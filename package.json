@@ -1,22 +1,26 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "redcoat-challenge",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "The Redcoat Challenge",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Gunnar Johnson <gunnarjohnson.github@gmail.com>",
   "dependencies": {
-    "gatsby": "^2.13.45",
-    "gatsby-image": "^2.2.7",
+    "babel-plugin-styled-components": "^1.10.6",
+    "gatsby": "^2.13.39",
+    "gatsby-image": "^2.2.6",
     "gatsby-plugin-manifest": "^2.2.4",
     "gatsby-plugin-offline": "^2.2.4",
     "gatsby-plugin-react-helmet": "^3.1.2",
     "gatsby-plugin-sharp": "^2.2.9",
-    "gatsby-source-filesystem": "^2.1.7",
-    "gatsby-transformer-sharp": "^2.2.5",
+    "gatsby-plugin-styled-components": "^3.1.2",
+    "gatsby-source-filesystem": "^2.1.6",
+    "gatsby-transformer-sharp": "^2.2.4",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "react-is": "^16.8.6",
+    "styled-components": "^4.3.2"
   },
   "devDependencies": {
     "prettier": "^1.18.2"
