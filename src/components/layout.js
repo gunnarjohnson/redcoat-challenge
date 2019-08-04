@@ -7,11 +7,28 @@
 
 import React from "react"
 import PropTypes from "prop-types"
+import styled from "styled-components";
 import { useStaticQuery, graphql } from "gatsby"
 
 import { Normalize } from "../theme/normalize";
 import { Fonts } from "../theme/fonts";
 import Header from "./header/"
+
+const MainWrapper = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.0875rem 1.45rem;
+`
+
+const MainContainer = styled.main`
+  font-family: 'pt sans', sans-serif;
+`
+
+const Footer = styled.footer`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -29,25 +46,12 @@ const Layout = ({ children }) => {
       <Normalize />
       <Fonts />
       <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 1200,
-          padding: `0px 1.0875rem 1.45rem`,
-          paddingTop: 0,
-        }}
-      >
-        <main>{children}</main>
-        <footer
-          style={{
-            display: `flex`,
-            alignItems: `center`,
-            justifyContent: `center`,
-          }}
-        >
+      <MainWrapper>
+        <MainContainer>{children}</MainContainer>
+        <Footer>
           © {new Date().getFullYear()}
-        </footer>
-      </div>
+        </Footer>
+      </MainWrapper>
     </React.Fragment>
   )
 }

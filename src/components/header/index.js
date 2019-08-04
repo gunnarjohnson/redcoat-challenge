@@ -1,6 +1,6 @@
+import React from "react"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import React from "react"
 import styled from "styled-components";
 
 import Nav from "./nav"
@@ -8,42 +8,53 @@ import Nav from "./nav"
 const HeaderWrapper = styled.header`
   margin-bottom: 1.45rem;
   background-color: #d32f2f;
-`;
+`
 
-const NavContainer = styled.div`
+const NavWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   max-width: 1200px;
   margin: 0 auto;
   padding: 1.45rem 1.0875rem;
-`;
 
-const HeaderTitle = styled.h1`
+  @media screen and (min-width: 768px) {
+    justify-content: space-between;
+  }
+`
+
+const HeaderLinkWrapper = styled.div`
   flex-basis: 50%;
-  margin: 0;
-`;
+  margin: 0 0 0.4rem;
+  text-align: center;
 
-const HeaderTitleLink = styled(props => <Link {...props} />)`
+  @media screen and (min-width: 768px) {
+    text-align: left;
+  }
+`
+
+const HeaderLink = styled(props => <Link {...props} />)`
   color: white;
   font-family: 'patua one', sans-serif;
-  font-size: 1.4em;
+  font-size: 2.5em;
   font-weight: 400;
   text-decoration: none;
   text-transform: uppercase;
-`;
+
+  @media screen and (min-width: 768px) {
+    font-size: 3em;
+  }
+`
 
 const Header = ({ siteTitle }) => (
   <HeaderWrapper>
-    <NavContainer>
-      <HeaderTitle>
-        <HeaderTitleLink to="/">
-          {siteTitle}
-        </HeaderTitleLink>
-      </HeaderTitle>
+    <NavWrapper>
+      <HeaderLinkWrapper>
+        <HeaderLink to="/">{siteTitle}</HeaderLink>
+      </HeaderLinkWrapper>
       <Nav />
-    </NavContainer>
+    </NavWrapper>
   </HeaderWrapper>
 )
 
