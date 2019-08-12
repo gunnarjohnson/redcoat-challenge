@@ -5,9 +5,9 @@ import styled from "styled-components";
 
 import Nav from "./nav"
 
-const HeaderWrapper = styled.header`
-  margin-bottom: 1.45rem;
-  background-color: #d32f2f;
+const HeaderContainer = styled.header`
+  max-width: 1200px;
+  margin: 0 auto;
 `
 
 const NavWrapper = styled.div`
@@ -15,9 +15,9 @@ const NavWrapper = styled.div`
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  max-width: 1200px;
+  width: calc(100% - 2rem);
   margin: 0 auto;
-  padding: 1.45rem 1.0875rem;
+  padding: 1.4rem 1rem;
 
   @media screen and (min-width: 768px) {
     justify-content: space-between;
@@ -25,17 +25,21 @@ const NavWrapper = styled.div`
 `
 
 const HeaderLinkWrapper = styled.div`
-  flex-basis: 50%;
-  margin: 0 0 0.4rem;
+  flex-basis: 100%;
+  margin-bottom: 0.4rem;
   text-align: center;
 
   @media screen and (min-width: 768px) {
+    flex-basis: 50%;
     text-align: left;
+  }
+  @media screen and (min-width: 992px) {
+    flex-basis: auto;
   }
 `
 
 const HeaderLink = styled(props => <Link {...props} />)`
-  color: white;
+  color: #ffffff;
   font-family: 'patua one', sans-serif;
   font-size: 2.5em;
   font-weight: 400;
@@ -43,19 +47,27 @@ const HeaderLink = styled(props => <Link {...props} />)`
   text-transform: uppercase;
 
   @media screen and (min-width: 768px) {
+    margin-left: -0.6rem;
+    padding: 0.4rem 0.6rem;
     font-size: 3em;
+  }
+
+  &:hover {
+    color: #f7cd45;
+    // color: #000000;
+    // color: #00247d;
   }
 `
 
 const Header = ({ siteTitle }) => (
-  <HeaderWrapper>
+  <HeaderContainer>
     <NavWrapper>
       <HeaderLinkWrapper>
         <HeaderLink to="/">{siteTitle}</HeaderLink>
       </HeaderLinkWrapper>
       <Nav />
     </NavWrapper>
-  </HeaderWrapper>
+  </HeaderContainer>
 )
 
 Header.propTypes = {
