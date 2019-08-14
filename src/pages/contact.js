@@ -110,6 +110,7 @@ const Contact = () => (
       <FormWrapper>
         <Form name="contact" method="POST" action="/success" netlify-honeypot="bot-field" data-netlify="true">
           <Input type="hidden" name="bot-field" />
+          <input type="hidden" name="form-name" value="contact" />
           <Row>
             <Label>
               Name
