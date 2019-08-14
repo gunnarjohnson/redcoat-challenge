@@ -107,8 +107,8 @@ const Button = styled(props => <Link {...props} />)`
   padding: 0.4rem 0.8rem;
   border: 2px solid #000000;
   border-radius: 4px;
-  color: #000000;
-  background-color: transparent;
+  color: #e8e8e8;
+  background-color: #000000;
   font-size: 1.2em;
   font-weight: 700;
   letter-spacing: 1px;
@@ -117,8 +117,8 @@ const Button = styled(props => <Link {...props} />)`
   transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 
   &:hover {
-    color: #e8e8e8;
-    background-color: #000000;
+    color: #000000;
+    background-color: transparent;
   }
 `
 
