@@ -48,7 +48,7 @@ const Registration = () => (
         </p>
       </ContentWrapper>
       <ButtonWrapper>
-        <Button href="https://reggiebeer.com/ReggieEntry.php?CompetitionID=AHLOEV1000496" target="_blank">Register Entries</Button>
+        <Button href="https://reggiebeer.com/ReggieEntry.php?CompetitionID=AHLOEV1000496" rel="noopener noreferrer" target="_blank">Register Entries</Button>
       </ButtonWrapper>
     </section>
   </Layout>

@@ -83,7 +83,7 @@ const SecondaryContent = styled.p`
 const Footer = () => (
   <FooterWrapper>
     <PrimaryContainer>
-      <a href="https://www.facebook.com/The-Redcoat-Challenge-109342907066283/" target="_blank" title="Facebook">
+      <a href="https://www.facebook.com/The-Redcoat-Challenge-109342907066283/" rel="noopener noreferrer" target="_blank" title="Facebook">
         <FooterIcon icon={faFacebookSquare} />
       </a>
       <PrimaryContent>

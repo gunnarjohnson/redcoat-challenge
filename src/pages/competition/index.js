@@ -84,7 +84,7 @@ const Competition = () => {
               Denton County Brewing Company<br />
               200 E McKinney St<br />
               Denton, TX 76201<br />
-              <TelNum href="940-435-0710">(940) 435-0710</TelNum>
+              <TelNum href="tel:940-435-0710">(940) 435-0710</TelNum>
             </Content>
           </ContentContainer>
         </ContentWrapper>

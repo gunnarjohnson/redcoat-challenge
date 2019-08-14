@@ -30,9 +30,9 @@ const Rules = () => (
           Walk‐in entries will be allowed, but only if they are dropped off by the entry deadline of 12:00 pm (noon), October 1st,  at the following locations: 
           <br />
           <ul>
-            <li>BrewHound in Fort Worth, Texas. (<MapLink href="https://goo.gl/maps/zKsmpGksSLZUp42n8" target="_blank">map</MapLink>)</li>
-            <li>Homebrew Headquarters in Richardson, Texas. (<MapLink href="https://goo.gl/maps/hgQf2WkcLoMQvfLa9" target="_blank">map</MapLink>)</li>
-            <li>Texas Brewing Inc in Haltom City, Texas. (<MapLink href="https://goo.gl/maps/dXH45dDRME8uo8q96" target="_blank">map</MapLink>)</li>
+            <li>BrewHound in Fort Worth, Texas. (<MapLink href="https://goo.gl/maps/zKsmpGksSLZUp42n8" rel="noopener noreferrer" target="_blank">view map</MapLink>)</li>
+            <li>Homebrew Headquarters in Richardson, Texas. (<MapLink href="https://goo.gl/maps/hgQf2WkcLoMQvfLa9" rel="noopener noreferrer" target="_blank">view map</MapLink>)</li>
+            <li>Texas Brewing Inc in Haltom City, Texas. (<MapLink href="https://goo.gl/maps/dXH45dDRME8uo8q96" rel="noopener noreferrer" target="_blank">view map</MapLink>)</li>
           </ul>
           <br />
           All entries must be handcrafted products, containing ingredients available to the general public, and made using private equipment by hobbyist brewers (i.e., no use of commercial facilities or Brew on Premises operations, supplies, etc.). 

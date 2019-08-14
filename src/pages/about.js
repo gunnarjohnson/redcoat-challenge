@@ -101,14 +101,14 @@ const About = () => {
               <DirectiveContent>Learn more about the DCHG @</DirectiveContent>
               <Directive>
                 <ImgWrapper>
-                  <a href="http://thedchg.org/" target="_blank" title="DCHG">
+                  <a href="http://thedchg.org/" rel="noopener noreferrer" target="_blank" title="DCHG">
                     <Img fluid={data.dchgLogo.childImageSharp.fluid} />
                   </a>
                 </ImgWrapper>
               </Directive>
               <DirectiveContent>or</DirectiveContent>
               <Directive>
-                <a href="https://www.facebook.com/DentonCountyHomebrewersGuild/" target="_blank" title="Facebook">
+                <a href="https://www.facebook.com/DentonCountyHomebrewersGuild/" rel="noopener noreferrer" target="_blank" title="Facebook">
                   <FacebookIcon icon={faFacebookSquare} />
                 </a>
               </Directive>
