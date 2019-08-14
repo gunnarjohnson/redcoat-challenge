@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import styled from "styled-components";
+import styled from "styled-components"
 
 const NavContainer = styled.div`
   display: flex;
@@ -36,8 +36,7 @@ const NavLink = styled(props => <Link {...props} />)`
   }
 
   &:hover {
-    color: #f7cd45;
-    // color: #00247d;
+    text-decoration: underline;
   }
 
   &:last-child {

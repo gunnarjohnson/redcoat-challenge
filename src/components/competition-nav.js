@@ -1,11 +1,11 @@
 import React from "react"
 import { Link } from "gatsby"
-import styled from "styled-components";
+import styled from "styled-components"
 
 const NavLinkWrapper = styled.section`
   display: flex;
   flex-wrap: wrap;
-  padding-bottom: 1.2rem;
+  padding-bottom: 1.4rem;
   border-bottom: 2px solid #000000;
   box-sizing: border-box;
 `
@@ -14,12 +14,12 @@ const NavLinkContainer = styled.div`
   flex-basis: 50%;
   margin: 0.4rem 0;
 
-  @media screen and (min-width: 768px) {
-    flex-basis: 25%;
+  @media screen and (min-width: 576px) {
+    flex-basis: 33.33%;
   }
-  @media screen and (min-width: 992px) {
+  @media screen and (min-width: 768px) {
     flex-basis: auto;
-
+    
     &:last-child a {
       margin-right: 0;
     }
@@ -49,12 +49,10 @@ const NavLink = styled(props => <Link {...props} />)`
 const CompetitionNav = () => (
   <NavLinkWrapper>
     <NavLinkContainer><NavLink to="/competition">Competition</NavLink></NavLinkContainer>
-    <NavLinkContainer><NavLink to="/competition/registration">Registration</NavLink></NavLinkContainer>
     <NavLinkContainer><NavLink to="/competition/rules">Rules</NavLink></NavLinkContainer>
     <NavLinkContainer><NavLink to="/competition/awards">Awards</NavLink></NavLinkContainer>
+    <NavLinkContainer><NavLink to="/competition/registration">Registration</NavLink></NavLinkContainer>
     <NavLinkContainer><NavLink to="/competition/shipping">Shipping</NavLink></NavLinkContainer>
-    <NavLinkContainer><NavLink to="/competition/fees">Fees</NavLink></NavLinkContainer>
-    <NavLinkContainer><NavLink to="/competition/prizes">Prizes</NavLink></NavLinkContainer>
     <NavLinkContainer><NavLink to="/competition/categories">Categories</NavLink></NavLinkContainer>
   </NavLinkWrapper>
 )

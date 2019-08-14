@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import styled from "styled-components";
+import styled from "styled-components"
 
 import Nav from "./nav"
 
@@ -39,6 +39,7 @@ const HeaderLinkWrapper = styled.div`
 `
 
 const HeaderLink = styled(props => <Link {...props} />)`
+  position: relative;
   color: #ffffff;
   font-family: 'patua one', sans-serif;
   font-size: 2.5em;
@@ -53,10 +54,7 @@ const HeaderLink = styled(props => <Link {...props} />)`
   }
 
   &:hover {
-    color: #f7cd45;
-    // color: #000000;
-    // color: #00247d;
-  }
+    text-decoration: underline;
 `
 
 const Header = ({ siteTitle }) => (

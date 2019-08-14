@@ -7,11 +7,11 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import styled from "styled-components";
+import styled from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
 
-import { Normalize } from "../theme/normalize";
-import { Fonts } from "../theme/fonts";
+import { Normalize } from "../theme/normalize"
+import { Fonts } from "../theme/fonts"
 import Header from "./header/"
 import Footer from "./footer"
 
@@ -19,20 +19,26 @@ const SiteContent = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
-  min-height: calc(100vh - 3rem);
-  padding-bottom: 3rem;
+  min-height: calc(100vh - 6rem);
+  padding-bottom: 6rem;
+  background-color: #e8e8e8;
+
+  @media screen and (min-width: 768px) {
+    min-height: calc(100vh - 4rem);
+    padding-bottom: 4rem;
+  }
 `
 
 const HeaderWrapper = styled.div`
   width: 100%;
-  margin-bottom: 1.45rem;
+  margin-bottom: 1.4rem;
   background-color: #cf142b;
 `
 
 const MainWrapper = styled.div`
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 auto 4rem;
 `
 
 const Main = styled.main`
