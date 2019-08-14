@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faWineBottle } from "@fortawesome/free-solid-svg-icons"
 import { faBeer } from "@fortawesome/free-solid-svg-icons"
-import styled from "styled-components";
+import styled from "styled-components"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -33,9 +33,9 @@ const HomeButton = styled(props => <Link {...props} />)`
   width: 2rem;
   height: 1rem;
   padding: 0.4rem 1rem;
+  border-radius: 4px;
   color: #ffffff;
   background-color: #cf142b;
-  border-radius: 4px;
   font-weight: 600;
   letter-spacing: 1px;
   text-decoration: none;

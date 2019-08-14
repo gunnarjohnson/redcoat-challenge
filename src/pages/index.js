@@ -1,13 +1,125 @@
 import React from "react"
 import Img from "gatsby-image"
-import styled from "styled-components";
+import { Link } from "gatsby"
+import styled from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const HeaderWrapper = styled.div`
+const Section = styled.section`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+
+  @media screen and (min-width: 768px) {
+    flex-wrap: nowrap;
+  }
+`
+
+const SubsectionOne = styled.div`
+  flex-basis: 100%;
+
+  @media screen and (min-width: 768px) {
+    flex-basis: 60%;
+  }
+`
+
+const SubsectionTwo = styled.div`
+  flex-basis: 100%;
+
+  @media screen and (min-width: 768px) {
+    flex-basis: 40%;
+  }
+`
+
+const Header = styled.h1`
+  font-family: 'patua one', sans-serif;
+  font-size: 4em;
+  font-weight: 400;
   text-align: center;
+  text-transform: uppercase;
+
+  @media screen and (min-width: 768px) {
+    text-align: left;
+  }
+  @media screen and (min-width: 992px) {
+    font-size: 5em;
+  }
+  @media screen and (min-width: 1200px) {
+    font-size: 6em;
+  }
+`
+
+const HeaderBlock = styled.span`
+  display: block;
+
+  &:first-child {
+    color: #cf142b;
+  }
+
+  &:last-child {
+    color: #00247d;
+  }
+`
+
+const ContentWrapper = styled.div`
+  @media screen and (min-width: 768px) {
+    padding-right: 6rem;
+  }
+`
+
+const Content = styled.p`
+  font-size: 1.2em;
+  line-height: 1.6;
+  text-align: center;
+
+  @media screen and (min-width: 768px) {
+    font-size: 1.4em;
+    text-align: left;
+  }
+`
+
+const TitleWrapper = styled.span`
+  display: inline-block;
+`
+
+const Title = styled.span`
+  font-family: 'patua one', sans-serif;
+  font-size: 1.2em;
+  font-weight: 400;
+  text-transform: uppercase;
+`
+
+const ButtonWrapper = styled.div`
+  margin: 2rem 0;
+  padding: 0.4rem 0;
+  line-height: 1.6;
+  text-align: center;
+
+  @media screen and (min-width: 768px) {
+    text-align: left;
+  }
+`
+
+const Button = styled(props => <Link {...props} />)`
+  padding: 0.4rem 0.8rem;
+  border: 2px solid #000000;
+  border-radius: 4px;
+  color: #000000;
+  background-color: transparent;
+  font-size: 1.2em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-decoration: none;
+  box-sizing: border-box;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+
+  &:hover {
+    color: #e8e8e8;
+    background-color: #000000;
+  }
 `
 
 const ImgWrapper = styled.div`
@@ -19,66 +131,13 @@ const ImgContainer = styled.div`
   width: 250px;
   height: auto;
   margin: 0 auto;
-`
-
-const Header = styled.h1`
-  font-size: 2.2em;
-`
-
-const MainContentWrapper = styled.div`
-  position: relative;
-  margin-top: 3rem;
-  padding: 0 2rem;
-
+  
   @media screen and (min-width: 768px) {
-    padding: 0 3rem;
+    width: 300px;
   }
-`
-
-const Content = styled.p`
-  font-size: 1.4em;
-  line-height: 1.6em;
-`
-
-const Title = styled.span`
-  font-family: 'patua one', sans-serif;
-  font-weight: 100;
-  text-transform: uppercase;
-`
-
-const LeftLine = styled.div`
-  position: absolute;
-  top: 2.5%;
-  bottom: 0;
-  left: 0.5rem;
-  width: 0.3rem;
-  height: 95%;
-  background-color: #000000;
-  border-radius: 4px;
-
-  @media screen and (min-width: 768px) {
-    left: 1rem;
+  @media screen and (min-width: 992px) {
+    width: 400px;
   }
-`
-
-const RightLine = styled.div`
-  position: absolute;
-  top: 2.5%;
-  right: 0.5rem;
-  bottom: 0;
-  width: 0.3rem;  
-  height: 95%;
-  background-color: #000000;
-  border-radius: 4px;
-
-  @media screen and (min-width: 768px) {
-    right: 1rem;
-  }
-`
-
-const SubContentWrapper = styled.div`
-  margin-top: 3rem;
-  text-align: center;
 `
 
 const IndexPage = () => {
@@ -86,7 +145,7 @@ const IndexPage = () => {
     query {
       redcoatLogoNoLabel: file(relativePath: { eq: "redcoat-logo-no-label.png" }) {
         childImageSharp {
-          fluid(maxWidth: 250) {
+          fluid(maxWidth: 400) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -96,30 +155,31 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <section>
-        <HeaderWrapper>
-          <Header><Title>The Redcoat Challenge</Title></Header>
-        </HeaderWrapper>
-        <MainContentWrapper>
-          <LeftLine />
-          <Content>
-            <Title>The Redcoat Challenge</Title> is a specialty homebrew competition focused on British beer styles and sponsored by the Denton County Homebrewers Guild.
-            <Title> The Redcoat Challenge</Title> is unique in that the BJCP styles of beers recognized as "British" in origin or inspiration are the focus, rather than just being grouped as part of the overall field of competition. 
-            We want to bring these beers back to the forefront and showcase the original American brewing tradition, helping to shine a light on these fantastic beers, the history behind them, and the brewers crafting them.
-          </Content>
-          <RightLine />
-        </MainContentWrapper>
-        <SubContentWrapper>
-          <Content>
-            Welcome to <Title>the Redcoat Challenge</Title> and thank you for participating. Cheers!
-          </Content>
-        </SubContentWrapper>
-        <ImgWrapper>
-          <ImgContainer>
-            <Img fluid={data.redcoatLogoNoLabel.childImageSharp.fluid} />
-          </ImgContainer>
-        </ImgWrapper>
-      </section>
+      <Section>
+        <SubsectionOne>
+          <Header>
+            <HeaderBlock>British Beer</HeaderBlock>
+            <HeaderBlock>Texas Pride</HeaderBlock>
+          </Header>
+          <ContentWrapper>
+            <Content>
+              Welcome to <TitleWrapper><Title>the Redcoat Challenge</Title>,</TitleWrapper>
+              {' '}
+              a specialty homebrew competition focused on British beer styles and sponsored by the Denton County Homebrewers Guild of Denton, Texas.
+            </Content>
+          </ContentWrapper>
+          <ButtonWrapper>
+            <Button to="/competition">Learn More</Button>
+          </ButtonWrapper>
+        </SubsectionOne>
+        <SubsectionTwo>
+          <ImgWrapper>
+            <ImgContainer>
+              <Img fluid={data.redcoatLogoNoLabel.childImageSharp.fluid} />
+            </ImgContainer>
+          </ImgWrapper>
+        </SubsectionTwo>
+      </Section>
     </Layout>
   ) 
 }

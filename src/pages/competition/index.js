@@ -1,15 +1,11 @@
 import React from "react"
 import Img from "gatsby-image"
-import styled from "styled-components";
+import styled from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import CompetitionNav from "../../components/competition-nav"
-
-const Section = styled.section`
-  text-align: center;
-`
 
 const ImageWrapper = styled.div`
   display: block;
@@ -22,8 +18,36 @@ const ImageContainer = styled.div`
   margin: 0 auto;
 `
 
+const ContentWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
+const ContentContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  margin: 0 auto;
+`
+
 const Content = styled.p`
-  font-size: 1.2em;
+  &:nth-child(odd) {
+    flex-basis: 25%;
+    font-weight: 700;
+  }
+
+  &:nth-child(even) {
+    flex-basis: 75%;
+  }
+`
+
+const TelNum = styled.a`
+  color: #00247d;
+
+  &:hover {
+    color: #cf142b;
+  }
 `
 
 const Competition = () => {
@@ -42,17 +66,29 @@ const Competition = () => {
     <Layout>
       <SEO title="Competition" />
       <CompetitionNav />
-      <h1>Competition</h1>
-      <Section>
+      <section>
+        <h1>Competition</h1>
         <ImageWrapper>
           <ImageContainer>
             <Img fluid={data.redcoatLogoNoDate.childImageSharp.fluid} />
           </ImageContainer>
         </ImageWrapper>
-        <div>
-          <Content>Do id est non nulla duis consequat id nostrud laborum anim veniam duis do.</Content>
-        </div>
-      </Section>
+        <ContentWrapper>
+          <h2>The Redcoat Challenge 2019</h2>
+          <ContentContainer>
+            <Content>Entry Period</Content>
+            <Content>Monday, Aug 12 - Tuesday, Oct 1</Content>
+            <Content>Awards Ceremony</Content>
+            <Content>
+              Saturday, Nov 9 (time TBD)<br />
+              Denton County Brewing Company<br />
+              200 E McKinney St<br />
+              Denton, TX 76201<br />
+              <TelNum href="940-435-0710">(940) 435-0710</TelNum>
+            </Content>
+          </ContentContainer>
+        </ContentWrapper>
+      </section>
     </Layout>
   )
 }
