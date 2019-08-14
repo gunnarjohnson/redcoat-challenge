@@ -108,7 +108,7 @@ const Contact = () => (
       <h1>Contact</h1>
       <p>Questions? Send us a message.</p>
       <FormWrapper>
-        <Form method="post" netlify-honeypot="bot-field" data-netlify="true">
+        <Form name="contact" method="POST" action="/success" netlify-honeypot="bot-field" data-netlify="true">
           <Input type="hidden" name="bot-field" />
           <Row>
             <Label>
