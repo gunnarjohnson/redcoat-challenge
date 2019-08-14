@@ -60,7 +60,7 @@ const SecondaryContainer = styled.div`
   align-items: center;
   justify-content: center;
   flex-basis: 100%;
-  background-color: #5d76b3;
+  background-color: #000000;
 
   @media screen and (min-width: 768px) {
     flex-basis: 10%;
@@ -71,12 +71,11 @@ const SecondaryContainer = styled.div`
 
 const SecondaryContent = styled.p`
   margin: 0 1rem;
-  color: #00247d;
+  color: #5d76b3;
   font-size: 0.8em;
   text-align: center;
 
   @media screen and (min-width: 768px) {
-    color: #5d76b3;
     text-align: left;
   }
 `
