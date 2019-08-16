@@ -2,7 +2,7 @@
   "name": "redcoat-challenge",
   "private": true,
   "description": "The Redcoat Challenge",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "Gunnar Johnson <gunnarjohnson.github@gmail.com>",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.21",
@@ -15,7 +15,9 @@
     "gatsby-plugin-manifest": "^2.2.4",
     "gatsby-plugin-offline": "^2.2.4",
     "gatsby-plugin-react-helmet": "^3.1.2",
+    "gatsby-plugin-remove-trailing-slashes": "^2.1.2",
     "gatsby-plugin-sharp": "^2.2.9",
+    "gatsby-plugin-sitemap": "^2.2.6",
     "gatsby-plugin-styled-components": "^3.1.2",
     "gatsby-source-filesystem": "^2.1.6",
     "gatsby-transformer-sharp": "^2.2.4",
@@ -43,9 +45,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/gunnarjohnson/redcoat-challenge"
   }
 }
