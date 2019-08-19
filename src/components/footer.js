@@ -41,14 +41,7 @@ const FooterIcon = styled(props => <FontAwesomeIcon {...props} />)`
 `
 
 const PrimaryContent = styled.p`
-  display: flex;
-  align-items: center;
-  height: 42px;
   margin: 0 2rem;
-  padding: 0 1rem;
-  border: 2px solid #ffffff;
-  border-radius: 4px;
-  box-sizing: border-box;
   
   @media screen and (min-width: 768px) {
     margin: 0 3rem;

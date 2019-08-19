@@ -36,12 +36,13 @@ const SubsectionTwo = styled.div`
 
 const Header = styled.h1`
   font-family: 'patua one', sans-serif;
-  font-size: 4em;
+  font-size: 3.2em;
   font-weight: 400;
   text-align: center;
   text-transform: uppercase;
 
   @media screen and (min-width: 768px) {
+    font-size: 4em;
     text-align: left;
   }
   @media screen and (min-width: 992px) {

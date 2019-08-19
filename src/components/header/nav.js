@@ -5,13 +5,13 @@ import styled from "styled-components"
 const NavContainer = styled.div`
   display: flex;
   flex-basis: 100%;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 
   @media screen and (min-width: 768px) {
     flex-basis: 50%;
-    flex-direction: row;
+    flex-wrap: nowrap;
     align-items: center;
     justify-content: flex-end;
   }
