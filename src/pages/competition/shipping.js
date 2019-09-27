@@ -59,31 +59,45 @@ const Shipping = () => (
         </AddressWrapper>
       </div>
       <div>
-        <h2>Packing & Shipping Hints</h2>
+        <h2 id="packaging-instructions">Packaging Instructions</h2>
         <ol>
           <li>
-            Carefully pack your entries in a sturdy box. 
-            Line the inside of your carton with a plastic trash bag. 
-            Partition and pack each bottle with adequate packaging material. 
-            Do not over pack! Your package should weigh less than 25 pounds. 
-            Please refrain from using "messy" packaging materials such a Styrofoam "peanuts" or pellets; please use packaging material such as bubble wrap.
+            Package
+            <ul>
+              <li>Line the inside of a sturdy box with a plastic trash bag.</li>
+            </ul>
           </li>
           <li>
-            Enclose each of your bottle labels in a small zip‐top bag before attaching to their respective bottles. 
-            This way it makes it possible for the organizer to identify specifically which beer has broken if there is damage during shipment. 
+            Labels
+            <ul>
+              <li>Enclose each of your bottle labels in a small zip‐top bag before attaching to their respective bottles.</li>
+              <ul><li>This makes it possible for the organizer to identify which specific beer has broken if there is damage during the shipment.</li></ul>
+            </ul>    
           </li>
           <li>
-            Every reasonable effort will be made to contact entrants whose bottles have broken to make arrangements for sending replacement bottles. 
+            Bottles
+            <ul>
+              <li>Carefully partition and pack each bottle with adequate packaging material.</li>
+            </ul>
           </li>
           <li>
-            It is not against any Bureau of Alcohol, Tobacco and Firearms (ATF) regulations or federal laws to ship your entries via privately owned shipping company for analytical purposes. 
-            However, IT IS ILLEGAL TO SHIP ALCOHOLIC BEVERAGES VIA THE U.S. POSTAL SERVICE. 
-            Private shipping companies have the right to refuse your shipment if they are informed that the package contains glass and/or alcoholic beverages. 
-            Be aware that entries mailed internationally are often required by customs to have proper documentation. 
-            These entries might be opened and/or returned to the shipper by customs' officials at their discretion. 
-            It is solely the entrant's responsibility to follow all applicable laws and regulations.
+            Notes
+            <ul>
+              <li>Don't overpack! Your package should weigh less than 25 pounds.</li>
+              <li>Please refrain from using "messy" packaging materials such a Styrofoam "peanuts" or pellets; please use packaging material such as bubble wrap.</li>
+              <li>Every reasonable effort will be made to contact entrants whose bottles have broken to make arrangements for sending replacement bottles.</li>
+            </ul>
           </li>
         </ol>
+        <h2>Shipping Notice</h2>
+        <p>
+          It is not against any Bureau of Alcohol, Tobacco and Firearms (ATF) regulations or federal laws to ship your entries via privately owned shipping company for analytical purposes. 
+          However, IT IS ILLEGAL TO SHIP ALCOHOLIC BEVERAGES VIA THE U.S. POSTAL SERVICE. 
+          Private shipping companies have the right to refuse your shipment if they are informed that the package contains glass and/or alcoholic beverages. 
+          Be aware that entries mailed internationally are often required by customs to have proper documentation. 
+          These entries might be opened and/or returned to the shipper by customs' officials at their discretion. 
+          It is solely the entrant's responsibility to follow all applicable laws and regulations.
+        </p>
       </div>
     </section>
   </Layout>

@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import styled from "styled-components"
 
 import Layout from "../../components/layout"
@@ -6,6 +7,14 @@ import SEO from "../../components/seo"
 import CompetitionNav from "../../components/competition-nav"
 
 const MapLink = styled.a`
+  color: #00247d;
+
+  &:hover {
+    color: #cf142b;
+  }
+`
+
+const SiteLink = styled(props => <Link {...props} />)`
   color: #00247d;
 
   &:hover {
@@ -28,13 +37,14 @@ const Rules = () => (
           Please allow for shipping time. 
           All entries will be picked up from drop‐off locations the day of the entry deadline. 
           Walk‐in entries will be allowed, but only if they are dropped off by the entry deadline of 12:00 pm (noon), October 1st,  at the following locations: 
-          <br />
+        </p>
           <ul>
             <li>BrewHound in Fort Worth, Texas. (<MapLink href="https://goo.gl/maps/zKsmpGksSLZUp42n8" rel="noopener noreferrer" target="_blank">view map</MapLink>)</li>
             <li>Homebrew Headquarters in Richardson, Texas. (<MapLink href="https://goo.gl/maps/hgQf2WkcLoMQvfLa9" rel="noopener noreferrer" target="_blank">view map</MapLink>)</li>
             <li>Texas Brewing Inc in Haltom City, Texas. (<MapLink href="https://goo.gl/maps/dXH45dDRME8uo8q96" rel="noopener noreferrer" target="_blank">view map</MapLink>)</li>
           </ul>
-          <br />
+        <p><em>Note: If you'll be dropping off entries, please be sure to follow the competition <SiteLink to='/competition/shipping#packaging-instructions'>packaging instructions</SiteLink>.</em></p>
+        <p>
           All entries must be handcrafted products, containing ingredients available to the general public, and made using private equipment by hobbyist brewers (i.e., no use of commercial facilities or Brew on Premises operations, supplies, etc.). 
           Entry forms must be printed off and sent with or dropped off with each entry. 
           Please make sure to complete all sections on each form. 
