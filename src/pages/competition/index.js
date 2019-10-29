@@ -80,7 +80,7 @@ const Competition = () => {
             <Content>Monday, Aug 12 - Tuesday, Oct 1</Content>
             <Content>Awards Ceremony</Content>
             <Content>
-              Saturday, Nov 9 (time TBD)<br />
+              Saturday, Nov 9 at 1:00 pm<br />
               Denton County Brewing Company<br />
               200 E McKinney St<br />
               Denton, TX 76201<br />
