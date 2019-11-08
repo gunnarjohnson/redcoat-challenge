@@ -166,9 +166,33 @@ const Categories = () => (
       <Container>
         <Subtitle>2015 BJCP Style Guidelines</Subtitle>
         <BJCPLinkList>
-          <li><BJCPLink href="https://bjcp.org/docs/2015_Guidelines_Beer.pdf" rel="noopener noreferrer" target="_blank">Beer Style Guidelines</BJCPLink></li>
-          <li><BJCPLink href="https://bjcp.org/docs/2015_Guidelines_Cider.pdf" rel="noopener noreferrer" target="_blank">Cider Style Guidelines</BJCPLink></li>
-          <li><BJCPLink href="https://bjcp.org/stylecenter.php" rel="noopener noreferrer" target="_blank">Additional Information</BJCPLink></li>
+          <li>
+            <BJCPLink
+              href="https://bjcp.org/docs/2015_Guidelines_Beer.pdf"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Beer Style Guidelines
+            </BJCPLink>
+          </li>
+          <li>
+            <BJCPLink
+              href="https://bjcp.org/docs/2015_Guidelines_Cider.pdf"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Cider Style Guidelines
+            </BJCPLink>
+          </li>
+          <li>
+            <BJCPLink
+              href="https://bjcp.org/stylecenter.php"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Additional Information
+            </BJCPLink>
+          </li>
         </BJCPLinkList>
       </Container>
     </section>

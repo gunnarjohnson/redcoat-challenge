@@ -19,17 +19,18 @@ const NavLinkContainer = styled.div`
   }
   @media screen and (min-width: 768px) {
     flex-basis: auto;
-    
+
     &:last-child a {
       margin-right: 0;
     }
   }
 `
 
+// eslint-disable-next-line react/jsx-props-no-spreading
 const NavLink = styled(props => <Link {...props} />)`
   margin-right: 0.6rem;
   color: #000000;
-  font-family: 'pt sans', sans-serif;
+  font-family: "pt sans", sans-serif;
   font-size: 1.2em;
   font-weight: 600;
   text-decoration: none;
@@ -48,12 +49,24 @@ const NavLink = styled(props => <Link {...props} />)`
 
 const CompetitionNav = () => (
   <NavLinkWrapper>
-    <NavLinkContainer><NavLink to="/competition">Competition</NavLink></NavLinkContainer>
-    <NavLinkContainer><NavLink to="/competition/rules">Rules</NavLink></NavLinkContainer>
-    <NavLinkContainer><NavLink to="/competition/awards">Awards</NavLink></NavLinkContainer>
-    <NavLinkContainer><NavLink to="/competition/registration">Registration</NavLink></NavLinkContainer>
-    <NavLinkContainer><NavLink to="/competition/shipping">Shipping</NavLink></NavLinkContainer>
-    <NavLinkContainer><NavLink to="/competition/categories">Categories</NavLink></NavLinkContainer>
+    <NavLinkContainer>
+      <NavLink to="/competition">Competition</NavLink>
+    </NavLinkContainer>
+    <NavLinkContainer>
+      <NavLink to="/competition/rules">Rules</NavLink>
+    </NavLinkContainer>
+    <NavLinkContainer>
+      <NavLink to="/competition/awards">Awards</NavLink>
+    </NavLinkContainer>
+    <NavLinkContainer>
+      <NavLink to="/competition/registration">Registration</NavLink>
+    </NavLinkContainer>
+    <NavLinkContainer>
+      <NavLink to="/competition/shipping">Shipping</NavLink>
+    </NavLinkContainer>
+    <NavLinkContainer>
+      <NavLink to="/competition/categories">Categories</NavLink>
+    </NavLinkContainer>
   </NavLinkWrapper>
 )
 

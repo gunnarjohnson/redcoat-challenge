@@ -15,7 +15,7 @@ const FooterWrapper = styled.footer`
   height: 6rem;
   color: #ffffff;
   background-color: #00247d;
-  font-family: 'pt sans', sans-serif;
+  font-family: "pt sans", sans-serif;
 
   @media screen and (min-width: 768px) {
     flex-wrap: nowrap;
@@ -35,6 +35,7 @@ const PrimaryContainer = styled.div`
   }
 `
 
+// eslint-disable-next-line react/jsx-props-no-spreading
 const FooterIcon = styled(props => <FontAwesomeIcon {...props} />)`
   color: #ffffff;
   font-size: 3em;
@@ -42,7 +43,7 @@ const FooterIcon = styled(props => <FontAwesomeIcon {...props} />)`
 
 const PrimaryContent = styled.p`
   margin: 0 2rem;
-  
+
   @media screen and (min-width: 768px) {
     margin: 0 3rem;
   }
@@ -76,12 +77,15 @@ const SecondaryContent = styled.p`
 const Footer = () => (
   <FooterWrapper>
     <PrimaryContainer>
-      <a href="https://www.facebook.com/The-Redcoat-Challenge-109342907066283/" rel="noopener noreferrer" target="_blank" title="Facebook">
+      <a
+        href="https://www.facebook.com/The-Redcoat-Challenge-109342907066283/"
+        rel="noopener noreferrer"
+        target="_blank"
+        title="Facebook"
+      >
         <FooterIcon icon={faFacebookSquare} />
       </a>
-      <PrimaryContent>
-        © {new Date().getFullYear()} DCHG
-      </PrimaryContent>
+      <PrimaryContent>{`© ${new Date().getFullYear()} DCHG`}</PrimaryContent>
       <Link to="/contact" title="Contact">
         <FooterIcon icon={faEnvelopeSquare} />
       </Link>

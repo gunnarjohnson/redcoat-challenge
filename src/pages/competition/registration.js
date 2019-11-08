@@ -42,13 +42,19 @@ const Registration = () => (
       <h1>Competition - Registration</h1>
       <ContentWrapper>
         <p>
-          Entries are to be registered through the Reggie homebrew competition website.
-          Each entry will be assessed a fee of $10, due at time of entry via PayPal.
-          All fees must be paid in advance.
+          Entries are to be registered through the Reggie homebrew competition
+          website. Each entry will be assessed a fee of $10, due at time of
+          entry via PayPal. All fees must be paid in advance.
         </p>
       </ContentWrapper>
       <ButtonWrapper>
-        <Button href="https://reggiebeer.com/ReggieEntry.php?CompetitionID=AHLOEV1000496" rel="noopener noreferrer" target="_blank">Register Entries</Button>
+        <Button
+          href="https://reggiebeer.com/ReggieEntry.php?CompetitionID=AHLOEV1000496"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Register Entries
+        </Button>
       </ButtonWrapper>
     </section>
   </Layout>

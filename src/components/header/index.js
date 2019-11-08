@@ -38,6 +38,7 @@ const HeaderLinkWrapper = styled.div`
   }
 `
 
+// eslint-disable-next-line react/jsx-props-no-spreading
 const HeaderLink = styled(props => <Link {...props} />)`
   position: relative;
   color: #ffffff;

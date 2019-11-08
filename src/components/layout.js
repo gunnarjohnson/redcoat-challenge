@@ -10,9 +10,9 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
 
-import { Normalize } from "../theme/normalize"
-import { Fonts } from "../theme/fonts"
-import Header from "./header/"
+import Normalize from "../theme/normalize"
+import Fonts from "../theme/fonts"
+import Header from "./header"
 import Footer from "./footer"
 
 const SiteContent = styled.div`
@@ -43,7 +43,7 @@ const MainWrapper = styled.div`
 
 const Main = styled.main`
   padding: 0 1rem 1.4rem;
-  font-family: 'pt sans', sans-serif;
+  font-family: "pt sans", sans-serif;
 `
 
 const Layout = ({ children }) => {
@@ -58,7 +58,7 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <React.Fragment>
+    <>
       <Normalize />
       <Fonts />
       <SiteContent>
@@ -70,7 +70,7 @@ const Layout = ({ children }) => {
         </MainWrapper>
         <Footer />
       </SiteContent>
-    </React.Fragment>
+    </>
   )
 }
 

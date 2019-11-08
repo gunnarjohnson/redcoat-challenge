@@ -20,11 +20,12 @@ const NavContainer = styled.div`
   }
 `
 
+// eslint-disable-next-line react/jsx-props-no-spreading
 const NavLink = styled(props => <Link {...props} />)`
   margin: 0.4rem 0;
   padding: 0.4rem 0.6rem;
   color: #ffffff;
-  font-family: 'pt sans', sans-serif;
+  font-family: "pt sans", sans-serif;
   font-size: 1.4em;
   text-decoration: none;
 

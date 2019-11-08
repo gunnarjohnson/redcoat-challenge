@@ -1,8 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faWineBottle } from "@fortawesome/free-solid-svg-icons"
-import { faBeer } from "@fortawesome/free-solid-svg-icons"
+import { faWineBottle, faBeer } from "@fortawesome/free-solid-svg-icons"
+
 import styled from "styled-components"
 
 import Layout from "../components/layout"
@@ -20,15 +20,18 @@ const IconWrapper = styled.div`
   font-size: 3em;
 `
 
+// eslint-disable-next-line react/jsx-props-no-spreading
 const BottleIcon = styled(props => <FontAwesomeIcon {...props} />)`
   margin-right: 0.2rem;
 `
 
+// eslint-disable-next-line react/jsx-props-no-spreading
 const MugIcon = styled(props => <FontAwesomeIcon {...props} />)`
   margin-left: 0.2rem;
   padding-top: 1rem;
 `
 
+// eslint-disable-next-line react/jsx-props-no-spreading
 const HomeButton = styled(props => <Link {...props} />)`
   width: 2rem;
   height: 1rem;
@@ -52,7 +55,7 @@ const NotFoundPage = () => (
     <section>
       <h1>NOT FOUND</h1>
       <ContentWrapper>
-        <p>Relax, don't worry, have a homebrew.</p>
+        <p>Relax, don&apos;t worry, have a homebrew.</p>
         <IconWrapper>
           <BottleIcon icon={faWineBottle} alt="bottle" />
           <MugIcon icon={faBeer} alt="mug" />

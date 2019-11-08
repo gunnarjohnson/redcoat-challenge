@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React from "react"
 import styled from "styled-components"
 
@@ -29,7 +30,7 @@ const Label = styled.label`
   font-weight: 700;
 `
 
-const Input  = styled.input`
+const Input = styled.input`
   width: calc(100% - 14px);
   margin-top: 0.5rem;
   padding: 3px 7px;
@@ -108,7 +109,13 @@ const Contact = () => (
       <h1>Contact</h1>
       <p>Questions? Send us a message.</p>
       <FormWrapper>
-        <Form name="contact" method="POST" action="/success" netlify-honeypot="bot-field" data-netlify="true">
+        <Form
+          name="contact"
+          method="POST"
+          action="/success"
+          netlify-honeypot="bot-field"
+          data-netlify="true"
+        >
           <Input type="hidden" name="bot-field" />
           <input type="hidden" name="form-name" value="contact" />
           <Row>

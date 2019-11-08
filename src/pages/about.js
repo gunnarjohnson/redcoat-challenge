@@ -29,7 +29,7 @@ const DirectiveContainer = styled.div`
   border-radius: 8px;
   background-color: #ffffff;
   box-shadow: 0 0 8px #000000;
-  
+
   @media screen and (min-width: 768px) {
     flex-direction: row;
   }
@@ -56,6 +56,7 @@ const ImgWrapper = styled.div`
   height: auto;
 `
 
+// eslint-disable-next-line react/jsx-props-no-spreading
 const FacebookIcon = styled(props => <FontAwesomeIcon {...props} />)`
   font-size: 5em;
   color: #000000;
@@ -80,35 +81,59 @@ const About = () => {
         <h1>About the Redcoat Challenge</h1>
         <div>
           <Content>
-            The Redcoat Challenge is a specialty homebrew competition focused on British beer styles and sponsored by the Denton County Homebrewers Guild. 
-            The Redcoat Challenge is unique in that the BJCP styles of beers recognized as "British" in origin or inspiration are the focus, rather than just being grouped as part of the overall field of competition. 
-            We want to bring these beers back to the forefront and showcase the original American brewing tradition, helping to shine a light on these fantastic beers, the history behind them, and the brewers crafting them.
+            The Redcoat Challenge is a specialty homebrew competition focused on
+            British beer styles and sponsored by the Denton County Homebrewers
+            Guild. The Redcoat Challenge is unique in that the BJCP styles of
+            beers recognized as &quot;British&quot; in origin or inspiration are
+            the focus, rather than just being grouped as part of the overall
+            field of competition. We want to bring these beers back to the
+            forefront and showcase the original American brewing tradition,
+            helping to shine a light on these fantastic beers, the history
+            behind them, and the brewers crafting them.
           </Content>
         </div>
         <div>
           <h2>The Denton County Homebrewers Guild</h2>
           <Content>
-            Founded in 2012, the DCHG exists as a means for members to explore their hobby through the promotion and education of home brewing. 
-            The mission of the DCHG is to promote awareness and appreciation of the quality and variety of homebrewed beers, wines, meads, and tea, through education, research, and the collection and dissemination of information: 
-            to serve as a forum for the technological and cross-cultural aspects of the art of zymurgy; 
-            and to encourage personal responsibility when using alcohol-containing beverages.
-            Our home is currently at Denton County Brewing Company in Denton TX, where most of our members meet every 1st Sunday of the month at 4pm. 
-            General Membership is unlimited and open to any individual person interested in the advancement of zymurgy, and who will support the Charter and basic policies of the DCHG, subject only to compliance with the provisions of the By-Laws. 
-            Members are not required to be brewers.
+            Founded in 2012, the DCHG exists as a means for members to explore
+            their hobby through the promotion and education of home brewing. The
+            mission of the DCHG is to promote awareness and appreciation of the
+            quality and variety of homebrewed beers, wines, meads, and tea,
+            through education, research, and the collection and dissemination of
+            information: to serve as a forum for the technological and
+            cross-cultural aspects of the art of zymurgy; and to encourage
+            personal responsibility when using alcohol-containing beverages. Our
+            home is currently at Denton County Brewing Company in Denton TX,
+            where most of our members meet every 1st Sunday of the month at 4pm.
+            General Membership is unlimited and open to any individual person
+            interested in the advancement of zymurgy, and who will support the
+            Charter and basic policies of the DCHG, subject only to compliance
+            with the provisions of the By-Laws. Members are not required to be
+            brewers.
           </Content>
           <DirectiveWrapper>
             <DirectiveContainer>
               <DirectiveContent>Learn more about the DCHG @</DirectiveContent>
               <Directive>
                 <ImgWrapper>
-                  <a href="http://thedchg.org/" rel="noopener noreferrer" target="_blank" title="DCHG">
+                  <a
+                    href="http://thedchg.org/"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    title="DCHG"
+                  >
                     <Img fluid={data.dchgLogo.childImageSharp.fluid} />
                   </a>
                 </ImgWrapper>
               </Directive>
               <DirectiveContent>or</DirectiveContent>
               <Directive>
-                <a href="https://www.facebook.com/DentonCountyHomebrewersGuild/" rel="noopener noreferrer" target="_blank" title="Facebook">
+                <a
+                  href="https://www.facebook.com/DentonCountyHomebrewersGuild/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  title="Facebook"
+                >
                   <FacebookIcon icon={faFacebookSquare} />
                 </a>
               </Directive>

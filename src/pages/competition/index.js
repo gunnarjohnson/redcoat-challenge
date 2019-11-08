@@ -53,7 +53,9 @@ const TelNum = styled.a`
 const Competition = () => {
   const data = useStaticQuery(graphql`
     query {
-      redcoatLogoNoDate: file(relativePath: { eq: "redcoat-logo-no-date.png" }) {
+      redcoatLogoNoDate: file(
+        relativePath: { eq: "redcoat-logo-no-date.png" }
+      ) {
         childImageSharp {
           fluid(maxWidth: 250) {
             ...GatsbyImageSharpFluid
@@ -80,10 +82,14 @@ const Competition = () => {
             <Content>Monday, Aug 12 - Tuesday, Oct 1</Content>
             <Content>Awards Ceremony</Content>
             <Content>
-              Saturday, Nov 9 at 1:00 pm<br />
-              Denton County Brewing Company<br />
-              200 E McKinney St<br />
-              Denton, TX 76201<br />
+              Saturday, Nov 9 at 1:00 pm
+              <br />
+              Denton County Brewing Company
+              <br />
+              200 E McKinney St
+              <br />
+              Denton, TX 76201
+              <br />
               <TelNum href="tel:940-435-0710">(940) 435-0710</TelNum>
             </Content>
           </ContentContainer>

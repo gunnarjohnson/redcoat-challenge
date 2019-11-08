@@ -1,8 +1,7 @@
 import React from "react"
 import Img from "gatsby-image"
-import { Link } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
-import { useStaticQuery, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -35,7 +34,7 @@ const SubsectionTwo = styled.div`
 `
 
 const Header = styled.h1`
-  font-family: 'patua one', sans-serif;
+  font-family: "patua one", sans-serif;
   font-size: 3.2em;
   font-weight: 400;
   text-align: center;
@@ -87,7 +86,7 @@ const TitleWrapper = styled.span`
 `
 
 const Title = styled.span`
-  font-family: 'patua one', sans-serif;
+  font-family: "patua one", sans-serif;
   font-size: 1.2em;
   font-weight: 400;
   text-transform: uppercase;
@@ -104,6 +103,7 @@ const ButtonWrapper = styled.div`
   }
 `
 
+// eslint-disable-next-line react/jsx-props-no-spreading
 const Button = styled(props => <Link {...props} />)`
   padding: 0.4rem 0.8rem;
   border: 2px solid #000000;
@@ -132,7 +132,7 @@ const ImgContainer = styled.div`
   width: 250px;
   height: auto;
   margin: 0 auto;
-  
+
   @media screen and (min-width: 768px) {
     width: 300px;
   }
@@ -144,7 +144,9 @@ const ImgContainer = styled.div`
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      redcoatLogoNoLabel: file(relativePath: { eq: "redcoat-logo-no-label.png" }) {
+      redcoatLogoNoLabel: file(
+        relativePath: { eq: "redcoat-logo-no-label.png" }
+      ) {
         childImageSharp {
           fluid(maxWidth: 400) {
             ...GatsbyImageSharpFluid
@@ -164,9 +166,15 @@ const IndexPage = () => {
           </Header>
           <ContentWrapper>
             <Content>
-              Welcome to <TitleWrapper><Title>the Redcoat Challenge</Title>,</TitleWrapper>
-              {' '}
-              a specialty homebrew competition focused on British beer styles and sponsored by the Denton County Homebrewers Guild of Denton, Texas.
+              {/* eslint-disable-next-line react/jsx-curly-brace-presence */}
+              {`Welcome to `}
+              <TitleWrapper>
+                {/* eslint-disable-next-line react/jsx-one-expression-per-line */}
+                <Title>the Redcoat Challenge</Title>,
+              </TitleWrapper>
+              {` a specialty homebrew competition focused on British beer styles
+              and sponsored by the Denton County Homebrewers Guild of Denton,
+              Texas.`}
             </Content>
           </ContentWrapper>
           <ButtonWrapper>
@@ -182,7 +190,7 @@ const IndexPage = () => {
         </SubsectionTwo>
       </Section>
     </Layout>
-  ) 
+  )
 }
 
 export default IndexPage
