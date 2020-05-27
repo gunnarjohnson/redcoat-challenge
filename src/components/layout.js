@@ -7,11 +7,11 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import styled from "styled-components"
+import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import styled from "styled-components"
 
 import Normalize from "../theme/normalize"
-import Fonts from "../theme/fonts"
 import Header from "./header"
 import Footer from "./footer"
 
@@ -60,7 +60,16 @@ const Layout = ({ children }) => {
   return (
     <>
       <Normalize />
-      <Fonts />
+      <Helmet>
+        <link
+          href="https://fonts.googleapis.com/css?family=Patua+One"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.googleapis.com/css?family=PT+Sans"
+          rel="stylesheet"
+        />
+      </Helmet>
       <SiteContent>
         <HeaderWrapper>
           <Header siteTitle={data.site.siteMetadata.title} />

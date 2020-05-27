@@ -9,13 +9,13 @@ const ContentWrapper = styled.div`
   margin-top: 2rem;
 `
 
-const ButtonWrapper = styled.div`
+const RegistrationWrapper = styled.div`
   margin-top: 2rem;
   padding: 0.4rem 0;
   line-height: 1.6;
 `
 
-const Button = styled.a`
+const RegistrationButton = styled.a`
   padding: 0.4rem 0.8rem;
   border: 2px solid #000000;
   border-radius: 4px;
@@ -34,6 +34,17 @@ const Button = styled.a`
   }
 `
 
+const RegistrationNotification = styled.p`
+  margin: 0;
+  color: #000000;
+  font-size: 1.2em;
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: 1px;
+`
+
+const RegistrationEnabled = false
+
 const Registration = () => (
   <Layout>
     <SEO title="Competition - Registration" />
@@ -47,15 +58,21 @@ const Registration = () => (
           entry via PayPal. All fees must be paid in advance.
         </p>
       </ContentWrapper>
-      <ButtonWrapper>
-        <Button
-          href="https://reggiebeer.com/ReggieEntry.php?CompetitionID=AHLOEV1000496"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          Register Entries
-        </Button>
-      </ButtonWrapper>
+      <RegistrationWrapper>
+        {RegistrationEnabled ? (
+          <RegistrationButton
+            href="https://reggiebeer.com/ReggieEntry.php?CompetitionID=AHLOEV1000496"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Register Entries
+          </RegistrationButton>
+        ) : (
+          <RegistrationNotification>
+            Registration will be open soon.
+          </RegistrationNotification>
+        )}
+      </RegistrationWrapper>
     </section>
   </Layout>
 )

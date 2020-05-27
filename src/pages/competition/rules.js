@@ -6,6 +6,11 @@ import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import CompetitionNav from "../../components/competition-nav"
 
+const HighlightedText = styled.span`
+  color: #cf142b;
+  text-decoration: underline;
+`
+
 const MapLink = styled.a`
   color: #00247d;
 
@@ -37,12 +42,16 @@ const Rules = () => (
           brewers are allowed, but if entering as a team or as part of a club
           you may only designate one team or club name in the appropriate
           section on the entry registration. All mailed entries must be received
-          at the mailing location by the entry deadline, October 1st, 2019.
+          at the mailing location by the entry deadline, October 3rd, 2020.
           Please allow for shipping time. All entries will be picked up from
           drop‐off locations the day of the entry deadline. Walk‐in entries will
           be allowed, but only if they are dropped off by the entry deadline of
-          12:00 pm (noon), October 1st, at the following locations:
+          12:00 pm (noon), October 3rd. All entries should be packaged as if
+          they were being shipped in order to assist our homebrew store partners
+          with storage/organization, as well as the organizers when collecting
+          your entries.
         </p>
+        <p>Entries can be dropped off at the following locations:</p>
         <ul>
           <li>
             BrewHound in Fort Worth, Texas. (
@@ -97,9 +106,9 @@ const Rules = () => (
           complete all sections on each form. If you wish to enter as an
           individual not associated with any team or club, please put N/A in the
           appropriate section. The Redcoat Challenge is not responsible for
-          mis‐categorized entries, mailed entries that are not received by the
-          entry deadline, or entries and/or paperwork that have arrived damaged
-          or lost in transit. TRC reserves the right to combine and/or expand
+          miscategorized entries, mailed entries that are not received by the
+          entry deadline, or entries and/or paperwork that arrive damaged or are
+          lost in transit. TRC reserves the right to combine and/or expand
           styles for judging and to restructure awards as needed depending upon
           the quantity and quality of entries. All possible efforts will be made
           to combine or group similar styles. Combined or grouped entries will
@@ -107,34 +116,50 @@ const Rules = () => (
           Qualified judging of all entries is the primary goal of our event.
           Judges will evaluate and score each entry. The average of the scores
           will rank each entry in its category. Each flight will have at least
-          one BJCP judge or judged during a BJCP certification class. Brewers
-          are limited to the one entry per each custom The Redcoat Challenge
-          category for a maximum of 8 entries. For example, you may enter 1 beer
-          for category TRC1 British Bitter, 1 entry for TRC5 Scottish Ale, and 1
-          entry for TRC6 Irish Beer, which would be a total of 3 entries in this
-          example. Recipes are not required. Judging style guidelines used will
-          be the 2015 Beer Judge Certification Program Style Guidelines and the
-          style guidelines created by TRC for future categories not listed in
-          the 2015 BJCP Style Guidelines. As per BJCP sanctioning requirements
-          judges may not judge a category they have entered in themselves if
-          they are also a competitor in the event. The style guidelines are
-          available on the BJCP’s website. The style guidelines will be
-          renumbered for our ease of use. Please fill out the entry forms
-          completely.
+          one BJCP judge or judged during a BJCP certification class.
+        </p>
+        <p>
+          <HighlightedText>
+            Brewers are limited to 1 entry in each custom The Redcoat Challenge
+            category for a maximum of 8 entries.
+          </HighlightedText>
+        </p>
+        <ul>
+          <li>
+            For example, a brewer could enter 1 beer in TRC1 British Bitter, 1
+            beer in TRC5 Scottish Ale, and 1 beer in TRC6 Irish Beer, which
+            would be a total of 3 entries.
+          </li>
+        </ul>
+        <p>
+          <HighlightedText>
+            Brewers may not submit 2 entries in a single category.
+          </HighlightedText>
+        </p>
+        <ul>
+          <li>
+            For example, a brewer couldn&rsquo;t enter a TRC1.1 Ordinary Bitter
+            and a TRC1.3 Strong Bitter in the TRC1 British Bitter category. The
+            brewer would have to choose a single entry to submit.
+          </li>
+        </ul>
+        <p>
+          Recipes are not required. Judging style guidelines used will be the
+          2015 Beer Judge Certification Program Style Guidelines and the style
+          guidelines created by TRC for future categories not listed in the 2015
+          BJCP Style Guidelines. As per BJCP sanctioning requirements judges may
+          not judge a category they have entered in themselves if they are also
+          a competitor in the event. The style guidelines are available on the
+          BJCP’s website. The style guidelines will be renumbered for our ease
+          of use. Please fill out the entry forms completely.
           <br />
           <br />
           Be meticulous about noting any special ingredients that must be
-          specified per the 2015 BJCP Style Guidelines. Category TRC8 will allow
-          brewers, who are so inclined, to push their abilities to craft a
-          British &quot;style&quot; beer that may not fit into the standard
-          categories, however all ingredients in such beers should be
-          identifiable as &quot;British&quot; and careful notations should be
-          included with the entry form to justify why the beer should be entered
-          as such. Failure to note such ingredients may impact the judges&apos;
-          scoring of your entry. Categories with a small number of entries may
-          be combined at the discretion of the competition organizers. The
-          Competition Coordinator or other qualified person will review elements
-          of beer categories and styles with each panel prior to judging.
+          specified per the 2015 BJCP Style Guidelines. Categories with a number
+          of entries may be combined at the discretion of the competition
+          organizers. The Competition Coordinator or other qualified person will
+          review elements of beer categories and styles with each panel prior to
+          judging.
           <br />
           <br />
           The Best of Show judging will be determined by a panel of BJCP judges

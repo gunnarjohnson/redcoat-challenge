@@ -13,11 +13,11 @@ const Awards = () => (
       <div>
         <p>
           There will be an awards ceremony for the competition at Denton County
-          Brewing Company on November 9th, 2019 at 1:00 pm. We will post the
-          winners on our Facebook page as well, starting the day of the event as
-          awards are announced. 1st, 2nd, and 3rd place awards will be issued
-          for each beverage category as well as a single winner for the Best Of
-          Show category.
+          Brewing Company on November 7, 2020 at 3:00 pm. Winners will also be
+          posted on our Facebook page on the day of the event as the awards are
+          announced. 1st, 2nd, and 3rd place awards will be issued for each
+          beverage category as well as a single winner for the Best Of Show
+          category.
           <br />
           <br />
           All 1st place entries from each category will advance to the Best of

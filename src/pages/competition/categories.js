@@ -65,7 +65,7 @@ const Categories = () => (
     <section>
       <h1>Competition - Categories</h1>
       <Container>
-        <Subtitle>The Redcoat Challenge 2019 Style Categories</Subtitle>
+        <Subtitle>The Redcoat Challenge 2020 Style Categories</Subtitle>
         <Subcontainer>
           <CardWrapper>
             <Card>
@@ -151,13 +151,12 @@ const Categories = () => (
           </CardWrapper>
           <CardWrapper>
             <Card>
-              <h3>TRC8 BRITISH BEER & CIDER</h3>
-              <p>(BJCP 31, M4, C1, C2)</p>
+              <h3>TRC8 BRAGGOT & CIDER</h3>
+              <p>(BJCP M4, C1, C2)</p>
               <ul>
-                <li>8.1 Alternative Fermentables</li>
-                <li>8.2 Braggot</li>
-                <li>8.3 Standard Cider & Perry</li>
-                <li>8.4 Specialty Cider & Perry</li>
+                <li>8.1 Braggot</li>
+                <li>8.2 Standard Cider & Perry</li>
+                <li>8.3 Specialty Cider & Perry</li>
               </ul>
             </Card>
           </CardWrapper>
