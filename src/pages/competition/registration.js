@@ -43,7 +43,7 @@ const RegistrationNotification = styled.p`
   letter-spacing: 1px;
 `
 
-const RegistrationEnabled = false
+const RegistrationEnabled = true
 
 const Registration = () => (
   <Layout>
@@ -61,7 +61,7 @@ const Registration = () => (
       <RegistrationWrapper>
         {RegistrationEnabled ? (
           <RegistrationButton
-            href="https://reggiebeer.com/ReggieEntry.php?CompetitionID=AHLOEV1000496"
+            href="https://reggiebeer.com/ReggieEntry.php?CompetitionID=KBUMJP1000567"
             rel="noopener noreferrer"
             target="_blank"
           >
