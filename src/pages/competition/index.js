@@ -78,8 +78,10 @@ const Competition = () => {
         <ContentWrapper>
           <h2>The Redcoat Challenge 2020</h2>
           <ContentContainer>
-            <Content>Entry Period</Content>
-            <Content>Tuesday, Sep 1 - Thursday, Oct 1</Content>
+            <Content>Entry Registration</Content>
+            <Content>Tuesday, Jul 28 - Thursday, Oct 1</Content>
+            <Content>Entry Delivery</Content>
+            <Content>Tuesday, Sep 1 - Saturday, Oct 3</Content>
             <Content>Awards Ceremony</Content>
             <Content>
               Saturday, Nov 7 at 3:00 pm

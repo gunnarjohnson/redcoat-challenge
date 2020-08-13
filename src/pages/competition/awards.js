@@ -60,13 +60,13 @@ const Awards = () => (
             All decisions of the Redcoat Challenge judging committee are to be
             considered final. Be assured that every effort will be taken to
             create an uncompromising, blind-tasting environment for the judging
-            of all entries. TRC judging committee reserves the right to re-align
-            medal categories based on final sub-category entries. The Head Judge
+            of all entries. TRC judging committee reserves the right to realign
+            medal categories based on final subcategory entries. The Head Judge
             reserves the right to disqualify an entry by sight or aroma alone.
-            Should this occur a refund will be issued. Should it be determined
-            that an entry has been doctored or altered in such a way as to gain
-            an unfair advantage or be dangerous, that entrant may be banned from
-            future participation.
+            If this occurs, a refund will be issued to the entrant. Should it be
+            determined that an entry has been doctored or altered in such a way
+            as to gain an unfair advantage or be dangerous, that entrant may be
+            banned from future participation.
           </p>
         </div>
       </div>

@@ -57,7 +57,7 @@ const ImgWrapper = styled.div`
 `
 
 // eslint-disable-next-line react/jsx-props-no-spreading
-const FacebookIcon = styled(props => <FontAwesomeIcon {...props} />)`
+const FacebookIcon = styled((props) => <FontAwesomeIcon {...props} />)`
   font-size: 5em;
   color: #000000;
 `
@@ -98,12 +98,14 @@ const About = () => {
             Founded in 2012, the DCHG exists as a means for members to explore
             their hobby through the promotion and education of home brewing. The
             mission of the DCHG is to promote awareness and appreciation of the
-            quality and variety of homebrewed beers, wines, meads, and tea,
+            quality and variety of homebrewed beers, wines, meads, and teas,
             through education, research, and the collection and dissemination of
             information: to serve as a forum for the technological and
             cross-cultural aspects of the art of zymurgy; and to encourage
-            personal responsibility when using alcohol-containing beverages. Our
-            home is currently at Denton County Brewing Company in Denton TX,
+            personal responsibility when using alcohol-containing beverages.
+            <br />
+            <br />
+            Our home is currently at Denton County Brewing Company in Denton TX,
             where most of our members meet every 1st Sunday of the month at 4pm.
             General Membership is unlimited and open to any individual person
             interested in the advancement of zymurgy, and who will support the

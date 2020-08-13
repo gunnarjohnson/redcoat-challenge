@@ -135,10 +135,10 @@ const Shipping = () => (
           companies have the right to refuse your shipment if they are informed
           that the package contains glass and/or alcoholic beverages. Be aware
           that entries mailed internationally are often required by customs to
-          have proper documentation. These entries might be opened and/or
-          returned to the shipper by customs&apos; officials at their
-          discretion. It is solely the entrant&apos;s responsibility to follow
-          all applicable laws and regulations.
+          have proper documentation. These entries may be opened and/or returned
+          to the shipper by customs officials at their discretion. It is solely
+          the entrant&apos;s responsibility to follow all applicable laws and
+          regulations.
         </p>
       </div>
     </section>
