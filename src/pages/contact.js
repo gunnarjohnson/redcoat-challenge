@@ -93,7 +93,8 @@ const ClearInput = styled.input`
   text-decoration: none;
   box-sizing: border-box;
   cursor: pointer;
-  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out;
 
   &:hover {
     color: #e8e8e8;
@@ -115,8 +116,9 @@ const Contact = () => (
           action="/success"
           netlify-honeypot="bot-field"
           data-netlify="true"
+          data-netlify-recaptcha="true"
         >
-          <Input type="hidden" name="bot-field" />
+          <input type="hidden" name="bot-field" />
           <input type="hidden" name="form-name" value="contact" />
           <Row>
             <Label>
@@ -141,6 +143,9 @@ const Contact = () => (
               Message
               <Textarea name="message" id="message" rows="5" />
             </Message>
+          </Row>
+          <Row>
+            <div data-netlify-recaptcha="true" />
           </Row>
           <Row>
             <SendButton type="submit">Send</SendButton>
