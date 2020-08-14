@@ -2,7 +2,7 @@
   "name": "redcoat-challenge",
   "private": true,
   "description": "The Redcoat Challenge",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Gunnar Johnson <gunnarjohnson.github@gmail.com>",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
@@ -24,6 +24,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-google-recaptcha": "^2.1.0",
     "react-helmet": "^6.0.0",
     "react-is": "^16.13.1",
     "styled-components": "^5.1.1"

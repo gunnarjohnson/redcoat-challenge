@@ -1,3 +1,8 @@
+// eslint-disable-next-line
+require("dotenv").config({
+  path: `.env`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `The Redcoat Challenge`,

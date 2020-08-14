@@ -1,5 +1,7 @@
 /* eslint-disable prettier/prettier */
 import React from "react"
+import { navigate } from "gatsby"
+import ReCAPTCHA from "react-google-recaptcha"
 import styled from "styled-components"
 
 import Layout from "../components/layout"
@@ -103,58 +105,122 @@ const ClearInput = styled.input`
   }
 `
 
-const Contact = () => (
-  <Layout>
-    <SEO title="Contact" />
-    <section>
-      <h1>Contact</h1>
-      <p>Questions? Send us a message.</p>
-      <FormWrapper>
-        <Form
-          name="contact"
-          method="POST"
-          action="/success"
-          netlify-honeypot="bot-field"
-          data-netlify="true"
-          data-netlify-recaptcha="true"
-        >
-          <input type="hidden" name="bot-field" />
-          <input type="hidden" name="form-name" value="contact" />
-          <Row>
-            <Label>
-              Name
-              <Input type="text" name="name" id="name" />
-            </Label>
-          </Row>
-          <Row>
-            <Label>
-              Email
-              <Input type="email" name="email" id="email" />
-            </Label>
-          </Row>
-          <Row>
-            <Label>
-              Subject
-              <Input type="text" name="subject" id="subject" />
-            </Label>
-          </Row>
-          <Row>
-            <Message>
-              Message
-              <Textarea name="message" id="message" rows="5" />
-            </Message>
-          </Row>
-          <Row>
-            <div data-netlify-recaptcha="true" />
-          </Row>
-          <Row>
-            <SendButton type="submit">Send</SendButton>
-            <ClearInput type="reset" value="Clear" />
-          </Row>
-        </Form>
-      </FormWrapper>
-    </section>
-  </Layout>
-)
+const recaptchaKey = process.env.GATSBY_SITE_RECAPTCHA_KEY
+
+const recaptchaRef = React.createRef()
+
+const encode = (data) => {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&")
+}
+
+// eslint-disable-next-line react/prefer-stateless-function
+class Contact extends React.Component {
+  state = {}
+
+  handleChange = (e) => {
+    this.setState({ [e.target.name]: e.target.value })
+  }
+
+  handleRecaptcha = (value) => {
+    this.setState({ "g-recaptcha-response": value })
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault()
+
+    const form = e.target
+
+    fetch("/", {
+      method: form.getAttribute("method"),
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": form.getAttribute("name"),
+        ...this.state,
+      }),
+    })
+      .then(() => navigate(form.getAttribute("action")))
+      .catch((error) => alert(error))
+  }
+
+  render() {
+    return (
+      <Layout>
+        <SEO title="Contact" />
+        <section>
+          <h1>Contact</h1>
+          <p>Questions? Send us a message.</p>
+          <FormWrapper>
+            <Form
+              name="contact"
+              method="POST"
+              action="/success"              
+              data-netlify="true"
+              data-netlify-recaptcha="true"
+              onSubmit={this.handleSubmit}
+            >
+              <Row>
+                <Label>
+                  Name
+                  <Input
+                    type="text"
+                    name="name"
+                    id="name"
+                    onChange={this.handleChange}
+                  />
+                </Label>
+              </Row>
+              <Row>
+                <Label>
+                  Email
+                  <Input
+                    type="email"
+                    name="email"
+                    id="email"
+                    onChange={this.handleChange}
+                  />
+                </Label>
+              </Row>
+              <Row>
+                <Label>
+                  Subject
+                  <Input
+                    type="text"
+                    name="subject"
+                    id="subject"
+                    onChange={this.handleChange}
+                  />
+                </Label>
+              </Row>
+              <Row>
+                <Message>
+                  Message
+                  <Textarea
+                    name="message"
+                    id="message"
+                    rows="5"
+                    onChange={this.handleChange}
+                  />
+                </Message>
+              </Row>
+              <Row>
+                <ReCAPTCHA
+                  ref={recaptchaRef}
+                  sitekey={recaptchaKey}
+                  onChange={this.handleRecaptcha}
+                />
+              </Row>
+              <Row>
+                <SendButton type="submit">Send</SendButton>
+                <ClearInput type="reset" value="Clear" />
+              </Row>
+            </Form>
+          </FormWrapper>
+        </section>
+      </Layout>
+    )
+  }
+}
 
 export default Contact
