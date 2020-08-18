@@ -41,10 +41,6 @@ const Input = styled.input`
   box-shadow: 0 0 4px #b8b8b8;
 `
 
-const Message = styled.label`
-  font-weight: 700;
-`
-
 const Textarea = styled.textarea`
   width: calc(100% - 14px);
   height: 12rem;
@@ -130,18 +126,24 @@ class Contact extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault()
 
-    const form = e.target
+    const isValidRecaptchaResponse = !!this.state["g-recaptcha-response"]
 
-    fetch("/", {
-      method: form.getAttribute("method"),
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({
-        "form-name": form.getAttribute("name"),
-        ...this.state,
-      }),
-    })
-      .then(() => navigate(form.getAttribute("action")))
-      .catch((error) => alert(error))
+    if (isValidRecaptchaResponse) {
+      const form = e.target
+
+      fetch("/", {
+        method: form.getAttribute("method"),
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({
+          "form-name": form.getAttribute("name"),
+          ...this.state,
+        }),
+      })
+        .then(() => navigate(form.getAttribute("action")))
+        .catch((error) => alert(error))
+    } else {
+      alert(`Please verify that you're a human and try again.`)
+    }
   }
 
   render() {
@@ -161,48 +163,52 @@ class Contact extends React.Component {
               onSubmit={this.handleSubmit}
             >
               <Row>
-                <Label>
+                <Label htmlFor="name">
                   Name
                   <Input
                     type="text"
                     name="name"
                     id="name"
                     onChange={this.handleChange}
+                    required
                   />
                 </Label>
               </Row>
               <Row>
-                <Label>
+                <Label htmlFor="email">
                   Email
                   <Input
                     type="email"
                     name="email"
                     id="email"
                     onChange={this.handleChange}
+                    required
                   />
                 </Label>
               </Row>
               <Row>
-                <Label>
+                <Label htmlFor="subject">
                   Subject
                   <Input
                     type="text"
                     name="subject"
                     id="subject"
                     onChange={this.handleChange}
+                    required
                   />
                 </Label>
               </Row>
               <Row>
-                <Message>
+                <Label htmlFor="message">
                   Message
                   <Textarea
                     name="message"
                     id="message"
                     rows="5"
                     onChange={this.handleChange}
+                    required
                   />
-                </Message>
+                </Label>
               </Row>
               <Row>
                 <ReCAPTCHA
