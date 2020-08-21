@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-fragments */
 import React from "react"
 import styled from "styled-components"
 
@@ -58,6 +59,200 @@ const BJCPLink = styled.a`
   }
 `
 
+const guidelineURLs = {
+  base: "https://dev.bjcp.org",
+  standard: "style/2015",
+  additional: "beer-styles",
+}
+
+const styleCategories = [
+  {
+    name: "BRITISH BITTER",
+    links: [
+      {
+        href: `${guidelineURLs.base}/${guidelineURLs.standard}/11/11A/ordinary-bitter/`,
+        content: "11A",
+      },
+      {
+        href: `${guidelineURLs.base}/${guidelineURLs.standard}/11/11B/best-bitter/`,
+        content: "11B",
+      },
+      {
+        href: `${guidelineURLs.base}/${guidelineURLs.standard}/11/11C/strong-bitter/`,
+        content: "11C",
+      },
+    ],
+    listItems: ["Ordinary Bitter", "Best Bitter", "Strong Bitter"],
+  },
+  {
+    name: "PALE COMMONWEALTH BEER",
+    links: [
+      {
+        href: `${guidelineURLs.base}/${guidelineURLs.standard}/12/12A/british-golden-ale/`,
+        content: "12A",
+      },
+      {
+        href: `${guidelineURLs.base}/${guidelineURLs.standard}/12/12B/australian-sparkling-ale/`,
+        content: "12B",
+      },
+      {
+        href: `${guidelineURLs.base}/${guidelineURLs.standard}/12/12C/english-ipa/`,
+        content: "12C",
+      },
+      {
+        href: `${guidelineURLs.base}/${guidelineURLs.additional}/x5-new-zealand-pilsner/`,
+        content: "X5",
+      },
+    ],
+    listItems: [
+      "British Golden Ale",
+      "Australian Sparkling Ale",
+      "English IPA",
+      "New Zealand Pilsner",
+    ],
+  },
+  {
+    name: "BROWN BRITISH BEER",
+    links: [
+      {
+        href: `${guidelineURLs.base}/${guidelineURLs.standard}/13/13A/dark-mild/`,
+        content: "13A",
+      },
+      {
+        href: `${guidelineURLs.base}/${guidelineURLs.standard}/13/13B/british-brown-ale/`,
+        content: "13B",
+      },
+      {
+        href: `${guidelineURLs.base}/${guidelineURLs.standard}/13/13C/english-porter/`,
+        content: "13C",
+      },
+      {
+        href: `${guidelineURLs.base}/${guidelineURLs.standard}/27/27A/historical-beer-london-brown-ale/`,
+        content: "27A",
+      },
+    ],
+    listItems: [
+      "Dark Mild",
+      "British Brown Ale",
+      "English Porter",
+      "London Brown Ale",
+    ],
+  },
+  {
+    name: "STRONG BRITISH BEER",
+    links: [
+      {
+        href: `${guidelineURLs.base}/${guidelineURLs.standard}/17/17A/british-strong-ale/`,
+        content: "17A",
+      },
+      {
+        href: `${guidelineURLs.base}/${guidelineURLs.standard}/17/17B/old-ale/`,
+        content: "17B",
+      },
+      {
+        href: `${guidelineURLs.base}/${guidelineURLs.standard}/17/17C/wee-heavy/`,
+        content: "17C",
+      },
+      {
+        href: `${guidelineURLs.base}/${guidelineURLs.standard}/17/17D/english-barleywine/`,
+        content: "17D",
+      },
+      {
+        href: `${guidelineURLs.base}/${guidelineURLs.additional}/17a-british-strong-ale-burton-ale/`,
+        content: "17A",
+      },
+    ],
+    listItems: [
+      "British Strong Ale",
+      "Old Ale",
+      "Wee Heavy",
+      "English Barleywine",
+      "Burton Ale",
+    ],
+  },
+  {
+    name: "SCOTTISH ALE",
+    links: [
+      {
+        href: `${guidelineURLs.base}/${guidelineURLs.standard}/14/14A/scottish-light/`,
+        content: "14A",
+      },
+      {
+        href: `${guidelineURLs.base}/${guidelineURLs.standard}/14/14B/scottish-heavy/`,
+        content: "14B",
+      },
+      {
+        href: `${guidelineURLs.base}/${guidelineURLs.standard}/14/14C/scottish-export/`,
+        content: "14C",
+      },
+    ],
+    listItems: ["Scottish Light", "Scottish Heavy", "Scottish Export"],
+  },
+  {
+    name: "IRISH BEER",
+    links: [
+      {
+        href: `${guidelineURLs.base}/${guidelineURLs.standard}/15/15A/irish-red-ale/`,
+        content: "15A",
+      },
+      {
+        href: `${guidelineURLs.base}/${guidelineURLs.standard}/15/15B/irish-stout/`,
+        content: "15B",
+      },
+      {
+        href: `${guidelineURLs.base}/${guidelineURLs.standard}/15/15C/irish-extra-stout/`,
+        content: "15C",
+      },
+    ],
+    listItems: ["Irish Red Ale", "Irish Stout", "Irish Extra Stout"],
+  },
+  {
+    name: "DARK BRITISH BEER",
+    links: [
+      {
+        href: `${guidelineURLs.base}/${guidelineURLs.standard}/16/16A/sweet-stout/`,
+        content: "16A",
+      },
+      {
+        href: `${guidelineURLs.base}/${guidelineURLs.standard}/16/16B/oatmeal-stout/`,
+        content: "16B",
+      },
+      {
+        href: `${guidelineURLs.base}/${guidelineURLs.standard}/16/16C/tropical-stout/`,
+        content: "16C",
+      },
+      {
+        href: `${guidelineURLs.base}/${guidelineURLs.standard}/16/16D/foreign-extra-stout/`,
+        content: "16D",
+      },
+    ],
+    listItems: [
+      "Sweet Stout",
+      "Oatmeal Stout",
+      "Tropical Stout",
+      "Foreign Extra Stout",
+    ],
+  },
+  {
+    name: "BRAGGOT & CIDER",
+    links: [
+      {
+        href: `${guidelineURLs.base}/${guidelineURLs.standard}/M4/M4A/braggot/`,
+        content: "M4",
+      },
+      {
+        href: `${guidelineURLs.base}/${guidelineURLs.standard}/C1/`,
+        content: "C1",
+      },
+      {
+        href: `${guidelineURLs.base}/${guidelineURLs.standard}/C2/`,
+        content: "C2",
+      },
+    ],
+    listItems: ["Braggot", "Standard Cider & Perry", "Specialty Cider & Perry"],
+  },
+]
+
 const Categories = () => (
   <Layout>
     <SEO title="Competition - Categories" />
@@ -67,99 +262,39 @@ const Categories = () => (
       <Container>
         <Subtitle>The Redcoat Challenge 2020 Style Categories</Subtitle>
         <Subcontainer>
-          <CardWrapper>
-            <Card>
-              <h3>TRC1 BRITISH BITTER</h3>
-              <p>(BJCP 11A, 11B, 11C)</p>
-              <ul>
-                <li>1.1 Ordinary Bitter</li>
-                <li>1.2 Best Bitter</li>
-                <li>1.3 Strong Bitter</li>
-              </ul>
-            </Card>
-          </CardWrapper>
-          <CardWrapper>
-            <Card>
-              <h3>TRC2 PALE COMMONWEALTH BEER</h3>
-              <p>(BJCP 12A, 12B, 12C, 27, X5)</p>
-              <ul>
-                <li>2.1 British Golden Ale</li>
-                <li>2.2 Australian Sparkling Ale</li>
-                <li>2.3 English IPA</li>
-                <li>2.4 New Zealand Pilsner</li>
-              </ul>
-            </Card>
-          </CardWrapper>
-          <CardWrapper>
-            <Card>
-              <h3>TRC3 BROWN BRITISH BEER</h3>
-              <p>(BJCP 13A, 13B, 13C, 27, 27)</p>
-              <ul>
-                <li>3.1 Dark Mild</li>
-                <li>3.2 British Brown Ale</li>
-                <li>3.3 English Porter</li>
-                <li>3.4 London Brown Ale</li>
-              </ul>
-            </Card>
-          </CardWrapper>
-          <CardWrapper>
-            <Card>
-              <h3>TRC4 STRONG BRITISH BEER</h3>
-              <p>(BJCP 17A, 17B, 17C, 17D, 17A)</p>
-              <ul>
-                <li>4.1 British Strong Ale</li>
-                <li>4.2 Old Ale</li>
-                <li>4.3 Wee Heavy</li>
-                <li>4.4 English Barleywine</li>
-                <li>4.5 Burton Ale</li>
-              </ul>
-            </Card>
-          </CardWrapper>
-          <CardWrapper>
-            <Card>
-              <h3>TRC5 SCOTTISH ALE</h3>
-              <p>(BJCP 14A, 14B, 14C)</p>
-              <ul>
-                <li>5.1 Scottish Light</li>
-                <li>5.2 Scottish Heavy</li>
-                <li>5.3 Scottish Export</li>
-              </ul>
-            </Card>
-          </CardWrapper>
-          <CardWrapper>
-            <Card>
-              <h3>TRC6 IRISH BEER</h3>
-              <p>(BJCP 15A, 15B, 15C)</p>
-              <ul>
-                <li>6.1 Irish Red Ale</li>
-                <li>6.2 Irish Stout</li>
-                <li>6.3 Irish Extra Stout</li>
-              </ul>
-            </Card>
-          </CardWrapper>
-          <CardWrapper>
-            <Card>
-              <h3>TRC7 DARK BRITISH BEER</h3>
-              <p>(BJCP 16A, 16B, 16C, 16D)</p>
-              <ul>
-                <li>7.1 Sweet Stout</li>
-                <li>7.2 Oatmeal Stout</li>
-                <li>7.3 Tropical Stout</li>
-                <li>7.4 Foreign Extra Stout</li>
-              </ul>
-            </Card>
-          </CardWrapper>
-          <CardWrapper>
-            <Card>
-              <h3>TRC8 BRAGGOT & CIDER</h3>
-              <p>(BJCP M4, C1, C2)</p>
-              <ul>
-                <li>8.1 Braggot</li>
-                <li>8.2 Standard Cider & Perry</li>
-                <li>8.3 Specialty Cider & Perry</li>
-              </ul>
-            </Card>
-          </CardWrapper>
+          {styleCategories.map((styleCategory, categoryIndex) => (
+            <CardWrapper>
+              <Card>
+                <h3>{`TRC${categoryIndex + 1} ${styleCategory.name}`}</h3>
+                <p>
+                  {`BJCP `}
+                  {styleCategory.links.map((categoryLink, linkIndex) => (
+                    <React.Fragment>
+                      {categoryLink.href ? (
+                        <BJCPLink
+                          href={categoryLink.href}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          {categoryLink.content}
+                        </BJCPLink>
+                      ) : (
+                        categoryLink.content
+                      )}
+                      {linkIndex + 1 < styleCategory.links.length ? ", " : ""}
+                    </React.Fragment>
+                  ))}
+                </p>
+                <ul>
+                  {styleCategory.listItems.map((listItem, itemIndex) => (
+                    <li>
+                      {`${categoryIndex + 1}.${itemIndex + 1} ${listItem}`}
+                    </li>
+                  ))}
+                </ul>
+              </Card>
+            </CardWrapper>
+          ))}
         </Subcontainer>
       </Container>
       <Container>
