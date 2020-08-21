@@ -45,6 +45,15 @@ const Card = styled.div`
   box-shadow: 4px 4px 8px #000000;
 `
 
+const CardTitle = styled.h3`
+  text-transform: uppercase;
+`
+
+const CardList = styled.ul`
+  list-style: none;
+  padding-left: 1.55rem;
+}`
+
 const BJCPLinkList = styled.ul`
   @media screen and (max-width: 767px) {
     padding-left: 0;
@@ -59,7 +68,7 @@ const BJCPLink = styled.a`
   }
 `
 
-const guidelineURLs = {
+const styleUrls = {
   base: "https://dev.bjcp.org",
   standard: "style/2015",
   additional: "beer-styles",
@@ -67,189 +76,267 @@ const guidelineURLs = {
 
 const styleCategories = [
   {
-    name: "BRITISH BITTER",
-    links: [
+    name: "British Bitter",
+    subcategories: [
       {
-        href: `${guidelineURLs.base}/${guidelineURLs.standard}/11/11A/ordinary-bitter/`,
-        content: "11A",
+        name: "Ordinary Bitter",
+        bjcp: {
+          documentationUrl: `${styleUrls.base}/${styleUrls.standard}/11/11A/ordinary-bitter/`,
+          subcategory: "11A",
+        },
       },
       {
-        href: `${guidelineURLs.base}/${guidelineURLs.standard}/11/11B/best-bitter/`,
-        content: "11B",
+        name: "Best Bitter",
+        bjcp: {
+          documentationUrl: `${styleUrls.base}/${styleUrls.standard}/11/11B/best-bitter/`,
+          subcategory: "11B",
+        },
       },
       {
-        href: `${guidelineURLs.base}/${guidelineURLs.standard}/11/11C/strong-bitter/`,
-        content: "11C",
+        name: "Strong Bitter",
+        bjcp: {
+          documentationUrl: `${styleUrls.base}/${styleUrls.standard}/11/11C/strong-bitter/`,
+          subcategory: "11C",
+        },
       },
-    ],
-    listItems: ["Ordinary Bitter", "Best Bitter", "Strong Bitter"],
-  },
-  {
-    name: "PALE COMMONWEALTH BEER",
-    links: [
-      {
-        href: `${guidelineURLs.base}/${guidelineURLs.standard}/12/12A/british-golden-ale/`,
-        content: "12A",
-      },
-      {
-        href: `${guidelineURLs.base}/${guidelineURLs.standard}/12/12B/australian-sparkling-ale/`,
-        content: "12B",
-      },
-      {
-        href: `${guidelineURLs.base}/${guidelineURLs.standard}/12/12C/english-ipa/`,
-        content: "12C",
-      },
-      {
-        href: `${guidelineURLs.base}/${guidelineURLs.additional}/x5-new-zealand-pilsner/`,
-        content: "X5",
-      },
-    ],
-    listItems: [
-      "British Golden Ale",
-      "Australian Sparkling Ale",
-      "English IPA",
-      "New Zealand Pilsner",
     ],
   },
   {
-    name: "BROWN BRITISH BEER",
-    links: [
+    name: "Pale Commonwealth Beer",
+    subcategories: [
       {
-        href: `${guidelineURLs.base}/${guidelineURLs.standard}/13/13A/dark-mild/`,
-        content: "13A",
+        name: "British Golden Ale",
+        bjcp: {
+          documentationUrl: `${styleUrls.base}/${styleUrls.standard}/12/12A/british-golden-ale/`,
+          subcategory: "12A",
+        },
       },
       {
-        href: `${guidelineURLs.base}/${guidelineURLs.standard}/13/13B/british-brown-ale/`,
-        content: "13B",
+        name: "Australian Sparkling Ale",
+        bjcp: {
+          documentationUrl: `${styleUrls.base}/${styleUrls.standard}/12/12B/australian-sparkling-ale/`,
+          subcategory: "12B",
+        },
       },
       {
-        href: `${guidelineURLs.base}/${guidelineURLs.standard}/13/13C/english-porter/`,
-        content: "13C",
+        name: "English IPA",
+        bjcp: {
+          documentationUrl: `${styleUrls.base}/${styleUrls.standard}/12/12C/english-ipa/`,
+          subcategory: "12C",
+        },
       },
       {
-        href: `${guidelineURLs.base}/${guidelineURLs.standard}/27/27A/historical-beer-london-brown-ale/`,
-        content: "27A",
+        name: "New Zealand Pilsner",
+        bjcp: {
+          documentationUrl: `${styleUrls.base}/${styleUrls.additional}/x5-new-zealand-pilsner/`,
+          subcategory: "X5",
+        },
       },
-    ],
-    listItems: [
-      "Dark Mild",
-      "British Brown Ale",
-      "English Porter",
-      "London Brown Ale",
     ],
   },
   {
-    name: "STRONG BRITISH BEER",
-    links: [
+    name: "Brown British Beer",
+    subcategories: [
       {
-        href: `${guidelineURLs.base}/${guidelineURLs.standard}/17/17A/british-strong-ale/`,
-        content: "17A",
+        name: "Dark Mild",
+        bjcp: {
+          documentationUrl: `${styleUrls.base}/${styleUrls.standard}/13/13A/dark-mild/`,
+          subcategory: "13A",
+        },
       },
       {
-        href: `${guidelineURLs.base}/${guidelineURLs.standard}/17/17B/old-ale/`,
-        content: "17B",
+        name: "British Brown Ale",
+        bjcp: {
+          documentationUrl: `${styleUrls.base}/${styleUrls.standard}/13/13B/british-brown-ale/`,
+          subcategory: "13B",
+        },
       },
       {
-        href: `${guidelineURLs.base}/${guidelineURLs.standard}/17/17C/wee-heavy/`,
-        content: "17C",
+        name: "English Porter",
+        bjcp: {
+          documentationUrl: `${styleUrls.base}/${styleUrls.standard}/13/13C/english-porter/`,
+          subcategory: "13C",
+        },
       },
       {
-        href: `${guidelineURLs.base}/${guidelineURLs.standard}/17/17D/english-barleywine/`,
-        content: "17D",
+        name: "London Brown Ale",
+        bjcp: {
+          documentationUrl: `${styleUrls.base}/${styleUrls.standard}/27/27A/historical-beer-london-brown-ale/`,
+          subcategory: "27A",
+        },
       },
-      {
-        href: `${guidelineURLs.base}/${guidelineURLs.additional}/17a-british-strong-ale-burton-ale/`,
-        content: "17A",
-      },
-    ],
-    listItems: [
-      "British Strong Ale",
-      "Old Ale",
-      "Wee Heavy",
-      "English Barleywine",
-      "Burton Ale",
     ],
   },
   {
-    name: "SCOTTISH ALE",
-    links: [
+    name: "Strong British Beer",
+    subcategories: [
       {
-        href: `${guidelineURLs.base}/${guidelineURLs.standard}/14/14A/scottish-light/`,
-        content: "14A",
+        name: "British Strong Ale",
+        bjcp: {
+          documentationUrl: `${styleUrls.base}/${styleUrls.standard}/17/17A/british-strong-ale/`,
+          subcategory: "17A",
+        },
       },
       {
-        href: `${guidelineURLs.base}/${guidelineURLs.standard}/14/14B/scottish-heavy/`,
-        content: "14B",
+        name: "Old Ale",
+        bjcp: {
+          documentationUrl: `${styleUrls.base}/${styleUrls.standard}/17/17B/old-ale/`,
+          subcategory: "17B",
+        },
       },
       {
-        href: `${guidelineURLs.base}/${guidelineURLs.standard}/14/14C/scottish-export/`,
-        content: "14C",
-      },
-    ],
-    listItems: ["Scottish Light", "Scottish Heavy", "Scottish Export"],
-  },
-  {
-    name: "IRISH BEER",
-    links: [
-      {
-        href: `${guidelineURLs.base}/${guidelineURLs.standard}/15/15A/irish-red-ale/`,
-        content: "15A",
+        name: "Wee Heavy",
+        bjcp: {
+          documentationUrl: `${styleUrls.base}/${styleUrls.standard}/17/17C/wee-heavy/`,
+          subcategory: "17C",
+        },
       },
       {
-        href: `${guidelineURLs.base}/${guidelineURLs.standard}/15/15B/irish-stout/`,
-        content: "15B",
+        name: "English Barleywine",
+        bjcp: {
+          documentationUrl: `${styleUrls.base}/${styleUrls.standard}/17/17D/english-barleywine/`,
+          subcategory: "17D",
+        },
       },
       {
-        href: `${guidelineURLs.base}/${guidelineURLs.standard}/15/15C/irish-extra-stout/`,
-        content: "15C",
+        name: "Burton Ale",
+        bjcp: {
+          documentationUrl: `${styleUrls.base}/${styleUrls.additional}/17a-british-strong-ale-burton-ale/`,
+          subcategory: "17A",
+        },
       },
-    ],
-    listItems: ["Irish Red Ale", "Irish Stout", "Irish Extra Stout"],
-  },
-  {
-    name: "DARK BRITISH BEER",
-    links: [
-      {
-        href: `${guidelineURLs.base}/${guidelineURLs.standard}/16/16A/sweet-stout/`,
-        content: "16A",
-      },
-      {
-        href: `${guidelineURLs.base}/${guidelineURLs.standard}/16/16B/oatmeal-stout/`,
-        content: "16B",
-      },
-      {
-        href: `${guidelineURLs.base}/${guidelineURLs.standard}/16/16C/tropical-stout/`,
-        content: "16C",
-      },
-      {
-        href: `${guidelineURLs.base}/${guidelineURLs.standard}/16/16D/foreign-extra-stout/`,
-        content: "16D",
-      },
-    ],
-    listItems: [
-      "Sweet Stout",
-      "Oatmeal Stout",
-      "Tropical Stout",
-      "Foreign Extra Stout",
     ],
   },
   {
-    name: "BRAGGOT & CIDER",
-    links: [
+    name: "Scottish Ale",
+    subcategories: [
       {
-        href: `${guidelineURLs.base}/${guidelineURLs.standard}/M4/M4A/braggot/`,
-        content: "M4",
+        name: "Scottish Light",
+        bjcp: {
+          documentationUrl: `${styleUrls.base}/${styleUrls.standard}/14/14A/scottish-light/`,
+          subcategory: "14A",
+        },
       },
       {
-        href: `${guidelineURLs.base}/${guidelineURLs.standard}/C1/`,
-        content: "C1",
+        name: "Scottish Heavy",
+        bjcp: {
+          documentationUrl: `${styleUrls.base}/${styleUrls.standard}/14/14B/scottish-heavy/`,
+          subcategory: "14B",
+        },
       },
       {
-        href: `${guidelineURLs.base}/${guidelineURLs.standard}/C2/`,
-        content: "C2",
+        name: "Scottish Export",
+        bjcp: {
+          documentationUrl: `${styleUrls.base}/${styleUrls.standard}/14/14C/scottish-export/`,
+          subcategory: "14C",
+        },
       },
     ],
-    listItems: ["Braggot", "Standard Cider & Perry", "Specialty Cider & Perry"],
+  },
+  {
+    name: "Irish Beer",
+    subcategories: [
+      {
+        name: "Irish Red Ale",
+        bjcp: {
+          documentationUrl: `${styleUrls.base}/${styleUrls.standard}/15/15A/irish-red-ale/`,
+          subcategory: "15A",
+        },
+      },
+      {
+        name: "Irish Stout",
+        bjcp: {
+          documentationUrl: `${styleUrls.base}/${styleUrls.standard}/15/15B/irish-stout/`,
+          subcategory: "15B",
+        },
+      },
+      {
+        name: "Irish Extra Stout",
+        bjcp: {
+          documentationUrl: `${styleUrls.base}/${styleUrls.standard}/15/15C/irish-extra-stout/`,
+          subcategory: "15C",
+        },
+      },
+    ],
+  },
+  {
+    name: "Dark British Beer",
+    subcategories: [
+      {
+        name: "Sweet Stout",
+        bjcp: {
+          documentationUrl: `${styleUrls.base}/${styleUrls.standard}/16/16A/sweet-stout/`,
+          subcategory: "16A",
+        },
+      },
+      {
+        name: "Oatmeal Stout",
+        bjcp: {
+          documentationUrl: `${styleUrls.base}/${styleUrls.standard}/16/16B/oatmeal-stout/`,
+          subcategory: "16B",
+        },
+      },
+      {
+        name: "Tropical Stout",
+        bjcp: {
+          documentationUrl: `${styleUrls.base}/${styleUrls.standard}/16/16C/tropical-stout/`,
+          subcategory: "16C",
+        },
+      },
+      {
+        name: "Foreign Extra Stout",
+        bjcp: {
+          documentationUrl: `${styleUrls.base}/${styleUrls.standard}/16/16D/foreign-extra-stout/`,
+          subcategory: "16D",
+        },
+      },
+    ],
+  },
+  {
+    name: "Braggot & Cider",
+    subcategories: [
+      {
+        name: "Braggot",
+        bjcp: {
+          documentationUrl: `${styleUrls.base}/${styleUrls.standard}/M4/M4A/braggot/`,
+          subcategory: "M4",
+        },
+      },
+      {
+        name: "Standard Cider & Perry",
+        bjcp: {
+          documentationUrl: `${styleUrls.base}/${styleUrls.standard}/C1/`,
+          subcategory: "C1",
+        },
+      },
+      {
+        name: "Specialty Cider & Perry",
+        bjcp: {
+          documentationUrl: `${styleUrls.base}/${styleUrls.standard}/C2/`,
+          subcategory: "C2",
+        },
+      },
+    ],
+  },
+]
+
+const guidelineUrls = {
+  base: "https://bjcp.org",
+  standard: "docs",
+}
+
+const guidelines = [
+  {
+    content: "Beer Style Guidelines",
+    url: `${guidelineUrls.base}/${guidelineUrls.standard}/2015_Guidelines_Beer.pdf`,
+  },
+  {
+    content: "Cider Style Guidelines",
+    url: `${guidelineUrls.base}/${guidelineUrls.standard}/2015_Guidelines_Cider.pdf`,
+  },
+  {
+    content: "Additional Information",
+    url: `${guidelineUrls.base}/stylecenter.php`,
   },
 ]
 
@@ -265,33 +352,35 @@ const Categories = () => (
           {styleCategories.map((styleCategory, categoryIndex) => (
             <CardWrapper>
               <Card>
-                <h3>{`TRC${categoryIndex + 1} ${styleCategory.name}`}</h3>
-                <p>
-                  {`BJCP `}
-                  {styleCategory.links.map((categoryLink, linkIndex) => (
-                    <React.Fragment>
-                      {categoryLink.href ? (
-                        <BJCPLink
-                          href={categoryLink.href}
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          {categoryLink.content}
-                        </BJCPLink>
-                      ) : (
-                        categoryLink.content
-                      )}
-                      {linkIndex + 1 < styleCategory.links.length ? ", " : ""}
-                    </React.Fragment>
-                  ))}
-                </p>
-                <ul>
-                  {styleCategory.listItems.map((listItem, itemIndex) => (
-                    <li>
-                      {`${categoryIndex + 1}.${itemIndex + 1} ${listItem}`}
-                    </li>
-                  ))}
-                </ul>
+                <CardTitle>
+                  {`TRC${categoryIndex + 1} ${styleCategory.name}`}
+                </CardTitle>
+                <CardList>
+                  {styleCategory.subcategories.map(
+                    (styleSubcategory, subcategoryIndex) => (
+                      <li key={`subcategory${subcategoryIndex + 1}`}>
+                        {`${categoryIndex + 1}.${subcategoryIndex + 1} ${
+                          styleSubcategory.name
+                        }`}
+                        <ul>
+                          <li key={`subcategory${subcategoryIndex + 1}Link`}>
+                            {styleSubcategory.bjcp.documentationUrl ? (
+                              <BJCPLink
+                                href={styleSubcategory.bjcp.documentationUrl}
+                                target="_blank"
+                                rel="noreferrer"
+                              >
+                                {`BJCP ${styleSubcategory.bjcp.subcategory}`}
+                              </BJCPLink>
+                            ) : (
+                              `BJCP ${styleSubcategory.bjcp.subcategory}`
+                            )}
+                          </li>
+                        </ul>
+                      </li>
+                    )
+                  )}
+                </CardList>
               </Card>
             </CardWrapper>
           ))}
@@ -300,33 +389,20 @@ const Categories = () => (
       <Container>
         <Subtitle>2015 BJCP Style Guidelines</Subtitle>
         <BJCPLinkList>
-          <li>
-            <BJCPLink
-              href="https://bjcp.org/docs/2015_Guidelines_Beer.pdf"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Beer Style Guidelines
-            </BJCPLink>
-          </li>
-          <li>
-            <BJCPLink
-              href="https://bjcp.org/docs/2015_Guidelines_Cider.pdf"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Cider Style Guidelines
-            </BJCPLink>
-          </li>
-          <li>
-            <BJCPLink
-              href="https://bjcp.org/stylecenter.php"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Additional Information
-            </BJCPLink>
-          </li>
+          {guidelines.map(
+            (guideline, guidelineIndex) =>
+              guideline.url && (
+                <li key={`guideline${guidelineIndex + 1}`}>
+                  <BJCPLink
+                    href={guideline.url}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    {guideline.content}
+                  </BJCPLink>
+                </li>
+              )
+          )}
         </BJCPLinkList>
       </Container>
     </section>
