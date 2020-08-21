@@ -299,7 +299,7 @@ const styleCategories = [
         name: "Braggot",
         bjcp: {
           documentationUrl: `${styleUrls.base}/${styleUrls.standard}/M4/M4A/braggot/`,
-          subcategory: "M4",
+          subcategory: "M4A",
         },
       },
       {
