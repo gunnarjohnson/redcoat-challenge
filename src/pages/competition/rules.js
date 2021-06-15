@@ -2,13 +2,16 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 
+import CompetitionDetails from "../../content/competition-details.json"
+
+import formatDate from "../../common/formatDate"
+
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import CompetitionNav from "../../components/competition-nav"
 
-const HighlightedText = styled.span`
+const HighlightedText = styled.b`
   color: #cf142b;
-  text-decoration: underline;
 `
 
 const MapLink = styled.a`
@@ -28,6 +31,13 @@ const SiteLink = styled((props) => <Link {...props} />)`
   }
 `
 
+const pickupDateFormatted = formatDate(
+  CompetitionDetails.delivery.pickup.date.dayOfMonth,
+  CompetitionDetails.delivery.pickup.date.dayOfWeek,
+  CompetitionDetails.delivery.pickup.date.monthName,
+  CompetitionDetails.delivery.pickup.date.year
+)
+
 const Rules = () => (
   <Layout>
     <SEO title="Competition - Rules" />
@@ -46,10 +56,11 @@ const Rules = () => (
         <p>
           <span>
             All mailed entries must be received at the mailing location by the
-            entry deadline,
+            entry deadline on
           </span>
           {` `}
-          <strong>October 3rd, 2020.</strong>
+          <strong>{pickupDateFormatted}</strong>
+          <span>.</span>
           {` `}
           <span>
             Please allow for shipping time. All entries will be picked up from
@@ -58,7 +69,7 @@ const Rules = () => (
             deadline of
           </span>
           {` `}
-          <strong>12:00 pm (noon), October 3rd</strong>
+          <strong>{`${CompetitionDetails.delivery.pickup.time} on ${CompetitionDetails.delivery.pickup.date.monthName} ${CompetitionDetails.delivery.pickup.date.dayOfMonth}`}</strong>
           <span>.</span>
           {` `}
           <span>
@@ -70,48 +81,32 @@ const Rules = () => (
         </p>
         <p>Entries can be dropped off at the following locations:</p>
         <ul>
-          <li>
-            BrewHound in Fort Worth, Texas. (
-            <MapLink
-              href="https://goo.gl/maps/zKsmpGksSLZUp42n8"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              view map
-            </MapLink>
-            )
-          </li>
-          <li>
-            Homebrew Headquarters in Richardson, Texas. (
-            <MapLink
-              href="https://goo.gl/maps/hgQf2WkcLoMQvfLa9"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              view map
-            </MapLink>
-            )
-          </li>
-          <li>
-            Texas Brewing Inc in Haltom City, Texas. (
-            <MapLink
-              href="https://goo.gl/maps/dXH45dDRME8uo8q96"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              view map
-            </MapLink>
-            )
-          </li>
+          {CompetitionDetails.delivery.shipping.locations.map((location) => (
+            <li>
+              {`${location.name} in ${location.city}, ${location.state} (`}
+              <MapLink
+                href={location.mapLink}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                View Map
+              </MapLink>
+              )
+            </li>
+          ))}
         </ul>
         <p>
           <em>
-            {`Note: If you'll be dropping off entries, please be sure to
-            follow the competition `}
+            Note: If dropping off entries, please be sure to follow the
+            competition
+            {` `}
             <SiteLink to="/competition/shipping#packaging-instructions">
               packaging instructions
             </SiteLink>
-            .
+            {`. `}
+            <strong>
+              No loose bottles in six-pack holders will be accepted.
+            </strong>
           </em>
         </p>
         <p>

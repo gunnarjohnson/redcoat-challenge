@@ -3,6 +3,11 @@ import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 
+import CompetitionDetails from "../../content/competition-details.json"
+
+import formatDate from "../../common/formatDate"
+import formatPhoneNumber from "../../common/formatPhoneNumber"
+
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import CompetitionNav from "../../components/competition-nav"
@@ -50,6 +55,31 @@ const TelNum = styled.a`
   }
 `
 
+const openDateFormatted = formatDate(
+  CompetitionDetails.registration.openDate.dayOfMonth,
+  CompetitionDetails.registration.openDate.dayOfWeek,
+  CompetitionDetails.registration.openDate.monthNameAbbreviated,
+  CompetitionDetails.registration.openDate.year
+)
+const closeDateFormatted = formatDate(
+  CompetitionDetails.registration.closeDate.dayOfMonth,
+  CompetitionDetails.registration.closeDate.dayOfWeek,
+  CompetitionDetails.registration.closeDate.monthNameAbbreviated,
+  CompetitionDetails.registration.closeDate.year
+)
+const pickupDateFormatted = formatDate(
+  CompetitionDetails.delivery.pickup.date.dayOfMonth,
+  CompetitionDetails.delivery.pickup.date.dayOfWeek,
+  CompetitionDetails.delivery.pickup.date.monthNameAbbreviated,
+  CompetitionDetails.delivery.pickup.date.year
+)
+const awardsDateFormatted = formatDate(
+  CompetitionDetails.awards.date.dayOfMonth,
+  CompetitionDetails.awards.date.dayOfWeek,
+  CompetitionDetails.awards.date.monthNameAbbreviated,
+  CompetitionDetails.awards.date.year
+)
+
 const Competition = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -76,23 +106,29 @@ const Competition = () => {
           </ImageContainer>
         </ImageWrapper>
         <ContentWrapper>
-          <h2>The Redcoat Challenge 2020</h2>
+          <h2>{`The Redcoat Challenge ${CompetitionDetails.year}`}</h2>
           <ContentContainer>
             <Content>Entry Registration</Content>
-            <Content>Tuesday, Jul 28 - Thursday, Oct 1</Content>
+            <Content>{`${openDateFormatted} - ${closeDateFormatted}`}</Content>
             <Content>Entry Delivery</Content>
-            <Content>Tuesday, Sep 1 - Saturday, Oct 3</Content>
+            <Content>{`${openDateFormatted} - ${pickupDateFormatted}`}</Content>
             <Content>Awards Ceremony</Content>
             <Content>
-              Saturday, Nov 7 at 3:00 pm
+              {`${awardsDateFormatted} at ${CompetitionDetails.awards.time}`}
               <br />
-              Denton County Brewing Company
+              {CompetitionDetails.awards.location.name}
               <br />
-              200 E McKinney St
+              {CompetitionDetails.awards.location.address}
               <br />
-              Denton, TX 76201
+              {`${CompetitionDetails.awards.location.city}, ${CompetitionDetails.awards.location.state} ${CompetitionDetails.awards.location.zip}`}
               <br />
-              <TelNum href="tel:940-435-0710">(940) 435-0710</TelNum>
+              <TelNum
+                href={`tel:${CompetitionDetails.awards.location.phoneNumber}`}
+              >
+                {formatPhoneNumber(
+                  CompetitionDetails.awards.location.phoneNumber
+                )}
+              </TelNum>
             </Content>
           </ContentContainer>
         </ContentWrapper>

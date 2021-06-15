@@ -1,0 +1,85 @@
+{
+  "awards": {
+    "date": {
+      "dayOfMonth": 6,
+      "dayOfWeek": "Saturday",
+      "monthName": "November",
+      "monthNameAbbreviated": "Nov",
+      "monthNumber": 10,
+      "year": 2021
+    },
+    "location": {
+      "name": "Denton County Brewing Company",
+      "address": "200 E McKinney St",
+      "city": "Denton",
+      "state": "TX",
+      "zip": "76201",
+      "phoneNumber": "940-435-0710"
+    },
+    "time": "2:00 pm"
+  },
+  "delivery": {
+    "pickup": {
+      "date": {
+        "dayOfMonth": 17,
+        "dayOfWeek": "Friday",
+        "monthName": "September",
+        "monthNameAbbreviated": "Sep",
+        "monthNumber": 8,
+        "year": 2021
+      },
+      "time": "12:00 pm (noon)"
+    },
+    "shipping": {
+      "locations": [
+        {
+          "name": "BrewHound",
+          "address": "8808 Camp Bowie West Blvd Ste 160",
+          "city": "Fort Worth",
+          "state": "TX",
+          "zip": "76116",
+          "phoneNumber": "817-615-9551",
+          "mapLink": "https://goo.gl/maps/zKsmpGksSLZUp42n8"
+        },
+        {
+          "name": "Homebrew Headquarters, Inc.",
+          "address": "300 N Coit Rd Ste 134",
+          "city": "Richardson",
+          "state": "TX",
+          "zip": "75080",
+          "phoneNumber": "972-234-4411",
+          "mapLink": "https://goo.gl/maps/hgQf2WkcLoMQvfLa9"
+        },
+        {
+          "name": "Texas Brewing Inc.",
+          "address": "5204 Airport Fwy",
+          "city": "Haltom City",
+          "state": "TX",
+          "zip": "76117",
+          "phoneNumber": "682-647-1267",
+          "mapLink": "https://goo.gl/maps/dXH45dDRME8uo8q96"
+        }
+      ]
+    }
+  },
+  "registration": {
+    "closeDate": {
+      "dayOfMonth": 16,
+      "dayOfWeek": "Thursday",
+      "monthName": "September",
+      "monthNameAbbreviated": "Sep",
+      "monthNumber": 8,
+      "year": 2021
+    },
+    "openDate": {
+      "dayOfMonth": 15,
+      "dayOfWeek": "Sunday",
+      "monthName": "August",
+      "monthNameAbbreviated": "Aug",
+      "monthNumber": 7,
+      "year": 2021
+    },
+    "url": "https://reggiebeer.com/ReggieEntry.php?CompetitionID=ERSFRN1000639"
+  },
+  "year": 2021
+}
