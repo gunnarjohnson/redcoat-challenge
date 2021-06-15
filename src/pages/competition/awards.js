@@ -1,8 +1,19 @@
 import React from "react"
 
+import CompetitionDetails from "../../content/competition-details.json"
+
+import formatDate from "../../common/formatDate"
+
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import CompetitionNav from "../../components/competition-nav"
+
+const awardsDateFormatted = formatDate(
+  CompetitionDetails.awards.date.dayOfMonth,
+  CompetitionDetails.awards.date.dayOfWeek,
+  CompetitionDetails.awards.date.monthName,
+  CompetitionDetails.awards.date.year
+)
 
 const Awards = () => (
   <Layout>
@@ -12,12 +23,14 @@ const Awards = () => (
       <h1>Competition - Awards</h1>
       <div>
         <p>
-          There will be an awards ceremony for the competition at Denton County
-          Brewing Company on November 7, 2020 at 3:00 pm. Winners will also be
-          posted on our Facebook page on the day of the event as the awards are
-          announced. 1st, 2nd, and 3rd place awards will be issued for each
-          beverage category as well as a single winner for the Best Of Show
-          category.
+          There will be an awards ceremony for the competition at
+          <b>
+            {` ${CompetitionDetails.awards.location.name} on ${awardsDateFormatted} at ${CompetitionDetails.awards.time}. `}
+          </b>
+          Winners will also be posted on our Facebook page on the day of the
+          event as the awards are announced. 1st, 2nd, and 3rd place awards will
+          be issued for each beverage category as well as a single winner for
+          the Best Of Show category.
           <br />
           <br />
           All 1st place entries from each category will advance to the Best of
@@ -32,18 +45,16 @@ const Awards = () => (
         <h2>Prizes</h2>
         <p>
           Prizes will be awarded in each of the main categories available at
-          this competition. The TRC reserves the right to collapse categories
-          not receiving adequate entries and/or to not award all places if the
+          this competition. TRC reserves the right to collapse categories not
+          receiving adequate entries and/or to not award all places if the
           entries do not merit it.
         </p>
         <div>
           <h3>Style Categories 1 thru 8</h3>
           <ul>
-            <li>
-              1st Place – A TRC Gold medal and TRC custom commemorative glass
-            </li>
-            <li>2nd Place – A TRC Silver medal.</li>
-            <li>3rd Place – A TRC Bronze medal.</li>
+            <li>1st Place – TRC Gold medal</li>
+            <li>2nd Place – TRC Silver medal</li>
+            <li>3rd Place – TRC Bronze medal</li>
           </ul>
         </div>
         <div>

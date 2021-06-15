@@ -1,6 +1,10 @@
 import React from "react"
 import styled from "styled-components"
 
+import CompetitionDetails from "../../content/competition-details.json"
+
+import formatPhoneNumber from "../../common/formatPhoneNumber"
+
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import CompetitionNav from "../../components/competition-nav"
@@ -37,39 +41,21 @@ const Shipping = () => (
           will pick up your entries for judging.
         </p>
         <AddressWrapper>
-          <Address>
-            The Redcoat Challenge
-            <br />
-            c/o BrewHound
-            <br />
-            8808 Camp Bowie West Blvd Ste 160
-            <br />
-            Fort Worth, TX 76116
-            <br />
-            <TelNum href="tel:817-615-9551">(817) 615-9551</TelNum>
-          </Address>
-          <Address>
-            The Redcoat Challenge
-            <br />
-            c/o Homebrew Headquarters, Inc.
-            <br />
-            300 N Coit Rd Ste 134
-            <br />
-            Richardson, TX 75080
-            <br />
-            <TelNum href="tel:972-234-4411">(972) 234-4411</TelNum>
-          </Address>
-          <Address>
-            The Redcoat Challenge
-            <br />
-            c/o Texas Brewing Inc
-            <br />
-            5204 Airport Fwy
-            <br />
-            Haltom City, TX 76117
-            <br />
-            <TelNum href="tel:682-647-1267">(682) 647-1267</TelNum>
-          </Address>
+          {CompetitionDetails.delivery.shipping.locations.map((location) => (
+            <Address>
+              The Redcoat Challenge
+              <br />
+              {`c/o ${location.name}`}
+              <br />
+              {location.address}
+              <br />
+              {`${location.city}, ${location.state} ${location.zip}`}
+              <br />
+              <TelNum href={`tel:${location.phoneNumber}`}>
+                {formatPhoneNumber(location.phoneNumber)}
+              </TelNum>
+            </Address>
+          ))}
         </AddressWrapper>
       </div>
       <div>
