@@ -65,7 +65,10 @@ const openDate = new Date(
 const closeDate = new Date(
   CompetitionDetails.registration.closeDate.year,
   CompetitionDetails.registration.closeDate.monthNumber,
-  CompetitionDetails.registration.closeDate.dayOfMonth
+  CompetitionDetails.registration.closeDate.dayOfMonth,
+  23,
+  59,
+  59
 )
 
 const enableRegistration = openDate <= currentDate && currentDate <= closeDate
