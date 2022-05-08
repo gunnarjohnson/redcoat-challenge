@@ -56,6 +56,10 @@ const RegistrationButton = styled.a`
   }
 `
 
+const AdditionalInformationTitle = styled.h3`
+  margin-top: 0;
+`
+
 const currentDate = new Date()
 const openDate = new Date(
   CompetitionDetails.registration.openDate.year,
@@ -107,18 +111,19 @@ const Registration = () => (
       <h1>Competition - Registration</h1>
       <ContentWrapper>
         <p>
-          Entries are to be registered through the
-          {` `}
+          {`Entries are to be registered through the `}
           <ContentLink
-            href={CompetitionDetails.registration.url}
+            href={CompetitionDetails.registration.website.url}
             rel="noopener noreferrer"
             target="_blank"
           >
-            Reggie homebrew competition website
+            {`${CompetitionDetails.registration.website.name} website`}
           </ContentLink>
           {`. `}
-          Each entry will be assessed a fee of $10, due at time of entry via
-          PayPal. All fees must be paid in advance.
+          {`
+            Each entry will be assessed a fee of ${CompetitionDetails.registration.fee}, due at time of entry via PayPal.
+            All fees must be paid in advance.
+          `}
         </p>
       </ContentWrapper>
       <RegistrationWrapper>
@@ -135,6 +140,20 @@ const Registration = () => (
           </RegistrationButton>
         )}
       </RegistrationWrapper>
+      {CompetitionDetails.registration.additionalInformation.length > 0 && (
+        <div>
+          <AdditionalInformationTitle>
+            Additional Information
+          </AdditionalInformationTitle>
+          <ul>
+            {CompetitionDetails.registration.additionalInformation.map(
+              (x, index) => (
+                <li key={`additionalInformation${index + 1}`}>{x}</li>
+              )
+            )}
+          </ul>
+        </div>
+      )}
     </section>
   </Layout>
 )

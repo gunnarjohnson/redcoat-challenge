@@ -2,6 +2,8 @@
 import React from "react"
 import styled from "styled-components"
 
+import CompetitionDetails from "../../content/competition-details.json"
+
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import CompetitionNav from "../../components/competition-nav"
@@ -347,10 +349,12 @@ const Categories = () => (
     <section>
       <h1>Competition - Categories</h1>
       <Container>
-        <Subtitle>The Redcoat Challenge 2020 Style Categories</Subtitle>
+        <Subtitle>
+          {`The Redcoat Challenge ${CompetitionDetails.year} Style Categories`}
+        </Subtitle>
         <Subcontainer>
           {styleCategories.map((styleCategory, categoryIndex) => (
-            <CardWrapper>
+            <CardWrapper key={`category${categoryIndex + 1}`}>
               <Card>
                 <CardTitle>
                   {`TRC${categoryIndex + 1} ${styleCategory.name}`}

@@ -29,6 +29,15 @@ const ContentWrapper = styled.div`
   align-items: center;
 `
 
+const ContentTitle = styled.h2`
+  margin-bottom: 0.4em;
+`
+
+const ContentSubtitle = styled.p`
+  margin-top: 0;
+  margin-bottom: 0.83em;
+`
+
 const ContentContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -106,12 +115,17 @@ const Competition = () => {
           </ImageContainer>
         </ImageWrapper>
         <ContentWrapper>
-          <h2>{`The Redcoat Challenge ${CompetitionDetails.year}`}</h2>
+          <ContentTitle>
+            {`The Redcoat Challenge ${CompetitionDetails.year}`}
+          </ContentTitle>
+          <ContentSubtitle>
+            Part of the North Texas Homebrew Circuit
+          </ContentSubtitle>
           <ContentContainer>
             <Content>Entry Registration</Content>
             <Content>{`${openDateFormatted} - ${closeDateFormatted}`}</Content>
             <Content>Entry Delivery</Content>
-            <Content>{`${openDateFormatted} - ${pickupDateFormatted}`}</Content>
+            <Content>{`${openDateFormatted} - ${pickupDateFormatted} at ${CompetitionDetails.delivery.pickup.time}`}</Content>
             <Content>Awards Ceremony</Content>
             <Content>
               {`${awardsDateFormatted} at ${CompetitionDetails.awards.time}`}

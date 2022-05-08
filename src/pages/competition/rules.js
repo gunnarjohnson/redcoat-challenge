@@ -79,21 +79,27 @@ const Rules = () => (
             entries.
           </span>
         </p>
-        <p>Entries can be dropped off at the following locations:</p>
+        <p>
+          {`Entries can be dropped off at the following location${
+            CompetitionDetails.delivery.shipping.locations.length > 1 && "s"
+          }:`}
+        </p>
         <ul>
-          {CompetitionDetails.delivery.shipping.locations.map((location) => (
-            <li>
-              {`${location.name} in ${location.city}, ${location.state} (`}
-              <MapLink
-                href={location.mapLink}
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                View Map
-              </MapLink>
-              )
-            </li>
-          ))}
+          {CompetitionDetails.delivery.shipping.locations.map(
+            (location, locationIndex) => (
+              <li key={`location${locationIndex + 1}`}>
+                {`${location.name} in ${location.city}, ${location.state} (`}
+                <MapLink
+                  href={location.mapLink}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  View Map
+                </MapLink>
+                )
+              </li>
+            )
+          )}
         </ul>
         <p>
           <em>
