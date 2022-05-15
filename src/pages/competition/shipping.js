@@ -36,26 +36,30 @@ const Shipping = () => (
       <div>
         <p>
           If you live outside of the North Texas area, but still wish to
-          participate in the competition, you can ship your entries to one of
-          the following homebrew supply stores. A competition committee member
-          will pick up your entries for judging.
+          participate in the competition, you can ship your entries to
+          {CompetitionDetails.delivery.shipping.locations.length > 1
+            ? ` one of the following homebrew supply stores. `
+            : ` the following homebrew supply store. `}
+          A competition committee member will pick up your entries for judging.
         </p>
         <AddressWrapper>
-          {CompetitionDetails.delivery.shipping.locations.map((location) => (
-            <Address>
-              The Redcoat Challenge
-              <br />
-              {`c/o ${location.name}`}
-              <br />
-              {location.address}
-              <br />
-              {`${location.city}, ${location.state} ${location.zip}`}
-              <br />
-              <TelNum href={`tel:${location.phoneNumber}`}>
-                {formatPhoneNumber(location.phoneNumber)}
-              </TelNum>
-            </Address>
-          ))}
+          {CompetitionDetails.delivery.shipping.locations.map(
+            (location, locationIndex) => (
+              <Address key={`location${locationIndex + 1}`}>
+                The Redcoat Challenge
+                <br />
+                {`c/o ${location.name}`}
+                <br />
+                {location.address}
+                <br />
+                {`${location.city}, ${location.state} ${location.zip}`}
+                <br />
+                <TelNum href={`tel:${location.phoneNumber}`}>
+                  {formatPhoneNumber(location.phoneNumber)}
+                </TelNum>
+              </Address>
+            )
+          )}
         </AddressWrapper>
       </div>
       <div>
