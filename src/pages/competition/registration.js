@@ -56,6 +56,10 @@ const RegistrationButton = styled.a`
   }
 `
 
+const AdditionalInformationWrapper = styled.div`
+  margin-top: 2rem;
+`
+
 const AdditionalInformationTitle = styled.h3`
   margin-top: 0;
 `
@@ -132,7 +136,7 @@ const Registration = () => (
         </RegistrationNotification>
         {enableRegistration && (
           <RegistrationButton
-            href={CompetitionDetails.registration.url}
+            href={CompetitionDetails.registration.website.url}
             rel="noopener noreferrer"
             target="_blank"
           >
@@ -141,7 +145,7 @@ const Registration = () => (
         )}
       </RegistrationWrapper>
       {CompetitionDetails.registration.additionalInformation.length > 0 && (
-        <div>
+        <AdditionalInformationWrapper>
           <AdditionalInformationTitle>
             Additional Information
           </AdditionalInformationTitle>
@@ -152,7 +156,7 @@ const Registration = () => (
               )
             )}
           </ul>
-        </div>
+        </AdditionalInformationWrapper>
       )}
     </section>
   </Layout>
