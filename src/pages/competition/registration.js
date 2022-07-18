@@ -136,7 +136,7 @@ const Registration = () => (
         </RegistrationNotification>
         {enableRegistration && (
           <RegistrationButton
-            href={CompetitionDetails.registration.url}
+            href={CompetitionDetails.registration.website.url}
             rel="noopener noreferrer"
             target="_blank"
           >
