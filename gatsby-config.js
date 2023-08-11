@@ -10,11 +10,12 @@ module.exports = {
     author: `Gunnar Johnson`,
     siteUrl: `https://texasredcoat.com/`,
   },
+  trailingSlash: "never",
   plugins: [
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
-        exclude: [`/success`],
+        excludes: [`/success`],
       },
     },
     `gatsby-plugin-react-helmet`,
@@ -40,7 +41,6 @@ module.exports = {
         icon: `src/images/redcoat-icon.png`, // This path is relative to the root of the site.
       },
     },
-    `gatsby-plugin-remove-trailing-slashes`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

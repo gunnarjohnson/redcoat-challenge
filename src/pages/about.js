@@ -2,7 +2,7 @@ import React from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faFacebookSquare } from "@fortawesome/free-brands-svg-icons"
 import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 
 import Layout from "../components/layout"
@@ -67,9 +67,7 @@ const About = () => {
     query {
       dchgLogo: file(relativePath: { eq: "dchg-logo.png" }) {
         childImageSharp {
-          fluid(maxWidth: 200) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: CONSTRAINED, width: 200)
         }
       }
     }
@@ -124,7 +122,7 @@ const About = () => {
                     target="_blank"
                     title="DCHG"
                   >
-                    <Img fluid={data.dchgLogo.childImageSharp.fluid} />
+                    <GatsbyImage image={data.dchgLogo.childImageSharp.gatsbyImageData} alt="Denton County Homebrewers Guild logo" />
                   </a>
                 </ImgWrapper>
               </Directive>
