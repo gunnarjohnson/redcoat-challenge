@@ -1,6 +1,6 @@
+import { Link, useStaticQuery, graphql } from "gatsby"
 import React from "react"
 import { GatsbyImage } from "gatsby-plugin-image"
-import { Link, useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 
 import Layout from "../components/layout"
@@ -104,7 +104,7 @@ const ButtonWrapper = styled.div`
 `
 
 // eslint-disable-next-line react/jsx-props-no-spreading
-const Button = styled(props => <Link {...props} />)`
+const Button = styled((props) => <Link {...props} />)`
   padding: 0.4rem 0.8rem;
   border: 2px solid #000000;
   border-radius: 4px;
@@ -115,7 +115,9 @@ const Button = styled(props => <Link {...props} />)`
   letter-spacing: 1px;
   text-decoration: none;
   box-sizing: border-box;
-  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  transition:
+    color 0.2s ease-in-out,
+    background-color 0.2s ease-in-out;
 
   &:hover {
     color: #000000;
@@ -182,7 +184,10 @@ const IndexPage = () => {
         <SubsectionTwo>
           <ImgWrapper>
             <ImgContainer>
-              <GatsbyImage image={data.redcoatLogoNoLabel.childImageSharp.gatsbyImageData} alt="Redcoat Challenge logo without label" />
+              <GatsbyImage
+                image={data.redcoatLogoNoLabel.childImageSharp.gatsbyImageData}
+                alt="Redcoat Challenge logo without label"
+              />
             </ImgContainer>
           </ImgWrapper>
         </SubsectionTwo>

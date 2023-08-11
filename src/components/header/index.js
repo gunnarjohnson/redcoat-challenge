@@ -1,5 +1,5 @@
-import React from "react"
 import { Link } from "gatsby"
+import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 
@@ -39,7 +39,7 @@ const HeaderLinkWrapper = styled.div`
 `
 
 // eslint-disable-next-line react/jsx-props-no-spreading
-const HeaderLink = styled(props => <Link {...props} />)`
+const HeaderLink = styled((props) => <Link {...props} />)`
   position: relative;
   color: #ffffff;
   font-family: 'patua one', sans-serif;

@@ -1,5 +1,5 @@
-import React from "react"
 import { Link } from "gatsby"
+import React from "react"
 import styled from "styled-components"
 
 const NavLinkWrapper = styled.section`
@@ -27,7 +27,7 @@ const NavLinkContainer = styled.div`
 `
 
 // eslint-disable-next-line react/jsx-props-no-spreading
-const NavLink = styled(props => <Link {...props} />)`
+const NavLink = styled((props) => <Link {...props} />)`
   margin-right: 0.6rem;
   color: #000000;
   font-family: "pt sans", sans-serif;

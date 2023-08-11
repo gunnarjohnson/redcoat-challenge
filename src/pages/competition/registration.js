@@ -48,7 +48,9 @@ const RegistrationButton = styled.a`
   letter-spacing: 1px;
   text-decoration: none;
   box-sizing: border-box;
-  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  transition:
+    color 0.2s ease-in-out,
+    background-color 0.2s ease-in-out;
 
   &:hover {
     color: #e8e8e8;

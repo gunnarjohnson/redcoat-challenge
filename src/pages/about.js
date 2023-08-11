@@ -1,7 +1,7 @@
+import { useStaticQuery, graphql } from "gatsby"
 import React from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faFacebookSquare } from "@fortawesome/free-brands-svg-icons"
-import { useStaticQuery, graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 
@@ -122,7 +122,10 @@ const About = () => {
                     target="_blank"
                     title="DCHG"
                   >
-                    <GatsbyImage image={data.dchgLogo.childImageSharp.gatsbyImageData} alt="Denton County Homebrewers Guild logo" />
+                    <GatsbyImage
+                      image={data.dchgLogo.childImageSharp.gatsbyImageData}
+                      alt="Denton County Homebrewers Guild logo"
+                    />
                   </a>
                 </ImgWrapper>
               </Directive>

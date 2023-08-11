@@ -1,6 +1,6 @@
+import { useStaticQuery, graphql } from "gatsby"
 import React from "react"
 import { GatsbyImage } from "gatsby-plugin-image"
-import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 
 import CompetitionDetails from "../../content/competition-details.json"
@@ -109,7 +109,10 @@ const Competition = () => {
         <h1>Competition</h1>
         <ImageWrapper>
           <ImageContainer>
-            <GatsbyImage image={data.redcoatLogoNoDate.childImageSharp.gatsbyImageData} alt="Redcoat Challenge logo" />
+            <GatsbyImage
+              image={data.redcoatLogoNoDate.childImageSharp.gatsbyImageData}
+              alt="Redcoat Challenge logo"
+            />
           </ImageContainer>
         </ImageWrapper>
         <ContentWrapper>
