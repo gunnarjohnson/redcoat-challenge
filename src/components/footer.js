@@ -1,8 +1,8 @@
+import { Link } from "gatsby"
 import React from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faFacebookSquare } from "@fortawesome/free-brands-svg-icons"
 import { faEnvelopeSquare } from "@fortawesome/free-solid-svg-icons"
-import { Link } from "gatsby"
 import styled from "styled-components"
 
 const FooterWrapper = styled.footer`
@@ -36,7 +36,7 @@ const PrimaryContainer = styled.div`
 `
 
 // eslint-disable-next-line react/jsx-props-no-spreading
-const FooterIcon = styled(props => <FontAwesomeIcon {...props} />)`
+const FooterIcon = styled((props) => <FontAwesomeIcon {...props} />)`
   color: #ffffff;
   font-size: 3em;
 `

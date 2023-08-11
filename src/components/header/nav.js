@@ -1,5 +1,5 @@
-import React from "react"
 import { Link } from "gatsby"
+import React from "react"
 import styled from "styled-components"
 
 const NavContainer = styled.div`
@@ -21,7 +21,7 @@ const NavContainer = styled.div`
 `
 
 // eslint-disable-next-line react/jsx-props-no-spreading
-const NavLink = styled(props => <Link {...props} />)`
+const NavLink = styled((props) => <Link {...props} />)`
   margin: 0.4rem 0;
   padding: 0.4rem 0.6rem;
   color: #ffffff;

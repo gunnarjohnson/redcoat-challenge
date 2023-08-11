@@ -1,5 +1,5 @@
-import React from "react"
 import { Link } from "gatsby"
+import React from "react"
 import styled from "styled-components"
 
 import CompetitionDetails from "../../content/competition-details.json"

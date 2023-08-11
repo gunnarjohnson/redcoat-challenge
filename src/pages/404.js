@@ -1,5 +1,5 @@
-import React from "react"
 import { Link } from "gatsby"
+import React from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faWineBottle, faBeer } from "@fortawesome/free-solid-svg-icons"
 import styled from "styled-components"
@@ -20,18 +20,18 @@ const IconWrapper = styled.div`
 `
 
 // eslint-disable-next-line react/jsx-props-no-spreading
-const BottleIcon = styled(props => <FontAwesomeIcon {...props} />)`
+const BottleIcon = styled((props) => <FontAwesomeIcon {...props} />)`
   margin-right: 0.2rem;
 `
 
 // eslint-disable-next-line react/jsx-props-no-spreading
-const MugIcon = styled(props => <FontAwesomeIcon {...props} />)`
+const MugIcon = styled((props) => <FontAwesomeIcon {...props} />)`
   margin-left: 0.2rem;
   padding-top: 1rem;
 `
 
 // eslint-disable-next-line react/jsx-props-no-spreading
-const HomeButton = styled(props => <Link {...props} />)`
+const HomeButton = styled((props) => <Link {...props} />)`
   width: 2rem;
   height: 1rem;
   padding: 0.4rem 1rem;
