@@ -1,5 +1,5 @@
 import React from "react"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 
@@ -148,9 +148,7 @@ const IndexPage = () => {
         relativePath: { eq: "redcoat-logo-no-label.png" }
       ) {
         childImageSharp {
-          fluid(maxWidth: 400) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: CONSTRAINED, width: 400)
         }
       }
     }
@@ -184,7 +182,7 @@ const IndexPage = () => {
         <SubsectionTwo>
           <ImgWrapper>
             <ImgContainer>
-              <Img fluid={data.redcoatLogoNoLabel.childImageSharp.fluid} />
+              <GatsbyImage image={data.redcoatLogoNoLabel.childImageSharp.gatsbyImageData} alt="Redcoat Challenge logo without label" />
             </ImgContainer>
           </ImgWrapper>
         </SubsectionTwo>

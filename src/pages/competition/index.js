@@ -1,5 +1,5 @@
 import React from "react"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 
@@ -96,9 +96,7 @@ const Competition = () => {
         relativePath: { eq: "redcoat-logo-no-date.png" }
       ) {
         childImageSharp {
-          fluid(maxWidth: 250) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: CONSTRAINED, width: 250)
         }
       }
     }
@@ -111,7 +109,7 @@ const Competition = () => {
         <h1>Competition</h1>
         <ImageWrapper>
           <ImageContainer>
-            <Img fluid={data.redcoatLogoNoDate.childImageSharp.fluid} />
+            <GatsbyImage image={data.redcoatLogoNoDate.childImageSharp.gatsbyImageData} alt="Redcoat Challenge logo" />
           </ImageContainer>
         </ImageWrapper>
         <ContentWrapper>
