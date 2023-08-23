@@ -81,7 +81,7 @@ const Rules = () => (
         </p>
         <p>
           {`Entries can be dropped off at the following location${
-            CompetitionDetails.delivery.shipping.locations.length > 1 && "s"
+            CompetitionDetails.delivery.shipping.locations.length > 1 ? "s" : ""
           }:`}
         </p>
         <ul>
