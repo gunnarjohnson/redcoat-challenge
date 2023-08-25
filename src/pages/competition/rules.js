@@ -31,12 +31,11 @@ const SiteLink = styled((props) => <Link {...props} />)`
   }
 `
 
-const pickupDateFormatted = formatDate(
-  CompetitionDetails.delivery.pickup.date.dayOfMonth,
-  CompetitionDetails.delivery.pickup.date.dayOfWeek,
-  CompetitionDetails.delivery.pickup.date.monthName,
-  CompetitionDetails.delivery.pickup.date.year
-)
+const { delivery } = CompetitionDetails
+const { locations } = delivery.shipping
+const { date, time } = delivery.pickup
+const { dayOfMonth, dayOfWeek, monthName, year } = date
+const formattedPickupDate = formatDate(dayOfMonth, dayOfWeek, monthName, year)
 
 const Rules = () => (
   <Layout>
@@ -59,17 +58,17 @@ const Rules = () => (
             entry deadline on
           </span>
           {` `}
-          <strong>{pickupDateFormatted}</strong>
+          <strong>{formattedPickupDate}</strong>
           <span>.</span>
           {` `}
           <span>
             Please allow for shipping time. All entries will be picked up from
-            drop‐off locations the day of the entry deadline. Walk‐in entries
+            drop-off locations the day of the entry deadline. Walk-in entries
             will be allowed, but only if they are dropped off by the entry
             deadline of
           </span>
           {` `}
-          <strong>{`${CompetitionDetails.delivery.pickup.time} on ${CompetitionDetails.delivery.pickup.date.monthName} ${CompetitionDetails.delivery.pickup.date.dayOfMonth}`}</strong>
+          <strong>{`${time} on ${monthName} ${dayOfMonth}`}</strong>
           <span>.</span>
           {` `}
           <span>
@@ -81,25 +80,23 @@ const Rules = () => (
         </p>
         <p>
           {`Entries can be dropped off at the following location${
-            CompetitionDetails.delivery.shipping.locations.length > 1 ? "s" : ""
+            locations.length > 1 ? "s" : ""
           }:`}
         </p>
         <ul>
-          {CompetitionDetails.delivery.shipping.locations.map(
-            (location, locationIndex) => (
-              <li key={`location${locationIndex + 1}`}>
-                {`${location.name} in ${location.city}, ${location.state} (`}
-                <MapLink
-                  href={location.mapLink}
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  View Map
-                </MapLink>
-                )
-              </li>
-            )
-          )}
+          {locations.map((location, locationIndex) => (
+            <li key={`location${locationIndex + 1}`}>
+              {`${location.name} in ${location.city}, ${location.state} (`}
+              <MapLink
+                href={location.mapLink}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                View Map
+              </MapLink>
+              )
+            </li>
+          ))}
         </ul>
         <p>
           <em>
@@ -111,7 +108,7 @@ const Rules = () => (
             </SiteLink>
             {`. `}
             <strong>
-              No loose bottles in six-pack holders will be accepted.
+              No loose bottles or cans in six-pack holders will be accepted.
             </strong>
           </em>
         </p>
@@ -141,27 +138,14 @@ const Rules = () => (
         </p>
         <p>
           <HighlightedText>
-            Brewers are limited to 1 entry in each custom The Redcoat Challenge
-            category for a maximum of 8 entries.
+            Brewers are limited to 1 entry in each subcategory.
           </HighlightedText>
         </p>
         <ul>
           <li>
-            For example, a brewer could enter 1 beer in TRC1 British Bitter, 1
-            beer in TRC5 Scottish Ale, and 1 beer in TRC6 Irish Beer, which
-            would be a total of 3 entries.
-          </li>
-        </ul>
-        <p>
-          <HighlightedText>
-            Brewers may not submit 2 entries in a single category.
-          </HighlightedText>
-        </p>
-        <ul>
-          <li>
-            For example, a brewer couldn&rsquo;t enter a TRC1.1 Ordinary Bitter
-            and a TRC1.3 Strong Bitter in the TRC1 British Bitter category. The
-            brewer would have to choose a single entry to submit.
+            For example, a brewer could enter 1 beer in each of the TRC1 British
+            Bitter subcategories (1.1 Ordinary Bitter, 1.2 Best Bitter, and 1.3
+            Strong Bitter), which would be a total of 3 entries.
           </li>
         </ul>
         <p>
@@ -171,8 +155,8 @@ const Rules = () => (
           BJCP Style Guidelines. As per BJCP sanctioning requirements, judges
           may not judge a category that they have entered in themselves if they
           are also a competitor in the event. The style guidelines are available
-          on the BJCP’s website. The style guidelines will be renumbered for our
-          ease of use. Please fill out the entry forms completely.
+          on the BJCP&apos;s website. The style guidelines will be renumbered
+          for our ease of use. Please fill out the entry forms completely.
           <br />
           <br />
           Be meticulous about noting any special ingredients that must be
@@ -184,9 +168,9 @@ const Rules = () => (
           <br />
           <br />
           The Best of Show judging will be determined by a panel of BJCP judges
-          based on a second judging of the top winners. Bottles will not be
-          returned to entrants for any reason. All entries become the property
-          of the The Redcoat Challenge Homebrew Competition. Rules and
+          based on a second judging of the top winners. Bottles and cans will
+          not be returned to entrants for any reason. All entries become the
+          property of the The Redcoat Challenge Homebrew Competition. Rules and
           regulations are subject to change. Due to Texas law, Homebrew
           Competitions are not allowed to charge for entries. The fee is for
           providing completed score sheets back to the entrant.
@@ -197,25 +181,26 @@ const Rules = () => (
         <p>
           <span>Each entry will consist of</span>
           {` `}
-          <strong>three (3) 12-ounce capped bottles</strong>
+          <strong>three (3) 12-ounce capped bottles or sealed cans</strong>
           {` `}
           <span>
             that are void of all identifying information, including labels and
             embossing. Printed caps are allowed, though discouraged, and if
-            used, must be completely blacked out. Bottles must be free of labels
-            or other easily identified marks. Re‐used commercial bottles with
-            embossed logos are allowed but discouraged. 12 oz brown glass
-            bottles are preferred; however, green or clear glass and corked
-            bottles will be accepted. Swing top bottles will be disqualified and
-            not judged.
+            used, must be completely blacked out. Bottles and cans must be free
+            of labels or other easily identified marks. Re-used commercial
+            bottles with embossed logos are allowed but discouraged. 12 oz brown
+            glass bottles are preferred; however, green or clear glass and
+            corked bottles will be accepted. Swing top bottles will be
+            disqualified and not judged.
           </span>
           <br />
           <br />
-          Bottles will not be returned to entrants for any reason. Completed
-          bottle labels must be submitted with all entries, and can be printed
-          directly from the entry website along with any other required
-          paperwork. Bottle labels should be attached to bottles with a rubber
-          band only; glue and/or tape are unacceptable.
+          Bottles and cans will not be returned to entrants for any reason.
+          Completed bottle/can labels must be submitted with all entries, and
+          can be printed directly from the entry website along with any other
+          required paperwork. Bottle/Can labels should be attached to
+          bottles/cans with a rubber band only; glue and/or tape are
+          unacceptable.
           <br />
           <br />
           <strong>
@@ -224,12 +209,12 @@ const Rules = () => (
           <br />
           <br />
           <em>
-            Note: In the event that only 2 bottles are submitted, the
-            Competition Coordinators will determine whether the second bottle
-            needs to be used during the first round/mini-BOS. If the second
-            bottle is used, the entry will not be eligible for the Best of Show
-            round due to fact that there is not a third bottle available for
-            judging.
+            Note: In the event that only 2 bottles/cans are submitted, the
+            Competition Coordinators will determine whether the second
+            bottle/can needs to be used during the first round/mini-BOS. If the
+            second bottle/can is used, the entry will not be eligible for the
+            Best of Show round due to fact that there is not a third bottle/can
+            available for judging.
           </em>
         </p>
       </div>
