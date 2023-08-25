@@ -8,11 +8,12 @@ import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import CompetitionNav from "../../components/competition-nav"
 
-const awardsDateFormatted = formatDate(
-  CompetitionDetails.awards.date.dayOfMonth,
-  CompetitionDetails.awards.date.dayOfWeek,
-  CompetitionDetails.awards.date.monthName,
-  CompetitionDetails.awards.date.year
+const { awards } = CompetitionDetails
+const formattedAwardsDate = formatDate(
+  awards.date.dayOfMonth,
+  awards.date.dayOfWeek,
+  awards.date.monthName,
+  awards.date.year
 )
 
 const Awards = () => (
@@ -24,9 +25,12 @@ const Awards = () => (
       <div>
         <p>
           There will be an awards ceremony for the competition at
+          {` `}
           <b>
-            {` ${CompetitionDetails.awards.location.name} on ${awardsDateFormatted} at ${CompetitionDetails.awards.time}. `}
+            {`${awards.location.name} on ${formattedAwardsDate} `}
+            {awards.time ? `at ${awards.time}` : "(time TBD)"}
           </b>
+          {". "}
           Winners will also be posted on our Facebook page on the day of the
           event as the awards are announced. 1st, 2nd, and 3rd place awards will
           be issued for each beverage category as well as a single winner for
@@ -52,9 +56,9 @@ const Awards = () => (
         <div>
           <h3>Style Categories 1 thru 8</h3>
           <ul>
-            <li>1st Place – TRC Gold medal</li>
-            <li>2nd Place – TRC Silver medal</li>
-            <li>3rd Place – TRC Bronze medal</li>
+            <li>1st Place - TRC Gold medal</li>
+            <li>2nd Place - TRC Silver medal</li>
+            <li>3rd Place - TRC Bronze medal</li>
           </ul>
         </div>
         <div>

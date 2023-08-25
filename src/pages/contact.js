@@ -147,28 +147,30 @@ function Contact() {
 
     const isValidRecaptchaResponse = !!gRecaptchaResponse
 
-    if (isValidRecaptchaResponse) {
-      const form = e.target
-
-      fetch("/", {
-        method: form.getAttribute("method"),
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({
-          "form-name": form.getAttribute("name"),
-          "g-recaptcha-response": gRecaptchaResponse,
-          name,
-          email,
-          subject,
-          message,
-        }),
-      })
-        .then(() => navigate(form.getAttribute("action")))
-        // eslint-disable-next-line no-alert, no-undef
-        .catch((error) => alert(error))
-    } else {
+    if (!isValidRecaptchaResponse) {
       // eslint-disable-next-line no-alert, no-undef
       alert("Please verify that you're a human and try again.")
+
+      return
     }
+
+    const form = e.target
+
+    fetch("/", {
+      method: form.getAttribute("method"),
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": form.getAttribute("name"),
+        "g-recaptcha-response": gRecaptchaResponse,
+        name,
+        email,
+        subject,
+        message,
+      }),
+    })
+      .then(() => navigate(form.getAttribute("action")))
+      // eslint-disable-next-line no-alert, no-undef
+      .catch((error) => alert(error))
   }
 
   return (

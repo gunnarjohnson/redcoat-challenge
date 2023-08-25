@@ -64,30 +64,42 @@ const TelNum = styled.a`
   }
 `
 
+const { awards, delivery, registration, year } = CompetitionDetails
+const { pickup } = delivery
+
+const { openDate } = registration
 const openDateFormatted = formatDate(
-  CompetitionDetails.registration.openDate.dayOfMonth,
-  CompetitionDetails.registration.openDate.dayOfWeek,
-  CompetitionDetails.registration.openDate.monthNameAbbreviated,
-  CompetitionDetails.registration.openDate.year
+  openDate.dayOfMonth,
+  openDate.dayOfWeek,
+  openDate.monthNameAbbreviated,
+  openDate.year
 )
+
+const { closeDate } = registration
 const closeDateFormatted = formatDate(
-  CompetitionDetails.registration.closeDate.dayOfMonth,
-  CompetitionDetails.registration.closeDate.dayOfWeek,
-  CompetitionDetails.registration.closeDate.monthNameAbbreviated,
-  CompetitionDetails.registration.closeDate.year
+  closeDate.dayOfMonth,
+  closeDate.dayOfWeek,
+  closeDate.monthNameAbbreviated,
+  closeDate.year
 )
+
+const pickupDate = pickup.date
 const pickupDateFormatted = formatDate(
-  CompetitionDetails.delivery.pickup.date.dayOfMonth,
-  CompetitionDetails.delivery.pickup.date.dayOfWeek,
-  CompetitionDetails.delivery.pickup.date.monthNameAbbreviated,
-  CompetitionDetails.delivery.pickup.date.year
+  pickupDate.dayOfMonth,
+  pickupDate.dayOfWeek,
+  pickupDate.monthNameAbbreviated,
+  pickupDate.year
 )
+
+const awardsDate = awards.date
 const awardsDateFormatted = formatDate(
-  CompetitionDetails.awards.date.dayOfMonth,
-  CompetitionDetails.awards.date.dayOfWeek,
-  CompetitionDetails.awards.date.monthNameAbbreviated,
-  CompetitionDetails.awards.date.year
+  awardsDate.dayOfMonth,
+  awardsDate.dayOfWeek,
+  awardsDate.monthNameAbbreviated,
+  awardsDate.year
 )
+
+const awardsLocation = awards.location
 
 const Competition = () => {
   const data = useStaticQuery(graphql`
@@ -116,9 +128,7 @@ const Competition = () => {
           </ImageContainer>
         </ImageWrapper>
         <ContentWrapper>
-          <ContentTitle>
-            {`The Redcoat Challenge ${CompetitionDetails.year}`}
-          </ContentTitle>
+          <ContentTitle>{`The Redcoat Challenge ${year}`}</ContentTitle>
           <ContentSubtitle>
             Part of the North Texas Homebrew Circuit
           </ContentSubtitle>
@@ -126,23 +136,21 @@ const Competition = () => {
             <Content>Entry Registration</Content>
             <Content>{`${openDateFormatted} - ${closeDateFormatted}`}</Content>
             <Content>Entry Delivery</Content>
-            <Content>{`${openDateFormatted} - ${pickupDateFormatted} at ${CompetitionDetails.delivery.pickup.time}`}</Content>
+            <Content>{`${openDateFormatted} - ${pickupDateFormatted} at ${pickup.time}`}</Content>
             <Content>Awards Ceremony</Content>
             <Content>
-              {`${awardsDateFormatted} at ${CompetitionDetails.awards.time}`}
+              {awardsDateFormatted}
+              {` `}
+              {awards.time ? `at ${awards.time}` : "(time TBD)"}
               <br />
-              {CompetitionDetails.awards.location.name}
+              {awardsLocation.name}
               <br />
-              {CompetitionDetails.awards.location.address}
+              {awardsLocation.address}
               <br />
-              {`${CompetitionDetails.awards.location.city}, ${CompetitionDetails.awards.location.state} ${CompetitionDetails.awards.location.zip}`}
+              {`${awardsLocation.city}, ${awardsLocation.state} ${awardsLocation.zip}`}
               <br />
-              <TelNum
-                href={`tel:${CompetitionDetails.awards.location.phoneNumber}`}
-              >
-                {formatPhoneNumber(
-                  CompetitionDetails.awards.location.phoneNumber
-                )}
+              <TelNum href={`tel:${awardsLocation.phoneNumber}`}>
+                {formatPhoneNumber(awardsLocation.phoneNumber)}
               </TelNum>
             </Content>
           </ContentContainer>

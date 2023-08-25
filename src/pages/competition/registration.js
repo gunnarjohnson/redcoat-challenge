@@ -1,9 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-
+import dayjs from "dayjs"
 import CompetitionDetails from "../../content/competition-details.json"
-
-import formatDate from "../../common/formatDate"
 
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
@@ -66,47 +64,39 @@ const AdditionalInformationTitle = styled.h3`
   margin-top: 0;
 `
 
+const getDateArgs = (data) => {
+  const { dayOfMonth, monthNumber, year } = data
+
+  return [year, monthNumber, dayOfMonth]
+}
+
+const { registration } = CompetitionDetails
+const competitionYear = CompetitionDetails.year
+
 const currentDate = new Date()
-const openDate = new Date(
-  CompetitionDetails.registration.openDate.year,
-  CompetitionDetails.registration.openDate.monthNumber,
-  CompetitionDetails.registration.openDate.dayOfMonth
-)
-const closeDate = new Date(
-  CompetitionDetails.registration.closeDate.year,
-  CompetitionDetails.registration.closeDate.monthNumber,
-  CompetitionDetails.registration.closeDate.dayOfMonth,
-  23,
-  59,
-  59
-)
+
+const openDateArgs = getDateArgs(registration.openDate)
+const openDate = new Date(...openDateArgs)
+
+const closeDateArgs = getDateArgs(registration.closeDate)
+const closeDate = new Date(...closeDateArgs, 23, 59, 59)
 
 const enableRegistration = openDate <= currentDate && currentDate <= closeDate
 
 const notificationMessage = (() => {
-  const openDateFormatted = formatDate(
-    CompetitionDetails.registration.openDate.dayOfMonth,
-    CompetitionDetails.registration.openDate.dayOfWeek,
-    CompetitionDetails.registration.openDate.monthNameAbbreviated,
-    CompetitionDetails.registration.openDate.year
-  )
-  const closeDateFormatted = formatDate(
-    CompetitionDetails.registration.closeDate.dayOfMonth,
-    CompetitionDetails.registration.closeDate.dayOfWeek,
-    CompetitionDetails.registration.closeDate.monthNameAbbreviated,
-    CompetitionDetails.registration.closeDate.year
-  )
-  let message = `Registration for the Redcoat Challenge ${CompetitionDetails.year} `
+  const openDateFormatted = dayjs(openDate).format("dddd, MMM D, YYYY")
+  const closeDateFormatted = dayjs(closeDate).format("dddd, MMM D, YYYY")
+  const baseMessage = `Registration for the Redcoat Challenge ${competitionYear}`
 
   if (currentDate < openDate) {
-    message += `will open on ${openDateFormatted}.`
-  } else if (currentDate > closeDate) {
-    message += `is closed as of ${closeDateFormatted}.`
-  } else {
-    message += `is open as of ${openDateFormatted} and will close on ${closeDateFormatted}.`
+    return `${baseMessage} will open on ${openDateFormatted}.`
   }
 
-  return message
+  if (currentDate > closeDate) {
+    return `${baseMessage} is closed as of ${closeDateFormatted}.`
+  }
+
+  return `${baseMessage} is open as of ${openDateFormatted} and will close on ${closeDateFormatted}.`
 })()
 
 const Registration = () => (
@@ -119,15 +109,15 @@ const Registration = () => (
         <p>
           {`Entries are to be registered through the `}
           <ContentLink
-            href={CompetitionDetails.registration.website.url}
+            href={registration.website.url}
             rel="noopener noreferrer"
             target="_blank"
           >
-            {`${CompetitionDetails.registration.website.name} website`}
+            {`${registration.website.name} website`}
           </ContentLink>
           {`. `}
           {`
-            Each entry will be assessed a fee of ${CompetitionDetails.registration.fee}, due at time of entry via PayPal.
+            Each entry will be assessed a fee of ${registration.fee}, due at time of entry via PayPal.
             All fees must be paid in advance.
           `}
         </p>
@@ -138,7 +128,7 @@ const Registration = () => (
         </RegistrationNotification>
         {enableRegistration && (
           <RegistrationButton
-            href={CompetitionDetails.registration.website.url}
+            href={registration.url}
             rel="noopener noreferrer"
             target="_blank"
           >
@@ -146,17 +136,15 @@ const Registration = () => (
           </RegistrationButton>
         )}
       </RegistrationWrapper>
-      {CompetitionDetails.registration.additionalInformation.length > 0 && (
+      {registration.additionalInformation.length > 0 && (
         <AdditionalInformationWrapper>
           <AdditionalInformationTitle>
             Additional Information
           </AdditionalInformationTitle>
           <ul>
-            {CompetitionDetails.registration.additionalInformation.map(
-              (x, index) => (
-                <li key={`additionalInformation${index + 1}`}>{x}</li>
-              )
-            )}
+            {registration.additionalInformation.map((x, index) => (
+              <li key={`additionalInformation${index + 1}`}>{x}</li>
+            ))}
           </ul>
         </AdditionalInformationWrapper>
       )}

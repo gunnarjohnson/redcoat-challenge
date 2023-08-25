@@ -27,6 +27,8 @@ const TelNum = styled.a`
   }
 `
 
+const { locations } = CompetitionDetails.delivery.shipping
+
 const Shipping = () => (
   <Layout>
     <SEO title="Competition - Shipping" />
@@ -37,29 +39,27 @@ const Shipping = () => (
         <p>
           If you live outside of the North Texas area, but still wish to
           participate in the competition, you can ship your entries to
-          {CompetitionDetails.delivery.shipping.locations.length > 1
+          {locations.length > 1
             ? ` one of the following homebrew supply stores. `
             : ` the following homebrew supply store. `}
           A competition committee member will pick up your entries for judging.
         </p>
         <AddressWrapper>
-          {CompetitionDetails.delivery.shipping.locations.map(
-            (location, locationIndex) => (
-              <Address key={`location${locationIndex + 1}`}>
-                The Redcoat Challenge
-                <br />
-                {`c/o ${location.name}`}
-                <br />
-                {location.address}
-                <br />
-                {`${location.city}, ${location.state} ${location.zip}`}
-                <br />
-                <TelNum href={`tel:${location.phoneNumber}`}>
-                  {formatPhoneNumber(location.phoneNumber)}
-                </TelNum>
-              </Address>
-            )
-          )}
+          {locations.map((location, locationIndex) => (
+            <Address key={`location${locationIndex + 1}`}>
+              The Redcoat Challenge
+              <br />
+              {`c/o ${location.name}`}
+              <br />
+              {location.address}
+              <br />
+              {`${location.city}, ${location.state} ${location.zip}`}
+              <br />
+              <TelNum href={`tel:${location.phoneNumber}`}>
+                {formatPhoneNumber(location.phoneNumber)}
+              </TelNum>
+            </Address>
+          ))}
         </AddressWrapper>
       </div>
       <div>
@@ -75,8 +75,8 @@ const Shipping = () => (
             Labels
             <ul>
               <li>
-                Enclose each of your bottle labels in a small zip‐top bag before
-                attaching to their respective bottles.
+                Enclose each of your bottle/can labels in a small zip-top bag
+                before attaching to their respective bottles.
               </li>
               <ul>
                 <li>
@@ -88,11 +88,11 @@ const Shipping = () => (
             </ul>
           </li>
           <li>
-            Bottles
+            Bottles/Cans
             <ul>
               <li>
-                Carefully partition and pack each bottle with adequate packaging
-                material.
+                Carefully partition and pack each bottle/can with adequate
+                packaging material.
               </li>
             </ul>
           </li>
@@ -110,8 +110,8 @@ const Shipping = () => (
               </li>
               <li>
                 Every reasonable effort will be made to contact entrants whose
-                bottles have broken to make arrangements for sending replacement
-                bottles.
+                bottles/cans have broken to make arrangements for sending
+                replacement bottles.
               </li>
             </ul>
           </li>
