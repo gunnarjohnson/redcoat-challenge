@@ -1,0 +1,10 @@
+{
+  "facebookUrl": "https://www.facebook.com/DentonCountyHomebrewersGuild/",
+  "meeting": {
+    "dayOfWeek": "Sunday",
+    "occurenceOfDay": "first",
+    "location": "Denton County Brewing Company",
+    "time": "3:00 p.m."
+  },
+  "websiteUrl": null
+}

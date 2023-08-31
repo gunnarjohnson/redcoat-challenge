@@ -5,6 +5,8 @@ import { faFacebookSquare } from "@fortawesome/free-brands-svg-icons"
 import { GatsbyImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 
+import DCHGDetails from "../content/dchg-details.json"
+
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -62,6 +64,10 @@ const FacebookIcon = styled((props) => <FontAwesomeIcon {...props} />)`
   color: #000000;
 `
 
+const { facebookUrl, meeting, websiteUrl } = DCHGDetails
+const hasUrl = facebookUrl || websiteUrl
+const hasMultipleUrls = facebookUrl && websiteUrl
+
 const About = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -103,45 +109,52 @@ const About = () => {
             personal responsibility when using alcohol-containing beverages.
             <br />
             <br />
-            Our home is currently at Denton County Brewing Company in Denton TX,
-            where most of our members meet every 1st Sunday of the month at 4pm.
-            General Membership is unlimited and open to any individual person
-            interested in the advancement of zymurgy, and who will support the
-            Charter and basic policies of the DCHG, subject only to compliance
-            with the provisions of the By-Laws. Members are not required to be
-            brewers.
+            Our home is currently at Denton County Brewing Company in Denton,
+            TX, where most of our members meet on the
+            {` ${meeting.occurenceOfDay} ${meeting.dayOfWeek}`} of every month
+            at {meeting.time} General Membership is unlimited and open to any
+            individual person interested in the advancement of zymurgy, and who
+            will support the Charter and basic policies of the DCHG, subject
+            only to compliance with the provisions of the By-Laws. Members are
+            not required to be brewers.
           </Content>
-          <DirectiveWrapper>
-            <DirectiveContainer>
-              <DirectiveContent>Learn more about the DCHG @</DirectiveContent>
-              <Directive>
-                <ImgWrapper>
-                  <a
-                    href="http://thedchg.org/"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    title="DCHG"
-                  >
-                    <GatsbyImage
-                      image={data.dchgLogo.childImageSharp.gatsbyImageData}
-                      alt="Denton County Homebrewers Guild logo"
-                    />
-                  </a>
-                </ImgWrapper>
-              </Directive>
-              <DirectiveContent>or</DirectiveContent>
-              <Directive>
-                <a
-                  href="https://www.facebook.com/DentonCountyHomebrewersGuild/"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  title="Facebook"
-                >
-                  <FacebookIcon icon={faFacebookSquare} />
-                </a>
-              </Directive>
-            </DirectiveContainer>
-          </DirectiveWrapper>
+          {hasUrl && (
+            <DirectiveWrapper>
+              <DirectiveContainer>
+                <DirectiveContent>Learn more about the DCHG @</DirectiveContent>
+                {websiteUrl && (
+                  <Directive>
+                    <ImgWrapper>
+                      <a
+                        href={websiteUrl}
+                        rel="noopener noreferrer"
+                        target="_blank"
+                        title="DCHG"
+                      >
+                        <GatsbyImage
+                          image={data.dchgLogo.childImageSharp.gatsbyImageData}
+                          alt="Denton County Homebrewers Guild logo"
+                        />
+                      </a>
+                    </ImgWrapper>
+                  </Directive>
+                )}
+                {hasMultipleUrls && <DirectiveContent>or</DirectiveContent>}
+                {facebookUrl && (
+                  <Directive>
+                    <a
+                      href={facebookUrl}
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      title="Facebook"
+                    >
+                      <FacebookIcon icon={faFacebookSquare} />
+                    </a>
+                  </Directive>
+                )}
+              </DirectiveContainer>
+            </DirectiveWrapper>
+          )}
         </div>
       </section>
     </Layout>
