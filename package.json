@@ -2,7 +2,7 @@
   "name": "redcoat-challenge",
   "private": true,
   "description": "The Redcoat Challenge",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "author": "Gunnar Johnson <gunnarjohnson.github@gmail.com>",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
