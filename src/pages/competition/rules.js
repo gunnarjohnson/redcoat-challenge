@@ -150,8 +150,8 @@ const Rules = () => (
         </ul>
         <p>
           Recipes are not required. Judging style guidelines used will be the
-          2015 Beer Judge Certification Program Style Guidelines and the style
-          guidelines created by TRC for future categories not listed in the 2015
+          2021 Beer Judge Certification Program Style Guidelines and the style
+          guidelines created by TRC for future categories not listed in the 2021
           BJCP Style Guidelines. As per BJCP sanctioning requirements, judges
           may not judge a category that they have entered in themselves if they
           are also a competitor in the event. The style guidelines are available
@@ -160,7 +160,7 @@ const Rules = () => (
           <br />
           <br />
           Be meticulous about noting any special ingredients that must be
-          specified per the 2015 BJCP Style Guidelines. Categories with a number
+          specified per the 2021 BJCP Style Guidelines. Categories with a number
           of entries may be combined at the discretion of the competition
           organizers. The Competition Coordinator or other qualified person will
           review elements of beer categories and styles with each panel prior to
