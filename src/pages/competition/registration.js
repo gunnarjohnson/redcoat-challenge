@@ -70,8 +70,9 @@ const getDateArgs = (data) => {
   return [year, monthNumber, dayOfMonth]
 }
 
-const { registration } = CompetitionDetails
-const competitionYear = CompetitionDetails.year
+const { registration, year: competitionYear } = CompetitionDetails
+const { additionalInformation, website } = registration
+const { url: websiteUrl } = website
 
 const currentDate = new Date()
 
@@ -109,11 +110,11 @@ const Registration = () => (
         <p>
           {`Entries are to be registered through the `}
           <ContentLink
-            href={registration.website.url}
+            href={websiteUrl}
             rel="noopener noreferrer"
             target="_blank"
           >
-            {`${registration.website.name} website`}
+            {`${website.name} website`}
           </ContentLink>
           {`. `}
           {`
@@ -128,7 +129,7 @@ const Registration = () => (
         </RegistrationNotification>
         {enableRegistration && (
           <RegistrationButton
-            href={registration.url}
+            href={websiteUrl}
             rel="noopener noreferrer"
             target="_blank"
           >
@@ -136,13 +137,13 @@ const Registration = () => (
           </RegistrationButton>
         )}
       </RegistrationWrapper>
-      {registration.additionalInformation.length > 0 && (
+      {additionalInformation.length > 0 && (
         <AdditionalInformationWrapper>
           <AdditionalInformationTitle>
             Additional Information
           </AdditionalInformationTitle>
           <ul>
-            {registration.additionalInformation.map((x, index) => (
+            {additionalInformation.map((x, index) => (
               <li key={`additionalInformation${index + 1}`}>{x}</li>
             ))}
           </ul>
