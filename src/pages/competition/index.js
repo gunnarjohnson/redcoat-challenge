@@ -10,6 +10,7 @@ import formatPhoneNumber from "../../common/formatPhoneNumber"
 
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
+import Title from "../../components/title"
 import CompetitionNav from "../../components/competition-nav"
 
 const ImageWrapper = styled.div`
@@ -129,7 +130,9 @@ const Competition = () => {
           </ImageContainer>
         </ImageWrapper>
         <ContentWrapper>
-          <ContentTitle>{`Texas Redcoat Challenge ${year}`}</ContentTitle>
+          <ContentTitle>
+            <Title year={year} />
+          </ContentTitle>
           <ContentSubtitle>
             Part of the North Texas Homebrew Circuit
           </ContentSubtitle>
