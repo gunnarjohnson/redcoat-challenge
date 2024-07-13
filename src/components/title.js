@@ -25,17 +25,17 @@ const Title = ({ year }) => {
   return (
     <TitleWrapper>
       {title}
-      {year !== "" ? ` ${year}` : ""}
+      {typeof year === "number" ? ` ${year}` : ""}
     </TitleWrapper>
   )
 }
 
 Title.propTypes = {
-  year: PropTypes.string,
+  year: PropTypes.number,
 }
 
 Title.defaultProps = {
-  year: "",
+  year: null,
 }
 
 export default Title
