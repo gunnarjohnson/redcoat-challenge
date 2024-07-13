@@ -10,7 +10,7 @@ import CompetitionNav from "../../components/competition-nav"
 const ContentWrapper = styled.div`
   margin-top: 2rem;
 `
-
+// eslint-disable-next-line no-unused-vars
 const ContentLink = styled.a`
   color: #00247d;
 
@@ -87,7 +87,7 @@ const enableRegistration = openDate <= currentDate && currentDate <= closeDate
 const notificationMessage = (() => {
   const openDateFormatted = dayjs(openDate).format("dddd, MMM D, YYYY")
   const closeDateFormatted = dayjs(closeDate).format("dddd, MMM D, YYYY")
-  const baseMessage = `Registration for the Redcoat Challenge ${competitionYear}`
+  const baseMessage = `Registration for the Texas Redcoat Challenge ${competitionYear}`
 
   if (currentDate < openDate) {
     return `${baseMessage} will open on ${openDateFormatted}.`
@@ -108,19 +108,13 @@ const Registration = () => (
       <h1>Competition - Registration</h1>
       <ContentWrapper>
         <p>
-          {`Entries are to be registered through the `}
-          <ContentLink
-            href={websiteUrl}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            {`${website.name} website`}
-          </ContentLink>
-          {`. `}
-          {`
-            Each entry will be assessed a fee of ${registration.fee}, due at time of entry via PayPal.
-            All fees must be paid in advance.
-          `}
+          This year, the Texas Redcoat Challenge will be hosted on a new BCOE&M
+          server. The registration website link and details will be posted in
+          the next couple of weeks as we complete the setup and testing of the
+          system. Please check back here for updates. The system will be up and
+          available before the competition opens. Entry fee is expected to be
+          $10 per entry, subject to change. Payment will be via PayPal with fees
+          covered by the entrant. Fees must be paid prior to printing labels.
         </p>
       </ContentWrapper>
       <RegistrationWrapper>

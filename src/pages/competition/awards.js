@@ -28,13 +28,15 @@ const Awards = () => (
           {` `}
           <b>
             {`${awards.location.name} on ${formattedAwardsDate} `}
-            {awards.time ? `at ${awards.time}` : "(time TBD)"}
+            {awards.time ? `at ${awards.time}` : "(time TBD)."}
           </b>
-          {". "}
-          Winners will also be posted on our Facebook page on the day of the
-          event as the awards are announced. 1st, 2nd, and 3rd place awards will
-          be issued for each beverage category as well as a single winner for
-          the Best Of Show category.
+          {` `}
+          Winners will also be posted on the BCOE&M site by 7:00 p.m. (CST) on
+          the day of the awards ceremony. It is our intent to livestream the
+          awards ceremony on either Facebook or YouTube. Details will be posted
+          as the ceremony date nears. 1st, 2nd, and 3rd place awards will be
+          issued for each beverage category as well as a single winner for the
+          Best Of Show category.
           <br />
           <br />
           All 1st place entries from each category will advance to the Best of
@@ -72,16 +74,16 @@ const Awards = () => (
         <div>
           <h3>Disclaimer</h3>
           <p>
-            All decisions of the Redcoat Challenge judging committee are to be
-            considered final. Be assured that every effort will be taken to
-            create an uncompromising, blind-tasting environment for the judging
-            of all entries. TRC judging committee reserves the right to realign
-            medal categories based on final subcategory entries. The Head Judge
-            reserves the right to disqualify an entry by sight or aroma alone.
-            If this occurs, a refund will be issued to the entrant. Should it be
-            determined that an entry has been doctored or altered in such a way
-            as to gain an unfair advantage or be dangerous, that entrant may be
-            banned from future participation.
+            All decisions of the Texas Redcoat Challenge judging committee are
+            to be considered final. Be assured that every effort will be taken
+            to create an uncompromising, blind-tasting environment for the
+            judging of all entries. TRC judging committee reserves the right to
+            realign medal categories based on final subcategory entries. The
+            Head Judge reserves the right to disqualify an entry by sight or
+            aroma alone. If this occurs, a refund will be issued to the entrant.
+            Should it be determined that an entry has been doctored or altered
+            in such a way as to gain an unfair advantage or be dangerous, that
+            entrant may be banned from future participation.
           </p>
         </div>
       </div>
