@@ -1,12 +1,12 @@
 {
   "awards": {
     "date": {
-      "dayOfMonth": 4,
+      "dayOfMonth": 9,
       "dayOfWeek": "Saturday",
       "monthName": "November",
       "monthNameAbbreviated": "Nov",
-      "monthNumber": 4,
-      "year": 2023
+      "monthNumber": 10,
+      "year": 2024
     },
     "location": {
       "name": "Denton County Brewing Company",
@@ -222,12 +222,12 @@
   "delivery": {
     "pickup": {
       "date": {
-        "dayOfMonth": 13,
-        "dayOfWeek": "Friday",
-        "monthName": "October",
-        "monthNameAbbreviated": "Oct",
-        "monthNumber": 10,
-        "year": 2023
+        "dayOfMonth": 26,
+        "dayOfWeek": "Thursday",
+        "monthName": "September",
+        "monthNameAbbreviated": "Sep",
+        "monthNumber": 8,
+        "year": 2024
       },
       "time": "5:00 p.m."
     },
@@ -265,30 +265,27 @@
   },
   "registration": {
     "openDate": {
-      "dayOfMonth": 18,
+      "dayOfMonth": 2,
       "dayOfWeek": "Monday",
       "monthName": "September",
       "monthNameAbbreviated": "Sep",
       "monthNumber": 8,
-      "year": 2023
+      "year": 2024
     },
     "closeDate": {
-      "dayOfMonth": 13,
-      "dayOfWeek": "Friday",
-      "monthName": "October",
-      "monthNameAbbreviated": "Oct",
-      "monthNumber": 9,
-      "year": 2023
+      "dayOfMonth": 26,
+      "dayOfWeek": "Thursday",
+      "monthName": "September",
+      "monthNameAbbreviated": "Sep",
+      "monthNumber": 8,
+      "year": 2024
     },
     "fee": "$10",
     "website": {
-      "name": "North Texas Circuit Brew Competition",
-      "url": "https://ntc.brewcompetition.com/"
+      "name": "Texas Redcoat Challenge - Entries",
+      "url": "https://entries.texasredcoat.com/"
     },
-    "additionalInformation": [
-      "The Horsemen of the Hopocalypse will be hosting most of the events on the North Texas Homebrew Circuit, so this registration link will also be used for other homebrewing events throughout the year. The North Texas Circuit Brew Competition website will be updated for the Redcoat Challenge before registration opens.",
-      "Registration for the Redcoat Challenge will be limited to the first 100 paid entries."
-    ]
+    "additionalInformation": []
   },
-  "year": 2023
+  "year": 2024
 }

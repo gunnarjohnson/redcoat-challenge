@@ -79,7 +79,7 @@ const Categories = () => (
     <section>
       <h1>Competition - Categories</h1>
       <Container>
-        <Subtitle>{`The Redcoat Challenge ${year} Style Categories`}</Subtitle>
+        <Subtitle>{`Texas Redcoat Challenge ${year} Style Categories`}</Subtitle>
         <Subcontainer>
           {categories.map((category, categoryIndex) => (
             <CardWrapper key={`category${categoryIndex + 1}`}>
@@ -136,6 +136,15 @@ const Categories = () => (
               )
           )}
         </BJCPLinkList>
+      </Container>
+      <Container>
+        <Subtitle>Disclaimer</Subtitle>
+        <p>
+          As stated in the competition rules, the TRC reserves the right to
+          combine and/or expand styles for judging and to restructure awards as
+          needed depending upon the quantity and quality of entries. All
+          possible efforts will be made to combine or group similar styles.
+        </p>
       </Container>
     </section>
   </Layout>

@@ -81,10 +81,6 @@ const Content = styled.p`
   }
 `
 
-const TitleWrapper = styled.span`
-  display: inline-block;
-`
-
 const Title = styled.span`
   font-family: "patua one", sans-serif;
   font-size: 1.2em;
@@ -155,6 +151,7 @@ const IndexPage = () => {
       }
     }
   `)
+
   return (
     <Layout>
       <SEO title="Home" />
@@ -166,15 +163,13 @@ const IndexPage = () => {
           </Header>
           <ContentWrapper>
             <Content>
-              {/* eslint-disable-next-line react/jsx-curly-brace-presence */}
-              {`Welcome to `}
-              <TitleWrapper>
-                {/* eslint-disable-next-line react/jsx-one-expression-per-line */}
-                <Title>the Redcoat Challenge</Title>,
-              </TitleWrapper>
-              {` a specialty homebrew competition focused on British beer styles
-              and sponsored by the Denton County Homebrewers Guild of Denton,
-              Texas.`}
+              Welcome to the <Title>Texas Redcoat Challenge</Title>, a BJCP and
+              AHA sanctioned homebrew competition focused on the beers, ciders,
+              and braggots from the British Isles and Commonwealth nations.
+              Styles include English, Irish, Scottish, and Commonwealth beers,
+              Cider, and Braggot. The <Title>Texas Redcoat Challenge</Title> is
+              sponsored by the Denton County Homebrewers Guild, which is based
+              in Denton, Texas.
             </Content>
           </ContentWrapper>
           <ButtonWrapper>
@@ -186,7 +181,7 @@ const IndexPage = () => {
             <ImgContainer>
               <GatsbyImage
                 image={data.redcoatLogoNoLabel.childImageSharp.gatsbyImageData}
-                alt="Redcoat Challenge logo without label"
+                alt="Texas Redcoat Challenge logo"
               />
             </ImgContainer>
           </ImgWrapper>

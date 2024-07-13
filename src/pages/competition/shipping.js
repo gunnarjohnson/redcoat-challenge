@@ -47,7 +47,7 @@ const Shipping = () => (
         <AddressWrapper>
           {locations.map((location, locationIndex) => (
             <Address key={`location${locationIndex + 1}`}>
-              The Redcoat Challenge
+              Texas Redcoat Challenge
               <br />
               {`c/o ${location.name}`}
               <br />

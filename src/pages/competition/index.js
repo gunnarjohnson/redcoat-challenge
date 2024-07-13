@@ -104,15 +104,16 @@ const awardsLocation = awards.location
 const Competition = () => {
   const data = useStaticQuery(graphql`
     query {
-      redcoatLogoNoDate: file(
-        relativePath: { eq: "redcoat-logo-no-date.png" }
+      redcoatLogoNoLabel: file(
+        relativePath: { eq: "redcoat-logo-no-label.png" }
       ) {
         childImageSharp {
-          gatsbyImageData(layout: CONSTRAINED, width: 250)
+          gatsbyImageData(layout: CONSTRAINED, width: 400)
         }
       }
     }
   `)
+
   return (
     <Layout>
       <SEO title="Competition" />
@@ -122,13 +123,13 @@ const Competition = () => {
         <ImageWrapper>
           <ImageContainer>
             <GatsbyImage
-              image={data.redcoatLogoNoDate.childImageSharp.gatsbyImageData}
-              alt="Redcoat Challenge logo"
+              image={data.redcoatLogoNoLabel.childImageSharp.gatsbyImageData}
+              alt="Texas Redcoat Challenge logo"
             />
           </ImageContainer>
         </ImageWrapper>
         <ContentWrapper>
-          <ContentTitle>{`The Redcoat Challenge ${year}`}</ContentTitle>
+          <ContentTitle>{`Texas Redcoat Challenge ${year}`}</ContentTitle>
           <ContentSubtitle>
             Part of the North Texas Homebrew Circuit
           </ContentSubtitle>

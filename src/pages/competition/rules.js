@@ -45,11 +45,11 @@ const Rules = () => (
       <div>
         <h1>Competition - Rules</h1>
         <p>
-          The Redcoat Challenge Homebrew Competition is a BJCP sanctioned event,
-          a British beer competition open to any amateur homebrewer; age 21 or
-          older. All entries must be entered under the name of the brewer. Team
-          brewers are allowed, but if entering as a team or as part of a club
-          you may only designate one team or club name in the appropriate
+          The Texas Redcoat Challenge homebrew competition is a BJCP sanctioned
+          event, a British beer competition open to any amateur homebrewer; age
+          21 or older. All entries must be entered under the name of the brewer.
+          Team brewers are allowed, but if entering as a team or as part of a
+          club you may only designate one team or club name in the appropriate
           section on the entry registration.
         </p>
         <p>
@@ -120,10 +120,10 @@ const Rules = () => (
           and sent with or dropped off with each entry. Please make sure to
           complete all sections on each form. If you wish to enter as an
           individual not associated with any team or club, please put N/A in the
-          appropriate section. The Redcoat Challenge is not responsible for
-          miscategorized entries, mailed entries that are not received by the
-          entry deadline, or entries and/or paperwork that arrive damaged or are
-          lost in transit.
+          appropriate section. The Texas Redcoat Challenge is not responsible
+          for miscategorized entries, mailed entries that are not received by
+          the entry deadline, or entries and/or paperwork that arrive damaged or
+          are lost in transit.
           <br />
           <br />
           TRC reserves the right to combine and/or expand styles for judging and
@@ -170,10 +170,10 @@ const Rules = () => (
           The Best of Show judging will be determined by a panel of BJCP judges
           based on a second judging of the top winners. Bottles and cans will
           not be returned to entrants for any reason. All entries become the
-          property of the The Redcoat Challenge Homebrew Competition. Rules and
-          regulations are subject to change. Due to Texas law, Homebrew
-          Competitions are not allowed to charge for entries. The fee is for
-          providing completed score sheets back to the entrant.
+          property of the The Texas Redcoat Challenge Homebrew Competition.
+          Rules and regulations are subject to change. Due to Texas law,
+          Homebrew Competitions are not allowed to charge for entries. The fee
+          is for providing completed score sheets back to the entrant.
         </p>
       </div>
       <div>
