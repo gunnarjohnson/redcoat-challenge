@@ -5,6 +5,7 @@ import styled from "styled-components"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Title from "../components/title"
 
 const Section = styled.section`
   display: flex;
@@ -79,13 +80,6 @@ const Content = styled.p`
     font-size: 1.4em;
     text-align: left;
   }
-`
-
-const Title = styled.span`
-  font-family: "patua one", sans-serif;
-  font-size: 1.2em;
-  font-weight: 400;
-  text-transform: uppercase;
 `
 
 const ButtonWrapper = styled.div`
@@ -163,13 +157,12 @@ const IndexPage = () => {
           </Header>
           <ContentWrapper>
             <Content>
-              Welcome to the <Title>Texas Redcoat Challenge</Title>, a BJCP and
-              AHA sanctioned homebrew competition focused on the beers, ciders,
-              and braggots from the British Isles and Commonwealth nations.
-              Styles include English, Irish, Scottish, and Commonwealth beers,
-              Cider, and Braggot. The <Title>Texas Redcoat Challenge</Title> is
-              sponsored by the Denton County Homebrewers Guild, which is based
-              in Denton, Texas.
+              Welcome to <Title />, a BJCP and AHA sanctioned homebrew
+              competition focused on the beers, ciders, and braggots from the
+              British Isles and Commonwealth nations. Styles include English,
+              Irish, Scottish, and Commonwealth beers, Cider, and Braggot.{" "}
+              <Title /> is sponsored by the Denton County Homebrewers Guild,
+              which is based in Denton, Texas.
             </Content>
           </ContentWrapper>
           <ButtonWrapper>
