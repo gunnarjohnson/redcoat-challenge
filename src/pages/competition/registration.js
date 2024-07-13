@@ -87,7 +87,7 @@ const enableRegistration = openDate <= currentDate && currentDate <= closeDate
 const notificationMessage = (() => {
   const openDateFormatted = dayjs(openDate).format("dddd, MMM D, YYYY")
   const closeDateFormatted = dayjs(closeDate).format("dddd, MMM D, YYYY")
-  const baseMessage = `Registration for the Texas Redcoat Challenge ${competitionYear}`
+  const baseMessage = `Registration for Texas Redcoat Challenge ${competitionYear}`
 
   if (currentDate < openDate) {
     return `${baseMessage} will open on ${openDateFormatted}.`
@@ -108,7 +108,7 @@ const Registration = () => (
       <h1>Competition - Registration</h1>
       <ContentWrapper>
         <p>
-          This year, the Texas Redcoat Challenge will be hosted on a new BCOE&M
+          This year, Texas Redcoat Challenge will be hosted on a new BCOE&M
           server. The registration website link and details will be posted in
           the next couple of weeks as we complete the setup and testing of the
           system. Please check back here for updates. The system will be up and
