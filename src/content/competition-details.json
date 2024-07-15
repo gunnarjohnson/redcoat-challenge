@@ -205,21 +205,6 @@
       ]
     }
   ],
-  "facebookUrl": "https://www.facebook.com/TexasRedcoatChallenge",
-  "guidelines": [
-    {
-      "content": "2021 Beer Style Guidelines",
-      "url": "https://bjcp.org/download/2021_Guidelines_Beer.pdf"
-    },
-    {
-      "content": "2015 Cider Style Guidelines",
-      "url": "https://legacy.bjcp.org/docs/2015_Guidelines_Cider.pdf"
-    },
-    {
-      "content": "Additional Information",
-      "url": "https://bjcp.org/bjcp-style-guidelines/"
-    }
-  ],
   "delivery": {
     "pickup": {
       "date": {
@@ -264,6 +249,21 @@
       ]
     }
   },
+  "facebookUrl": "https://www.facebook.com/TexasRedcoatChallenge",
+  "guidelines": [
+    {
+      "content": "2021 Beer Style Guidelines",
+      "url": "https://bjcp.org/download/2021_Guidelines_Beer.pdf"
+    },
+    {
+      "content": "2015 Cider Style Guidelines",
+      "url": "https://legacy.bjcp.org/docs/2015_Guidelines_Cider.pdf"
+    },
+    {
+      "content": "Additional Information",
+      "url": "https://bjcp.org/bjcp-style-guidelines/"
+    }
+  ],
   "registration": {
     "openDate": {
       "dayOfMonth": 2,
