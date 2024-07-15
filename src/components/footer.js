@@ -5,6 +5,8 @@ import { faFacebookSquare } from "@fortawesome/free-brands-svg-icons"
 import { faEnvelopeSquare } from "@fortawesome/free-solid-svg-icons"
 import styled from "styled-components"
 
+import CompetitionDetails from "../content/competition-details.json"
+
 const FooterWrapper = styled.footer`
   display: flex;
   flex-wrap: wrap;
@@ -74,14 +76,16 @@ const SecondaryContent = styled.p`
   }
 `
 
+const { facebookUrl } = CompetitionDetails
+
 const Footer = () => (
   <FooterWrapper>
     <PrimaryContainer>
       <a
-        href="https://www.facebook.com/The-Redcoat-Challenge-109342907066283/"
+        href={facebookUrl}
         rel="noopener noreferrer"
         target="_blank"
-        title="Facebook"
+        title="TRC Facebook"
       >
         <FooterIcon icon={faFacebookSquare} />
       </a>

@@ -147,7 +147,7 @@ const About = () => {
                       href={facebookUrl}
                       rel="noopener noreferrer"
                       target="_blank"
-                      title="Facebook"
+                      title="DCHG Facebook"
                     >
                       <FacebookIcon icon={faFacebookSquare} />
                     </a>
