@@ -5,7 +5,7 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Texas Redcoat Challenge`,
+    title: `The Texas Redcoat Challenge`,
     description: `A homebrew competition for all British beer styles.`,
     author: `Gunnar Johnson`,
     siteUrl: `https://texasredcoat.com/`,
