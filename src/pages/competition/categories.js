@@ -140,10 +140,10 @@ const Categories = () => (
       <Container>
         <Subtitle>Disclaimer</Subtitle>
         <p>
-          As stated in the competition rules, the TRC reserves the right to
-          combine and/or expand styles for judging and to restructure awards as
-          needed depending upon the quantity and quality of entries. All
-          possible efforts will be made to combine or group similar styles.
+          As stated in the competition rules, TRC reserves the right to combine
+          and/or expand styles for judging and to restructure awards as needed
+          depending upon the quantity and quality of entries. All possible
+          efforts will be made to combine or group similar styles.
         </p>
       </Container>
     </section>
