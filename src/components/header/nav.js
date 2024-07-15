@@ -15,7 +15,7 @@ const NavContainer = styled.div`
     align-items: center;
     justify-content: flex-end;
   }
-  @media screen and (min-width: 992px) {
+  @media screen and (min-width: 1200px) {
     flex-basis: auto;
   }
 `
@@ -32,7 +32,7 @@ const NavLink = styled((props) => <Link {...props} />)`
   @media screen and (min-width: 768px) {
     margin: 0 1rem 0 0;
   }
-  @media screen and (min-width: 992px) {
+  @media screen and (min-width: 1200px) {
     margin-right: 2rem;
   }
 
