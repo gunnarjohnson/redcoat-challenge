@@ -33,7 +33,7 @@ const HeaderLinkWrapper = styled.div`
     flex-basis: 50%;
     text-align: left;
   }
-  @media screen and (min-width: 992px) {
+  @media screen and (min-width: 1200px) {
     flex-basis: auto;
   }
 `
