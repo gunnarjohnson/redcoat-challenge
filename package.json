@@ -1,7 +1,7 @@
 {
   "name": "redcoat-challenge",
   "private": true,
-  "description": "Texas Redcoat Challenge",
+  "description": "The Texas Redcoat Challenge",
   "version": "2.1.0",
   "author": "Gunnar Johnson <gunnarjohnson.github@gmail.com>",
   "dependencies": {
