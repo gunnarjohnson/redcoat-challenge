@@ -159,10 +159,9 @@ const IndexPage = () => {
             <Content>
               Welcome to <Title />, a BJCP and AHA sanctioned homebrew
               competition focused on the beers, ciders, and braggots from the
-              British Isles and Commonwealth nations. Styles include English,
-              Irish, Scottish, and Commonwealth beers, Cider, and Braggot.{" "}
-              <Title /> is sponsored by the Denton County Homebrewers Guild,
-              which is based in Denton, Texas.
+              British Isles and Commonwealth nations. <Title /> is sponsored by
+              the Denton County Homebrewers Guild, which is based in Denton,
+              Texas.
             </Content>
           </ContentWrapper>
           <ButtonWrapper>
