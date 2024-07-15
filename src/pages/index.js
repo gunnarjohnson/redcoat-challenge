@@ -174,7 +174,7 @@ const IndexPage = () => {
             <ImgContainer>
               <GatsbyImage
                 image={data.redcoatLogoNoLabel.childImageSharp.gatsbyImageData}
-                alt="Texas Redcoat Challenge logo"
+                alt="The Texas Redcoat Challenge logo"
               />
             </ImgContainer>
           </ImgWrapper>

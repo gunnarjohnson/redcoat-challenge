@@ -45,7 +45,7 @@ const Rules = () => (
       <div>
         <h1>Competition - Rules</h1>
         <p>
-          Texas Redcoat Challenge is a BJCP and AHA sanctioned homebrew
+          The Texas Redcoat Challenge is a BJCP and AHA sanctioned homebrew
           competition open to any amateur homebrewer aged 21 or older. All
           entries must be entered under the name of the brewer. Team brewers are
           allowed, but if entering as a team or as part of a club, you may only
@@ -120,10 +120,10 @@ const Rules = () => (
           and sent with or dropped off with each entry. Please make sure to
           complete all sections on each form. If you wish to enter as an
           individual not associated with any team or club, please put N/A in the
-          appropriate section. Texas Redcoat Challenge is not responsible for
-          miscategorized entries, mailed entries that are not received by the
-          entry deadline, or entries and/or paperwork that arrive damaged or are
-          lost in transit.
+          appropriate section. The Texas Redcoat Challenge is not responsible
+          for miscategorized entries, mailed entries that are not received by
+          the entry deadline, or entries and/or paperwork that arrive damaged or
+          are lost in transit.
           <br />
           <br />
           TRC reserves the right to combine and/or expand styles for judging and

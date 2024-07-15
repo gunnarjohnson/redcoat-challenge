@@ -79,7 +79,7 @@ const Categories = () => (
     <section>
       <h1>Competition - Categories</h1>
       <Container>
-        <Subtitle>{`Texas Redcoat Challenge ${year} Style Categories`}</Subtitle>
+        <Subtitle>{`The Texas Redcoat Challenge ${year} Style Categories`}</Subtitle>
         <Subcontainer>
           {categories.map((category, categoryIndex) => (
             <CardWrapper key={`category${categoryIndex + 1}`}>
