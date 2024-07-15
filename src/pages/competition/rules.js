@@ -33,7 +33,7 @@ const SiteLink = styled((props) => <Link {...props} />)`
 
 const { delivery } = CompetitionDetails
 const { locations } = delivery.shipping
-const { date, time } = delivery.pickup
+const { date } = delivery.pickup
 const { dayOfMonth, dayOfWeek, monthName, year } = date
 const formattedPickupDate = formatDate(dayOfMonth, dayOfWeek, monthName, year)
 
@@ -65,10 +65,10 @@ const Rules = () => (
             Please allow for shipping time. All entries will be picked up from
             drop-off locations the day of the entry deadline. Walk-in entries
             will be allowed, but only if they are dropped off by the entry
-            deadline of
+            deadline on
           </span>
           {` `}
-          <strong>{`${time} on ${monthName} ${dayOfMonth}`}</strong>
+          <strong>{`${monthName} ${dayOfMonth}`}</strong>
           <span>.</span>
           {` `}
           <span>

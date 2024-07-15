@@ -140,7 +140,7 @@ const Competition = () => {
             <Content>Entry Registration</Content>
             <Content>{`${openDateFormatted} - ${closeDateFormatted}`}</Content>
             <Content>Entry Delivery</Content>
-            <Content>{`${openDateFormatted} - ${pickupDateFormatted} at ${pickup.time}`}</Content>
+            <Content>{`${openDateFormatted} - ${pickupDateFormatted}`}</Content>
             <Content>Awards Ceremony</Content>
             <Content>
               {awardsDateFormatted}
