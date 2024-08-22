@@ -1,6 +1,6 @@
-import { Link } from "gatsby"
-import React from "react"
-import styled from "styled-components"
+import { Link } from "gatsby";
+import React from "react";
+import styled from "styled-components";
 
 const NavLinkWrapper = styled.section`
   display: flex;
@@ -8,7 +8,7 @@ const NavLinkWrapper = styled.section`
   padding-bottom: 1.4rem;
   border-bottom: 2px solid #000000;
   box-sizing: border-box;
-`
+`;
 
 const NavLinkContainer = styled.div`
   flex-basis: 50%;
@@ -24,7 +24,7 @@ const NavLinkContainer = styled.div`
       margin-right: 0;
     }
   }
-`
+`;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
 const NavLink = styled((props) => <Link {...props} />)`
@@ -45,7 +45,7 @@ const NavLink = styled((props) => <Link {...props} />)`
   @media screen and (min-width: 992px) {
     margin-right: 2rem;
   }
-`
+`;
 
 const CompetitionNav = () => (
   <NavLinkWrapper>
@@ -68,6 +68,6 @@ const CompetitionNav = () => (
       <NavLink to="/competition/categories">Categories</NavLink>
     </NavLinkContainer>
   </NavLinkWrapper>
-)
+);
 
-export default CompetitionNav
+export default CompetitionNav;

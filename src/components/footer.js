@@ -1,11 +1,11 @@
-import { Link } from "gatsby"
-import React from "react"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faFacebookSquare } from "@fortawesome/free-brands-svg-icons"
-import { faEnvelopeSquare } from "@fortawesome/free-solid-svg-icons"
-import styled from "styled-components"
+import { Link } from "gatsby";
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebookSquare } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelopeSquare } from "@fortawesome/free-solid-svg-icons";
+import styled from "styled-components";
 
-import CompetitionDetails from "../content/competition-details.json"
+import CompetitionDetails from "../content/competition-details.json";
 
 const FooterWrapper = styled.footer`
   display: flex;
@@ -23,7 +23,7 @@ const FooterWrapper = styled.footer`
     flex-wrap: nowrap;
     height: 4rem;
   }
-`
+`;
 
 const PrimaryContainer = styled.div`
   display: flex;
@@ -35,13 +35,13 @@ const PrimaryContainer = styled.div`
     flex-basis: 80%;
     margin-left: 10%;
   }
-`
+`;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
 const FooterIcon = styled((props) => <FontAwesomeIcon {...props} />)`
   color: #ffffff;
   font-size: 3em;
-`
+`;
 
 const PrimaryContent = styled.p`
   margin: 0 2rem;
@@ -49,7 +49,7 @@ const PrimaryContent = styled.p`
   @media screen and (min-width: 768px) {
     margin: 0 3rem;
   }
-`
+`;
 
 const SecondaryContainer = styled.div`
   display: flex;
@@ -63,7 +63,7 @@ const SecondaryContainer = styled.div`
     justify-content: flex-end;
     background-color: transparent;
   }
-`
+`;
 
 const SecondaryContent = styled.p`
   margin: 0 1rem;
@@ -74,9 +74,9 @@ const SecondaryContent = styled.p`
   @media screen and (min-width: 768px) {
     text-align: left;
   }
-`
+`;
 
-const { facebookUrl } = CompetitionDetails
+const { facebookUrl } = CompetitionDetails;
 
 const Footer = () => (
   <FooterWrapper>
@@ -98,6 +98,6 @@ const Footer = () => (
       <SecondaryContent>Site by ToneDev</SecondaryContent>
     </SecondaryContainer>
   </FooterWrapper>
-)
+);
 
-export default Footer
+export default Footer;

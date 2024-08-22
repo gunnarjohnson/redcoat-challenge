@@ -1,20 +1,20 @@
-import React from "react"
+import React from "react";
 
-import CompetitionDetails from "../../content/competition-details.json"
+import CompetitionDetails from "../../content/competition-details.json";
 
-import formatDate from "../../common/formatDate"
+import formatDate from "../../common/formatDate";
 
-import Layout from "../../components/layout"
-import SEO from "../../components/seo"
-import CompetitionNav from "../../components/competition-nav"
+import Layout from "../../components/layout";
+import SEO from "../../components/seo";
+import CompetitionNav from "../../components/competition-nav";
 
-const { awards } = CompetitionDetails
+const { awards } = CompetitionDetails;
 const formattedAwardsDate = formatDate(
   awards.date.dayOfMonth,
   awards.date.dayOfWeek,
   awards.date.monthName,
   awards.date.year
-)
+);
 
 const Awards = () => (
   <Layout>
@@ -89,6 +89,6 @@ const Awards = () => (
       </div>
     </section>
   </Layout>
-)
+);
 
-export default Awards
+export default Awards;

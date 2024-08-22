@@ -1,50 +1,50 @@
-import { useStaticQuery, graphql } from "gatsby"
-import React from "react"
-import { GatsbyImage } from "gatsby-plugin-image"
-import styled from "styled-components"
+import { useStaticQuery, graphql } from "gatsby";
+import React from "react";
+import { GatsbyImage } from "gatsby-plugin-image";
+import styled from "styled-components";
 
-import CompetitionDetails from "../../content/competition-details.json"
+import CompetitionDetails from "../../content/competition-details.json";
 
-import formatDate from "../../common/formatDate"
-import formatPhoneNumber from "../../common/formatPhoneNumber"
+import formatDate from "../../common/formatDate";
+import formatPhoneNumber from "../../common/formatPhoneNumber";
 
-import Layout from "../../components/layout"
-import SEO from "../../components/seo"
-import Title from "../../components/title"
-import CompetitionNav from "../../components/competition-nav"
+import Layout from "../../components/layout";
+import SEO from "../../components/seo";
+import Title from "../../components/title";
+import CompetitionNav from "../../components/competition-nav";
 
 const ImageWrapper = styled.div`
   display: block;
   padding: 1rem 0;
-`
+`;
 
 const ImageContainer = styled.div`
   width: 250px;
   height: auto;
   margin: 0 auto;
-`
+`;
 
 const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-`
+`;
 
 const ContentTitle = styled.h2`
   margin-bottom: 0.4em;
-`
+`;
 
 const ContentSubtitle = styled.p`
   margin-top: 0;
   margin-bottom: 0.83em;
-`
+`;
 
 const ContentContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
   margin: 0 auto;
-`
+`;
 
 const Content = styled.p`
   &:nth-child(odd) {
@@ -55,7 +55,7 @@ const Content = styled.p`
   &:nth-child(even) {
     flex-basis: 75%;
   }
-`
+`;
 
 const TelNum = styled.a`
   color: #00247d;
@@ -63,44 +63,44 @@ const TelNum = styled.a`
   &:hover {
     color: #cf142b;
   }
-`
+`;
 
-const { awards, delivery, registration, year } = CompetitionDetails
-const { pickup } = delivery
+const { awards, delivery, registration, year } = CompetitionDetails;
+const { pickup } = delivery;
 
-const { openDate } = registration
+const { openDate } = registration;
 const openDateFormatted = formatDate(
   openDate.dayOfMonth,
   openDate.dayOfWeek,
   openDate.monthNameAbbreviated,
   openDate.year
-)
+);
 
-const { closeDate } = registration
+const { closeDate } = registration;
 const closeDateFormatted = formatDate(
   closeDate.dayOfMonth,
   closeDate.dayOfWeek,
   closeDate.monthNameAbbreviated,
   closeDate.year
-)
+);
 
-const pickupDate = pickup.date
+const pickupDate = pickup.date;
 const pickupDateFormatted = formatDate(
   pickupDate.dayOfMonth,
   pickupDate.dayOfWeek,
   pickupDate.monthNameAbbreviated,
   pickupDate.year
-)
+);
 
-const awardsDate = awards.date
+const awardsDate = awards.date;
 const awardsDateFormatted = formatDate(
   awardsDate.dayOfMonth,
   awardsDate.dayOfWeek,
   awardsDate.monthNameAbbreviated,
   awardsDate.year
-)
+);
 
-const awardsLocation = awards.location
+const awardsLocation = awards.location;
 
 const Competition = () => {
   const data = useStaticQuery(graphql`
@@ -113,7 +113,7 @@ const Competition = () => {
         }
       }
     }
-  `)
+  `);
 
   return (
     <Layout>
@@ -161,7 +161,7 @@ const Competition = () => {
         </ContentWrapper>
       </section>
     </Layout>
-  )
-}
+  );
+};
 
-export default Competition
+export default Competition;

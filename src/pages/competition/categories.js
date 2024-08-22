@@ -1,12 +1,12 @@
 /* eslint-disable react/jsx-fragments */
-import React from "react"
-import styled from "styled-components"
+import React from "react";
+import styled from "styled-components";
 
-import CompetitionDetails from "../../content/competition-details.json"
+import CompetitionDetails from "../../content/competition-details.json";
 
-import Layout from "../../components/layout"
-import SEO from "../../components/seo"
-import CompetitionNav from "../../components/competition-nav"
+import Layout from "../../components/layout";
+import SEO from "../../components/seo";
+import CompetitionNav from "../../components/competition-nav";
 
 const Subtitle = styled.h2`
   text-align: center;
@@ -14,7 +14,7 @@ const Subtitle = styled.h2`
   @media screen and (min-width: 768px) {
     text-align: left;
   }
-`
+`;
 
 const Container = styled.div`
   display: flex;
@@ -25,18 +25,18 @@ const Container = styled.div`
   @media screen and (min-width: 768px) {
     display: block;
   }
-`
+`;
 
 const Subcontainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-`
+`;
 
 const CardWrapper = styled.div`
   width: 16rem;
   margin: 1rem;
-`
+`;
 
 const Card = styled.div`
   min-height: 18rem;
@@ -45,22 +45,22 @@ const Card = styled.div`
   border-radius: 8px;
   background-color: #ffffff;
   box-shadow: 4px 4px 8px #000000;
-`
+`;
 
 const CardTitle = styled.h3`
   text-transform: uppercase;
-`
+`;
 
 const CardList = styled.ul`
   list-style: none;
   padding-left: 1.55rem;
-}`
+}`;
 
 const BJCPLinkList = styled.ul`
   @media screen and (max-width: 767px) {
     padding-left: 0;
   }
-`
+`;
 
 const BJCPLink = styled.a`
   color: #00247d;
@@ -68,9 +68,9 @@ const BJCPLink = styled.a`
   &:hover {
     color: #cf142b;
   }
-`
+`;
 
-const { categories, guidelines, year } = CompetitionDetails
+const { categories, guidelines, year } = CompetitionDetails;
 
 const Categories = () => (
   <Layout>
@@ -148,6 +148,6 @@ const Categories = () => (
       </Container>
     </section>
   </Layout>
-)
+);
 
-export default Categories
+export default Categories;

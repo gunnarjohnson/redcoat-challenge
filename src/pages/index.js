@@ -1,11 +1,11 @@
-import { Link, useStaticQuery, graphql } from "gatsby"
-import React from "react"
-import { GatsbyImage } from "gatsby-plugin-image"
-import styled from "styled-components"
+import { Link, useStaticQuery, graphql } from "gatsby";
+import React from "react";
+import { GatsbyImage } from "gatsby-plugin-image";
+import styled from "styled-components";
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Title from "../components/title"
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import Title from "../components/title";
 
 const Section = styled.section`
   display: flex;
@@ -16,7 +16,7 @@ const Section = styled.section`
   @media screen and (min-width: 768px) {
     flex-wrap: nowrap;
   }
-`
+`;
 
 const SubsectionOne = styled.div`
   flex-basis: 100%;
@@ -24,7 +24,7 @@ const SubsectionOne = styled.div`
   @media screen and (min-width: 768px) {
     flex-basis: 60%;
   }
-`
+`;
 
 const SubsectionTwo = styled.div`
   flex-basis: 100%;
@@ -32,7 +32,7 @@ const SubsectionTwo = styled.div`
   @media screen and (min-width: 768px) {
     flex-basis: 40%;
   }
-`
+`;
 
 const Header = styled.h1`
   font-family: "patua one", sans-serif;
@@ -51,7 +51,7 @@ const Header = styled.h1`
   @media screen and (min-width: 1200px) {
     font-size: 6em;
   }
-`
+`;
 
 const HeaderBlock = styled.span`
   display: block;
@@ -63,13 +63,13 @@ const HeaderBlock = styled.span`
   &:last-child {
     color: #00247d;
   }
-`
+`;
 
 const ContentWrapper = styled.div`
   @media screen and (min-width: 768px) {
     padding-right: 6rem;
   }
-`
+`;
 
 const Content = styled.p`
   font-size: 1.2em;
@@ -80,7 +80,7 @@ const Content = styled.p`
     font-size: 1.4em;
     text-align: left;
   }
-`
+`;
 
 const ButtonWrapper = styled.div`
   margin: 2rem 0;
@@ -91,7 +91,7 @@ const ButtonWrapper = styled.div`
   @media screen and (min-width: 768px) {
     text-align: left;
   }
-`
+`;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
 const Button = styled((props) => <Link {...props} />)`
@@ -113,12 +113,12 @@ const Button = styled((props) => <Link {...props} />)`
     color: #000000;
     background-color: transparent;
   }
-`
+`;
 
 const ImgWrapper = styled.div`
   display: block;
   padding: 1rem 0;
-`
+`;
 
 const ImgContainer = styled.div`
   width: 250px;
@@ -131,7 +131,7 @@ const ImgContainer = styled.div`
   @media screen and (min-width: 992px) {
     width: 400px;
   }
-`
+`;
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
@@ -144,7 +144,7 @@ const IndexPage = () => {
         }
       }
     }
-  `)
+  `);
 
   return (
     <Layout>
@@ -180,7 +180,7 @@ const IndexPage = () => {
         </SubsectionTwo>
       </Section>
     </Layout>
-  )
-}
+  );
+};
 
-export default IndexPage
+export default IndexPage;
