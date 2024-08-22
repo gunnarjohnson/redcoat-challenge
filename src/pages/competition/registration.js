@@ -10,7 +10,6 @@ import CompetitionNav from "../../components/competition-nav"
 const ContentWrapper = styled.div`
   margin-top: 2rem;
 `
-// eslint-disable-next-line no-unused-vars
 const ContentLink = styled.a`
   color: #00247d;
 
@@ -108,13 +107,20 @@ const Registration = () => (
       <h1>Competition - Registration</h1>
       <ContentWrapper>
         <p>
-          This year, the Texas Redcoat Challenge will be hosted on a new BCOE&M
-          server. The registration website link and details will be posted in
-          the next couple of weeks as we complete the setup and testing of the
-          system. Please check back here for updates. The system will be up and
-          available before the competition opens. Entry fee is expected to be
-          $10 per entry, subject to change. Payment will be via PayPal with fees
-          covered by the entrant. Fees must be paid prior to printing labels.
+          Please visit the official
+          {` `}
+          <ContentLink
+            href={websiteUrl}
+            rel="noopener noreferrer"
+            target="_blank"
+            title="Texas Redcoat Challenge Entries"
+          >
+            Texas Redcoat Challenge registration website
+          </ContentLink>
+          {` `}
+          to register your account and entries. This website will also contain
+          the most up-to-date competition information, including categories,
+          judging sessions and dates, and final results.
         </p>
       </ContentWrapper>
       <RegistrationWrapper>
