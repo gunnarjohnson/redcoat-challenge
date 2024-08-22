@@ -14,18 +14,13 @@ const FooterWrapper = styled.footer`
   right: 0;
   bottom: 0;
   left: 0;
-  height: 6rem;
+  height: 4rem;
   color: #ffffff;
   background-color: #00247d;
   font-family: "pt sans", sans-serif;
-
-  @media screen and (min-width: 768px) {
-    flex-wrap: nowrap;
-    height: 4rem;
-  }
 `;
 
-const PrimaryContainer = styled.div`
+const FooterContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -43,7 +38,7 @@ const FooterIcon = styled((props) => <FontAwesomeIcon {...props} />)`
   font-size: 3em;
 `;
 
-const PrimaryContent = styled.p`
+const FooterContent = styled.p`
   margin: 0 2rem;
 
   @media screen and (min-width: 768px) {
@@ -51,36 +46,11 @@ const PrimaryContent = styled.p`
   }
 `;
 
-const SecondaryContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-basis: 100%;
-  background-color: #000000;
-
-  @media screen and (min-width: 768px) {
-    flex-basis: 10%;
-    justify-content: flex-end;
-    background-color: transparent;
-  }
-`;
-
-const SecondaryContent = styled.p`
-  margin: 0 1rem;
-  color: #5d76b3;
-  font-size: 0.8em;
-  text-align: center;
-
-  @media screen and (min-width: 768px) {
-    text-align: left;
-  }
-`;
-
 const { facebookUrl } = CompetitionDetails;
 
 const Footer = () => (
   <FooterWrapper>
-    <PrimaryContainer>
+    <FooterContainer>
       <a
         href={facebookUrl}
         rel="noopener noreferrer"
@@ -89,14 +59,11 @@ const Footer = () => (
       >
         <FooterIcon icon={faFacebookSquare} />
       </a>
-      <PrimaryContent>{`© ${new Date().getFullYear()} DCHG`}</PrimaryContent>
+      <FooterContent>{`© ${new Date().getFullYear()} DCHG`}</FooterContent>
       <Link to="/contact" title="Contact">
         <FooterIcon icon={faEnvelopeSquare} />
       </Link>
-    </PrimaryContainer>
-    <SecondaryContainer>
-      <SecondaryContent>Site by ToneDev</SecondaryContent>
-    </SecondaryContainer>
+    </FooterContainer>
   </FooterWrapper>
 );
 
