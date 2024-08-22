@@ -118,7 +118,7 @@ const Registration = () => (
             Texas Redcoat Challenge registration website
           </ContentLink>
           {` `}
-          to register your account and entries. This website will also contain
+          to register your account and entries. The website will also contain
           the most up-to-date competition information, including categories,
           judging sessions and dates, and final results.
         </p>
