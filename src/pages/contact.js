@@ -1,16 +1,16 @@
 /* eslint-disable prettier/prettier */
-import { navigate } from "gatsby"
-import React, { useState } from "react"
-import ReCAPTCHA from "react-google-recaptcha"
-import styled from "styled-components"
+import { navigate } from "gatsby";
+import React, { useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
+import styled from "styled-components";
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from "../components/layout";
+import SEO from "../components/seo";
 
 const FormWrapper = styled.div`
   display: flex;
   justify-content: center;
-`
+`;
 
 const Form = styled.form`
   width: 100%;
@@ -21,16 +21,16 @@ const Form = styled.form`
   @media screen and (min-width: 992px) {
     width: 45rem;
   }
-`
+`;
 
 const Row = styled.div`
   width: 100%;
   margin-bottom: 1rem;
-`
+`;
 
 const Label = styled.label`
   font-weight: 700;
-`
+`;
 
 const Input = styled.input`
   width: calc(100% - 14px);
@@ -39,7 +39,7 @@ const Input = styled.input`
   border: 0;
   border-radius: 7px;
   box-shadow: 0 0 4px #b8b8b8;
-`
+`;
 
 const Textarea = styled.textarea`
   width: calc(100% - 14px);
@@ -51,7 +51,7 @@ const Textarea = styled.textarea`
   box-shadow: 0 0 4px #b8b8b8;
   overflow-y: scroll;
   resize: none;
-`
+`;
 
 const SendButton = styled.button`
   width: calc(50% - 1rem);
@@ -76,7 +76,7 @@ const SendButton = styled.button`
     background-color: #cf142b;
     border-color: #cf142b;
   }
-`
+`;
 
 const ClearInput = styled.input`
   width: calc(50% - 1rem);
@@ -103,58 +103,58 @@ const ClearInput = styled.input`
     background-color: #00247d;
     border-color: #00247d;
   }
-`
+`;
 
-const recaptchaKey = process.env.GATSBY_SITE_RECAPTCHA_KEY
+const recaptchaKey = process.env.GATSBY_SITE_RECAPTCHA_KEY;
 
-const recaptchaRef = React.createRef()
+const recaptchaRef = React.createRef();
 
 const encode = (data) => {
   return Object.keys(data)
     .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
-    .join("&")
-}
+    .join("&");
+};
 
 function Contact() {
-  const [name, setName] = useState("")
-  const [email, setEmail] = useState("")
-  const [subject, setSubject] = useState("")
-  const [message, setMessage] = useState("")
-  const [gRecaptchaResponse, setGRecaptchaResponse] = useState(null)
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+  const [gRecaptchaResponse, setGRecaptchaResponse] = useState(null);
 
   const handleNameChange = (e) => {
-    setName(e.target.value)
-  }
+    setName(e.target.value);
+  };
 
   const handleEmailChange = (e) => {
-    setEmail(e.target.value)
-  }
+    setEmail(e.target.value);
+  };
 
   const handleSubjectChange = (e) => {
-    setSubject(e.target.value)
-  }
+    setSubject(e.target.value);
+  };
 
   const handleMessageChange = (e) => {
-    setMessage(e.target.value)
-  }
+    setMessage(e.target.value);
+  };
 
   const handleRecaptcha = (value) => {
-    setGRecaptchaResponse(value)
-  }
+    setGRecaptchaResponse(value);
+  };
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    const isValidRecaptchaResponse = !!gRecaptchaResponse
+    const isValidRecaptchaResponse = !!gRecaptchaResponse;
 
     if (!isValidRecaptchaResponse) {
       // eslint-disable-next-line no-alert, no-undef
-      alert("Please verify that you're a human and try again.")
+      alert("Please verify that you're a human and try again.");
 
-      return
+      return;
     }
 
-    const form = e.target
+    const form = e.target;
 
     fetch("/", {
       method: form.getAttribute("method"),
@@ -170,8 +170,8 @@ function Contact() {
     })
       .then(() => navigate(form.getAttribute("action")))
       // eslint-disable-next-line no-alert, no-undef
-      .catch((error) => alert(error))
-  }
+      .catch((error) => alert(error));
+  };
 
   return (
     <Layout>
@@ -251,7 +251,7 @@ function Contact() {
         </FormWrapper>
       </section>
     </Layout>
-  )
+  );
 }
 
-export default Contact
+export default Contact;

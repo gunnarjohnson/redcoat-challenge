@@ -1,28 +1,28 @@
-import React from "react"
-import styled from "styled-components"
-import dayjs from "dayjs"
-import CompetitionDetails from "../../content/competition-details.json"
+import React from "react";
+import styled from "styled-components";
+import dayjs from "dayjs";
+import CompetitionDetails from "../../content/competition-details.json";
 
-import Layout from "../../components/layout"
-import SEO from "../../components/seo"
-import CompetitionNav from "../../components/competition-nav"
+import Layout from "../../components/layout";
+import SEO from "../../components/seo";
+import CompetitionNav from "../../components/competition-nav";
 
 const ContentWrapper = styled.div`
   margin-top: 2rem;
-`
+`;
 const ContentLink = styled.a`
   color: #00247d;
 
   &:hover {
     color: #cf142b;
   }
-`
+`;
 
 const RegistrationWrapper = styled.div`
   margin-top: 2rem;
   padding-bottom: 0.4rem;
   line-height: 1.6;
-`
+`;
 
 const RegistrationNotification = styled.p`
   margin-top: 0;
@@ -32,7 +32,7 @@ const RegistrationNotification = styled.p`
   font-style: italic;
   font-weight: 700;
   letter-spacing: 1px;
-`
+`;
 
 const RegistrationButton = styled.a`
   padding: 0.4rem 0.8rem;
@@ -53,51 +53,51 @@ const RegistrationButton = styled.a`
     color: #e8e8e8;
     background-color: #000000;
   }
-`
+`;
 
 const AdditionalInformationWrapper = styled.div`
   margin-top: 2rem;
-`
+`;
 
 const AdditionalInformationTitle = styled.h3`
   margin-top: 0;
-`
+`;
 
 const getDateArgs = (data) => {
-  const { dayOfMonth, monthNumber, year } = data
+  const { dayOfMonth, monthNumber, year } = data;
 
-  return [year, monthNumber, dayOfMonth]
-}
+  return [year, monthNumber, dayOfMonth];
+};
 
-const { registration, year: competitionYear } = CompetitionDetails
-const { additionalInformation, website } = registration
-const { url: websiteUrl } = website
+const { registration, year: competitionYear } = CompetitionDetails;
+const { additionalInformation, website } = registration;
+const { url: websiteUrl } = website;
 
-const currentDate = new Date()
+const currentDate = new Date();
 
-const openDateArgs = getDateArgs(registration.openDate)
-const openDate = new Date(...openDateArgs)
+const openDateArgs = getDateArgs(registration.openDate);
+const openDate = new Date(...openDateArgs);
 
-const closeDateArgs = getDateArgs(registration.closeDate)
-const closeDate = new Date(...closeDateArgs, 23, 59, 59)
+const closeDateArgs = getDateArgs(registration.closeDate);
+const closeDate = new Date(...closeDateArgs, 23, 59, 59);
 
-const enableRegistration = openDate <= currentDate && currentDate <= closeDate
+const enableRegistration = openDate <= currentDate && currentDate <= closeDate;
 
 const notificationMessage = (() => {
-  const openDateFormatted = dayjs(openDate).format("dddd, MMM D, YYYY")
-  const closeDateFormatted = dayjs(closeDate).format("dddd, MMM D, YYYY")
-  const baseMessage = `Registration for the Texas Redcoat Challenge ${competitionYear}`
+  const openDateFormatted = dayjs(openDate).format("dddd, MMM D, YYYY");
+  const closeDateFormatted = dayjs(closeDate).format("dddd, MMM D, YYYY");
+  const baseMessage = `Registration for the Texas Redcoat Challenge ${competitionYear}`;
 
   if (currentDate < openDate) {
-    return `${baseMessage} will open on ${openDateFormatted}.`
+    return `${baseMessage} will open on ${openDateFormatted}.`;
   }
 
   if (currentDate > closeDate) {
-    return `${baseMessage} is closed as of ${closeDateFormatted}.`
+    return `${baseMessage} is closed as of ${closeDateFormatted}.`;
   }
 
-  return `${baseMessage} is open as of ${openDateFormatted} and will close on ${closeDateFormatted}.`
-})()
+  return `${baseMessage} is open as of ${openDateFormatted} and will close on ${closeDateFormatted}.`;
+})();
 
 const Registration = () => (
   <Layout>
@@ -151,6 +151,6 @@ const Registration = () => (
       )}
     </section>
   </Layout>
-)
+);
 
-export default Registration
+export default Registration;

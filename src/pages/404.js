@@ -1,34 +1,34 @@
-import { Link } from "gatsby"
-import React from "react"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faWineBottle, faBeer } from "@fortawesome/free-solid-svg-icons"
-import styled from "styled-components"
+import { Link } from "gatsby";
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faWineBottle, faBeer } from "@fortawesome/free-solid-svg-icons";
+import styled from "styled-components";
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from "../components/layout";
+import SEO from "../components/seo";
 
 const ContentWrapper = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
-`
+`;
 
 const IconWrapper = styled.div`
   display: flex;
   margin: 1rem;
   font-size: 3em;
-`
+`;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
 const BottleIcon = styled((props) => <FontAwesomeIcon {...props} />)`
   margin-right: 0.2rem;
-`
+`;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
 const MugIcon = styled((props) => <FontAwesomeIcon {...props} />)`
   margin-left: 0.2rem;
   padding-top: 1rem;
-`
+`;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
 const HomeButton = styled((props) => <Link {...props} />)`
@@ -46,7 +46,7 @@ const HomeButton = styled((props) => <Link {...props} />)`
   &:hover {
     background-color: #00247d;
   }
-`
+`;
 
 const NotFoundPage = () => (
   <Layout>
@@ -63,6 +63,6 @@ const NotFoundPage = () => (
       <HomeButton to="/">Home</HomeButton>
     </section>
   </Layout>
-)
+);
 
-export default NotFoundPage
+export default NotFoundPage;

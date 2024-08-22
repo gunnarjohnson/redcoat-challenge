@@ -1,23 +1,23 @@
-import React from "react"
-import styled from "styled-components"
+import React from "react";
+import styled from "styled-components";
 
-import CompetitionDetails from "../../content/competition-details.json"
+import CompetitionDetails from "../../content/competition-details.json";
 
-import formatPhoneNumber from "../../common/formatPhoneNumber"
+import formatPhoneNumber from "../../common/formatPhoneNumber";
 
-import Layout from "../../components/layout"
-import SEO from "../../components/seo"
-import CompetitionNav from "../../components/competition-nav"
+import Layout from "../../components/layout";
+import SEO from "../../components/seo";
+import CompetitionNav from "../../components/competition-nav";
 
 const AddressWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-`
+`;
 
 const Address = styled.p`
   margin: 1rem 2rem 1rem 0;
   font-size: 1em;
-`
+`;
 
 const TelNum = styled.a`
   color: #00247d;
@@ -25,9 +25,9 @@ const TelNum = styled.a`
   &:hover {
     color: #cf142b;
   }
-`
+`;
 
-const { locations } = CompetitionDetails.delivery.shipping
+const { locations } = CompetitionDetails.delivery.shipping;
 
 const Shipping = () => (
   <Layout>
@@ -133,6 +133,6 @@ const Shipping = () => (
       </div>
     </section>
   </Layout>
-)
+);
 
-export default Shipping
+export default Shipping;

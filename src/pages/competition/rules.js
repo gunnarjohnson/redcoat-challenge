@@ -1,18 +1,18 @@
-import { Link } from "gatsby"
-import React from "react"
-import styled from "styled-components"
+import { Link } from "gatsby";
+import React from "react";
+import styled from "styled-components";
 
-import CompetitionDetails from "../../content/competition-details.json"
+import CompetitionDetails from "../../content/competition-details.json";
 
-import formatDate from "../../common/formatDate"
+import formatDate from "../../common/formatDate";
 
-import Layout from "../../components/layout"
-import SEO from "../../components/seo"
-import CompetitionNav from "../../components/competition-nav"
+import Layout from "../../components/layout";
+import SEO from "../../components/seo";
+import CompetitionNav from "../../components/competition-nav";
 
 const HighlightedText = styled.b`
   color: #cf142b;
-`
+`;
 
 const MapLink = styled.a`
   color: #00247d;
@@ -20,7 +20,7 @@ const MapLink = styled.a`
   &:hover {
     color: #cf142b;
   }
-`
+`;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
 const SiteLink = styled((props) => <Link {...props} />)`
@@ -29,13 +29,13 @@ const SiteLink = styled((props) => <Link {...props} />)`
   &:hover {
     color: #cf142b;
   }
-`
+`;
 
-const { delivery } = CompetitionDetails
-const { locations } = delivery.shipping
-const { date } = delivery.pickup
-const { dayOfMonth, dayOfWeek, monthName, year } = date
-const formattedPickupDate = formatDate(dayOfMonth, dayOfWeek, monthName, year)
+const { delivery } = CompetitionDetails;
+const { locations } = delivery.shipping;
+const { date } = delivery.pickup;
+const { dayOfMonth, dayOfWeek, monthName, year } = date;
+const formattedPickupDate = formatDate(dayOfMonth, dayOfWeek, monthName, year);
 
 const Rules = () => (
   <Layout>
@@ -210,6 +210,6 @@ const Rules = () => (
       </div>
     </section>
   </Layout>
-)
+);
 
-export default Rules
+export default Rules;

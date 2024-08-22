@@ -1,6 +1,6 @@
-import { Link } from "gatsby"
-import React from "react"
-import styled from "styled-components"
+import { Link } from "gatsby";
+import React from "react";
+import styled from "styled-components";
 
 const NavContainer = styled.div`
   display: flex;
@@ -18,7 +18,7 @@ const NavContainer = styled.div`
   @media screen and (min-width: 1200px) {
     flex-basis: auto;
   }
-`
+`;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
 const NavLink = styled((props) => <Link {...props} />)`
@@ -45,7 +45,7 @@ const NavLink = styled((props) => <Link {...props} />)`
       margin-right: -0.6rem;
     }
   }
-`
+`;
 
 const Nav = () => (
   <NavContainer>
@@ -53,6 +53,6 @@ const Nav = () => (
     <NavLink to="/about">About</NavLink>
     <NavLink to="/contact">Contact</NavLink>
   </NavContainer>
-)
+);
 
-export default Nav
+export default Nav;

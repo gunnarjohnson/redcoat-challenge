@@ -5,15 +5,15 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import { useStaticQuery, graphql } from "gatsby"
-import React from "react"
-import PropTypes from "prop-types"
-import { Helmet } from "react-helmet"
-import styled from "styled-components"
+import { useStaticQuery, graphql } from "gatsby";
+import React from "react";
+import PropTypes from "prop-types";
+import { Helmet } from "react-helmet";
+import styled from "styled-components";
 
-import Normalize from "../theme/normalize"
-import Header from "./header"
-import Footer from "./footer"
+import Normalize from "../theme/normalize";
+import Header from "./header";
+import Footer from "./footer";
 
 const SiteContent = styled.div`
   display: flex;
@@ -27,24 +27,24 @@ const SiteContent = styled.div`
     min-height: calc(100vh - 4rem);
     padding-bottom: 4rem;
   }
-`
+`;
 
 const HeaderWrapper = styled.div`
   width: 100%;
   margin-bottom: 1.4rem;
   background-color: #cf142b;
-`
+`;
 
 const MainWrapper = styled.div`
   width: 100%;
   max-width: 1200px;
   margin: 0 auto 4rem;
-`
+`;
 
 const Main = styled.main`
   padding: 0 1rem 1.4rem;
   font-family: "pt sans", sans-serif;
-`
+`;
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -55,7 +55,7 @@ const Layout = ({ children }) => {
         }
       }
     }
-  `)
+  `);
 
   return (
     <>
@@ -80,11 +80,11 @@ const Layout = ({ children }) => {
         <Footer />
       </SiteContent>
     </>
-  )
-}
+  );
+};
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
-export default Layout
+export default Layout;

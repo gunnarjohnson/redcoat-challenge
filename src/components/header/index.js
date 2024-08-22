@@ -1,14 +1,14 @@
-import { Link } from "gatsby"
-import React from "react"
-import PropTypes from "prop-types"
-import styled from "styled-components"
+import { Link } from "gatsby";
+import React from "react";
+import PropTypes from "prop-types";
+import styled from "styled-components";
 
-import Nav from "./nav"
+import Nav from "./nav";
 
 const HeaderContainer = styled.header`
   max-width: 1200px;
   margin: 0 auto;
-`
+`;
 
 const NavWrapper = styled.div`
   display: flex;
@@ -22,7 +22,7 @@ const NavWrapper = styled.div`
   @media screen and (min-width: 768px) {
     justify-content: space-between;
   }
-`
+`;
 
 const HeaderLinkWrapper = styled.div`
   flex-basis: 100%;
@@ -36,7 +36,7 @@ const HeaderLinkWrapper = styled.div`
   @media screen and (min-width: 1200px) {
     flex-basis: auto;
   }
-`
+`;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
 const HeaderLink = styled((props) => <Link {...props} />)`
@@ -56,7 +56,7 @@ const HeaderLink = styled((props) => <Link {...props} />)`
 
   &:hover {
     text-decoration: underline;
-`
+`;
 
 const Header = ({ siteTitle }) => (
   <HeaderContainer>
@@ -67,14 +67,14 @@ const Header = ({ siteTitle }) => (
       <Nav />
     </NavWrapper>
   </HeaderContainer>
-)
+);
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
-}
+};
 
 Header.defaultProps = {
   siteTitle: ``,
-}
+};
 
-export default Header
+export default Header;

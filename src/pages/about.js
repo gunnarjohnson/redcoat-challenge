@@ -1,24 +1,24 @@
-import { useStaticQuery, graphql } from "gatsby"
-import React from "react"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faFacebookSquare } from "@fortawesome/free-brands-svg-icons"
-import { GatsbyImage } from "gatsby-plugin-image"
-import styled from "styled-components"
+import { useStaticQuery, graphql } from "gatsby";
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebookSquare } from "@fortawesome/free-brands-svg-icons";
+import { GatsbyImage } from "gatsby-plugin-image";
+import styled from "styled-components";
 
-import DCHGDetails from "../content/dchg-details.json"
+import DCHGDetails from "../content/dchg-details.json";
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from "../components/layout";
+import SEO from "../components/seo";
 
 const Content = styled.p`
   font-size: 1.2em;
   line-height: 1.4;
-`
+`;
 
 const DirectiveWrapper = styled.div`
   display: flex;
   margin: 4rem 0;
-`
+`;
 
 const DirectiveContainer = styled.div`
   display: flex;
@@ -35,11 +35,11 @@ const DirectiveContainer = styled.div`
   @media screen and (min-width: 768px) {
     flex-direction: row;
   }
-`
+`;
 
 const Directive = styled.div`
   margin: 0 0.6rem;
-`
+`;
 
 const DirectiveContent = styled.p`
   font-size: 1.2em;
@@ -51,22 +51,22 @@ const DirectiveContent = styled.p`
   @media screen and (min-width: 768px) {
     text-align: left;
   }
-`
+`;
 
 const ImgWrapper = styled.div`
   width: 100px;
   height: auto;
-`
+`;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
 const FacebookIcon = styled((props) => <FontAwesomeIcon {...props} />)`
   font-size: 5em;
   color: #000000;
-`
+`;
 
-const { facebookUrl, meeting, websiteUrl } = DCHGDetails
-const hasUrl = facebookUrl || websiteUrl
-const hasMultipleUrls = facebookUrl && websiteUrl
+const { facebookUrl, meeting, websiteUrl } = DCHGDetails;
+const hasUrl = facebookUrl || websiteUrl;
+const hasMultipleUrls = facebookUrl && websiteUrl;
 
 const About = () => {
   const data = useStaticQuery(graphql`
@@ -77,7 +77,7 @@ const About = () => {
         }
       }
     }
-  `)
+  `);
 
   return (
     <Layout>
@@ -159,7 +159,7 @@ const About = () => {
         </div>
       </section>
     </Layout>
-  )
-}
+  );
+};
 
-export default About
+export default About;
