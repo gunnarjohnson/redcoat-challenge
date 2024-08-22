@@ -181,7 +181,7 @@ const Rules = () => (
         <p>
           <span>Each entry will consist of</span>
           {` `}
-          <strong>three (3) 12-ounce capped bottles or sealed cans</strong>
+          <strong>two (2) 12-ounce capped bottles or sealed cans</strong>
           {` `}
           <span>
             that are void of all identifying information, including labels and
@@ -206,16 +206,6 @@ const Rules = () => (
           <strong>
             Failure to submit entries properly will exclude them from judging.
           </strong>
-          <br />
-          <br />
-          <em>
-            Note: In the event that only 2 bottles/cans are submitted, the
-            Competition Coordinators will determine whether the second
-            bottle/can needs to be used during the first round/mini-BOS. If the
-            second bottle/can is used, the entry will not be eligible for the
-            Best of Show round due to fact that there is not a third bottle/can
-            available for judging.
-          </em>
         </p>
       </div>
     </section>
