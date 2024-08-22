@@ -265,8 +265,8 @@
   ],
   "registration": {
     "openDate": {
-      "dayOfMonth": 2,
-      "dayOfWeek": "Monday",
+      "dayOfMonth": 7,
+      "dayOfWeek": "Saturday",
       "monthName": "September",
       "monthNameAbbreviated": "Sep",
       "monthNumber": 8,
