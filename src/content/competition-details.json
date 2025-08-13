@@ -1,12 +1,12 @@
 {
   "awards": {
     "date": {
-      "dayOfMonth": 9,
+      "dayOfMonth": 8,
       "dayOfWeek": "Saturday",
       "monthName": "November",
       "monthNameAbbreviated": "Nov",
       "monthNumber": 10,
-      "year": 2024
+      "year": 2025
     },
     "location": {
       "name": "Denton County Brewing Company",
@@ -16,7 +16,7 @@
       "zip": "76201",
       "phoneNumber": "940-435-0710"
     },
-    "time": "3:00 p.m."
+    "time": "1:00 p.m."
   },
   "categories": [
     {
@@ -208,12 +208,12 @@
   "delivery": {
     "pickup": {
       "date": {
-        "dayOfMonth": 26,
+        "dayOfMonth": 25,
         "dayOfWeek": "Thursday",
         "monthName": "September",
         "monthNameAbbreviated": "Sep",
         "monthNumber": 8,
-        "year": 2024
+        "year": 2025
       }
     },
     "shipping": {
@@ -256,20 +256,20 @@
   ],
   "registration": {
     "openDate": {
-      "dayOfMonth": 7,
+      "dayOfMonth": 6,
       "dayOfWeek": "Saturday",
       "monthName": "September",
       "monthNameAbbreviated": "Sep",
       "monthNumber": 8,
-      "year": 2024
+      "year": 2025
     },
     "closeDate": {
-      "dayOfMonth": 26,
+      "dayOfMonth": 25,
       "dayOfWeek": "Thursday",
       "monthName": "September",
       "monthNameAbbreviated": "Sep",
       "monthNumber": 8,
-      "year": 2024
+      "year": 2025
     },
     "fee": "$10",
     "website": {
@@ -278,5 +278,5 @@
     },
     "additionalInformation": []
   },
-  "year": 2024
+  "year": 2025
 }
