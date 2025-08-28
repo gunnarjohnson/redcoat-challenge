@@ -27,7 +27,9 @@ const TelNum = styled.a`
   }
 `;
 
-const { locations } = CompetitionDetails.delivery.shipping;
+const shippingLocations = CompetitionDetails.delivery.locations.filter(
+  ({ isShippingLocation }) => isShippingLocation
+);
 
 const Shipping = () => (
   <Layout>
@@ -39,27 +41,29 @@ const Shipping = () => (
         <p>
           If you live outside of the North Texas area, but still wish to
           participate in the competition, you can ship your entries to
-          {locations.length > 1
+          {shippingLocations.length > 1
             ? ` one of the following homebrew supply stores. `
             : ` the following homebrew supply store. `}
           A competition committee member will pick up your entries for judging.
         </p>
         <AddressWrapper>
-          {locations.map((location, locationIndex) => (
-            <Address key={`location${locationIndex + 1}`}>
-              The Texas Redcoat Challenge
-              <br />
-              {`c/o ${location.name}`}
-              <br />
-              {location.address}
-              <br />
-              {`${location.city}, ${location.state} ${location.zip}`}
-              <br />
-              <TelNum href={`tel:${location.phoneNumber}`}>
-                {formatPhoneNumber(location.phoneNumber)}
-              </TelNum>
-            </Address>
-          ))}
+          {shippingLocations.map(
+            ({ address, city, name, phoneNumber, state, zip }) => (
+              <Address key={name.toLowerCase().replace(/\s+/g, "-")}>
+                The Texas Redcoat Challenge
+                <br />
+                {`c/o ${name}`}
+                <br />
+                {address}
+                <br />
+                {`${city}, ${state} ${zip}`}
+                <br />
+                <TelNum href={`tel:${phoneNumber}`}>
+                  {formatPhoneNumber(phoneNumber)}
+                </TelNum>
+              </Address>
+            )
+          )}
         </AddressWrapper>
       </div>
       <div>
