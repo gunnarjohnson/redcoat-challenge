@@ -32,7 +32,9 @@ const SiteLink = styled((props) => <Link {...props} />)`
 `;
 
 const { delivery } = CompetitionDetails;
-const { locations } = delivery.shipping;
+const dropOffLocations = delivery.locations.filter(
+  ({ isDropOffLocation }) => isDropOffLocation
+);
 const { date } = delivery.pickup;
 const { dayOfMonth, dayOfWeek, monthName, year } = date;
 const formattedPickupDate = formatDate(dayOfMonth, dayOfWeek, monthName, year);
@@ -80,18 +82,14 @@ const Rules = () => (
         </p>
         <p>
           {`Entries can be dropped off at the following location${
-            locations.length > 1 ? "s" : ""
+            dropOffLocations.length > 1 ? "s" : ""
           }:`}
         </p>
         <ul>
-          {locations.map((location, locationIndex) => (
-            <li key={`location${locationIndex + 1}`}>
-              {`${location.name} in ${location.city}, ${location.state} (`}
-              <MapLink
-                href={location.mapLink}
-                rel="noopener noreferrer"
-                target="_blank"
-              >
+          {dropOffLocations.map(({ city, mapLink, name, state }) => (
+            <li key={name.toLowerCase().replace(/\s+/g, "-")}>
+              {`${name} in ${city}, ${state} (`}
+              <MapLink href={mapLink} rel="noopener noreferrer" target="_blank">
                 View Map
               </MapLink>
               )

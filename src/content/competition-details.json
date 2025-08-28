@@ -216,28 +216,30 @@
         "year": 2025
       }
     },
-    "shipping": {
-      "locations": [
-        {
-          "name": "BrewHound",
-          "address": "8808 Camp Bowie West Blvd Ste 160",
-          "city": "Fort Worth",
-          "state": "TX",
-          "zip": "76116",
-          "phoneNumber": "817-615-9551",
-          "mapLink": "https://goo.gl/maps/zKsmpGksSLZUp42n8"
-        },
-        {
-          "name": "North Texas Homebrew Supply",
-          "address": "17811 Davenport Rd Ste 11",
-          "city": "Dallas",
-          "state": "TX",
-          "zip": "75252",
-          "phoneNumber": "469-206-6227",
-          "mapLink": "https://goo.gl/maps/uDKVQAGJ3nYxGKhV7"
-        }
-      ]
-    }
+    "locations": [
+      {
+        "name": "BrewHound",
+        "address": "8808 Camp Bowie West Blvd Ste 160",
+        "city": "Fort Worth",
+        "state": "TX",
+        "zip": "76116",
+        "phoneNumber": "817-615-9551",
+        "mapLink": "https://goo.gl/maps/zKsmpGksSLZUp42n8",
+        "isDropOffLocation": true,
+        "isShippingLocation": false
+      },
+      {
+        "name": "North Texas Homebrew Supply",
+        "address": "17811 Davenport Rd Ste 11",
+        "city": "Dallas",
+        "state": "TX",
+        "zip": "75252",
+        "phoneNumber": "469-206-6227",
+        "mapLink": "https://goo.gl/maps/uDKVQAGJ3nYxGKhV7",
+        "isDropOffLocation": true,
+        "isShippingLocation": true
+      }
+    ]
   },
   "facebookUrl": "https://www.facebook.com/TexasRedcoatChallenge",
   "guidelines": [
