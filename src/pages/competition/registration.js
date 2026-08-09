@@ -10,6 +10,7 @@ import CompetitionNav from "../../components/competition-nav";
 const ContentWrapper = styled.div`
   margin-top: 2rem;
 `;
+
 const ContentLink = styled.a`
   color: #00247d;
 
