@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 import CompetitionDetails from "../../content/competition-details.json";
 
+import Anchor from "../../components/anchor";
 import Layout from "../../components/layout";
 import SEO from "../../components/seo";
 import CompetitionNav from "../../components/competition-nav";
@@ -62,14 +63,6 @@ const BJCPLinkList = styled.ul`
   }
 `;
 
-const BJCPLink = styled.a`
-  color: #00247d;
-
-  &:hover {
-    color: #cf142b;
-  }
-`;
-
 const { categories, guidelines } = CompetitionDetails;
 
 const Categories = () => (
@@ -97,13 +90,11 @@ const Categories = () => (
                         <ul>
                           <li key={`subcategory${subcategoryIndex + 1}Link`}>
                             {subcategory.url ? (
-                              <BJCPLink
-                                href={subcategory.url}
-                                target="_blank"
+                              <Anchor
+                                text={`BJCP ${subcategory.id}`}
                                 rel="noreferrer"
-                              >
-                                {`BJCP ${subcategory.id}`}
-                              </BJCPLink>
+                                url={subcategory.url}
+                              />
                             ) : (
                               `BJCP ${subcategory.id}`
                             )}
@@ -125,13 +116,7 @@ const Categories = () => (
             (guideline, guidelineIndex) =>
               guideline.url && (
                 <li key={`guideline${guidelineIndex + 1}`}>
-                  <BJCPLink
-                    href={guideline.url}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    {guideline.content}
-                  </BJCPLink>
+                  <Anchor text={guideline.content} url={guideline.url} />
                 </li>
               )
           )}
