@@ -1,12 +1,12 @@
 {
   "awards": {
     "date": {
-      "dayOfMonth": 8,
+      "dayOfMonth": 14,
       "dayOfWeek": "Saturday",
       "monthName": "November",
       "monthNameAbbreviated": "Nov",
       "monthNumber": 10,
-      "year": 2025
+      "year": 2026
     },
     "location": {
       "name": "Denton County Brewing Company",
@@ -16,7 +16,7 @@
       "zip": "76201",
       "phoneNumber": "940-435-0710"
     },
-    "time": "12:00 p.m."
+    "time": "1:00 p.m."
   },
   "categories": [
     {
@@ -208,12 +208,12 @@
   "delivery": {
     "pickup": {
       "date": {
-        "dayOfMonth": 25,
+        "dayOfMonth": 24,
         "dayOfWeek": "Thursday",
         "monthName": "September",
         "monthNameAbbreviated": "Sep",
         "monthNumber": 8,
-        "year": 2025
+        "year": 2026
       }
     },
     "locations": [
@@ -245,7 +245,7 @@
   "guidelines": [
     {
       "content": "2021 Beer Style Guidelines",
-      "url": "https://bjcp.org/download/2021_Guidelines_Beer.pdf"
+      "url": "https://www.bjcp.org/wp-content/uploads/2025/02/2021_Guidelines_Beer_1.25.pdf"
     },
     {
       "content": "2015 Cider Style Guidelines",
@@ -258,20 +258,20 @@
   ],
   "registration": {
     "openDate": {
-      "dayOfMonth": 6,
-      "dayOfWeek": "Saturday",
+      "dayOfMonth": 7,
+      "dayOfWeek": "Monday",
       "monthName": "September",
       "monthNameAbbreviated": "Sep",
       "monthNumber": 8,
-      "year": 2025
+      "year": 2026
     },
     "closeDate": {
-      "dayOfMonth": 25,
+      "dayOfMonth": 24,
       "dayOfWeek": "Thursday",
       "monthName": "September",
       "monthNameAbbreviated": "Sep",
       "monthNumber": 8,
-      "year": 2025
+      "year": 2026
     },
     "fee": "$10",
     "website": {
@@ -280,5 +280,5 @@
     },
     "additionalInformation": []
   },
-  "year": 2025
+  "year": 2026
 }
