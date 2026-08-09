@@ -8,10 +8,11 @@ import CompetitionDetails from "../../content/competition-details.json";
 import formatDate from "../../common/formatDate";
 import formatPhoneNumber from "../../common/formatPhoneNumber";
 
+import Anchor from "../../components/anchor";
+import CompetitionNav from "../../components/competition-nav";
 import Layout from "../../components/layout";
 import SEO from "../../components/seo";
 import Title from "../../components/title";
-import CompetitionNav from "../../components/competition-nav";
 
 const ImageWrapper = styled.div`
   display: block;
@@ -57,18 +58,15 @@ const Content = styled.p`
   }
 `;
 
-const TelNum = styled.a`
-  color: #00247d;
-
-  &:hover {
-    color: #cf142b;
-  }
+const OtherContent = styled.p`
+  margin-top: 1rem;
 `;
 
 const { awards, delivery, registration, year } = CompetitionDetails;
 const { pickup } = delivery;
+const { openDate, website } = registration;
+const { url: websiteUrl } = website;
 
-const { openDate } = registration;
 const openDateFormatted = formatDate(
   openDate.dayOfMonth,
   openDate.dayOfWeek,
@@ -153,11 +151,23 @@ const Competition = () => {
               <br />
               {`${awardsLocation.city}, ${awardsLocation.state} ${awardsLocation.zip}`}
               <br />
-              <TelNum href={`tel:${awardsLocation.phoneNumber}`}>
-                {formatPhoneNumber(awardsLocation.phoneNumber)}
-              </TelNum>
+              <Anchor
+                text={formatPhoneNumber(awardsLocation.phoneNumber)}
+                url={`tel:${awardsLocation.phoneNumber}`}
+              />
             </Content>
           </ContentContainer>
+          <OtherContent>
+            Please visit the
+            {` `}
+            <Anchor
+              text="Texas Redcoat Challenge registration website"
+              url={websiteUrl}
+              title="Texas Redcoat Challenge Entries"
+            />
+            {` `}
+            for the most current dates and information.
+          </OtherContent>
         </ContentWrapper>
       </section>
     </Layout>
