@@ -70,7 +70,7 @@ const BJCPLink = styled.a`
   }
 `;
 
-const { categories, guidelines, year } = CompetitionDetails;
+const { categories, guidelines } = CompetitionDetails;
 
 const Categories = () => (
   <Layout>
@@ -79,7 +79,7 @@ const Categories = () => (
     <section>
       <h1>Competition - Categories</h1>
       <Container>
-        <Subtitle>{`The Texas Redcoat Challenge ${year} Style Categories`}</Subtitle>
+        <Subtitle>The Texas Redcoat Challenge Style Categories</Subtitle>
         <Subcontainer>
           {categories.map((category, categoryIndex) => (
             <CardWrapper key={`category${categoryIndex + 1}`}>
