@@ -1,20 +1,27 @@
 import React from "react";
 
 import CompetitionDetails from "../../content/competition-details.json";
+import DCHGDetails from "../../content/dchg-details.json";
 
 import formatDate from "../../common/formatDate";
 
+import Anchor from "../../components/anchor";
 import Layout from "../../components/layout";
 import SEO from "../../components/seo";
 import CompetitionNav from "../../components/competition-nav";
 
-const { awards } = CompetitionDetails;
+const { awards, registration } = CompetitionDetails;
+const {
+  website: { url: registrationUrl },
+} = registration;
 const formattedAwardsDate = formatDate(
   awards.date.dayOfMonth,
   awards.date.dayOfWeek,
   awards.date.monthName,
   awards.date.year
 );
+
+const { facebookUrl, youTubeUrl } = DCHGDetails;
 
 const Awards = () => (
   <Layout>
@@ -33,10 +40,23 @@ const Awards = () => (
           {` `}
           Winners will also be posted on the BCOE&M site by 7:00 p.m. (CST) on
           the day of the awards ceremony. It is our intent to livestream the
-          awards ceremony on either Facebook or YouTube. Details will be posted
-          as the ceremony date nears. 1st, 2nd, and 3rd place awards will be
-          issued for each beverage category as well as a single winner for the
-          Best Of Show category.
+          awards ceremony on either
+          {` `}
+          <Anchor text="Facebook" url={facebookUrl} />
+          {` or `}
+          <Anchor text="YouTube" url={youTubeUrl}>
+            YouTube
+          </Anchor>
+          . Details will be posted as the ceremony date nears. 1st, 2nd, and 3rd
+          place awards will be issued for each beverage category as well as a
+          single winner for the Best Of Show category. Please visit the
+          {` `}
+          <Anchor
+            text="Texas Redcoat Challenge entry website"
+            url={registrationUrl}
+          />
+          {` `}
+          for the most current dates and information.
           <br />
           <br />
           All 1st place entries from each category will advance to the Best of
@@ -67,7 +87,7 @@ const Awards = () => (
           <h3>Best of Show</h3>
           <p>
             A &quot;Best of Show Beer&quot; will be judged and awarded from
-            categories 1-8. A custom display plaque will be presented to the BOS
+            categories 1-8. A custom display award will be presented to the BOS
             winner.
           </p>
         </div>
