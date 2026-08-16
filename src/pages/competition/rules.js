@@ -65,9 +65,9 @@ const Rules = () => (
               Please visit the
               {` `}
               <Anchor
-                text="TRC registration website"
-                title="Texas Redcoat Challenge Registration"
-                url="https://www.trc.com/registration"
+                text="TRC entry website"
+                title="Texas Redcoat Challenge Entries"
+                url={registrationUrl}
               />
               {` `}
               for specific dates and times.
