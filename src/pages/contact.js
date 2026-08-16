@@ -4,8 +4,18 @@ import React, { useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import styled from "styled-components";
 
+import Anchor from "../components/anchor";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+
+import CompetitionDetails from "../content/competition-details.json";
+import DCHGDetails from "../content/dchg-details.json";
+
+const Section = styled.section`
+  & + & {
+    margin-top: 3rem;
+  }
+`;
 
 const FormWrapper = styled.div`
   display: flex;
@@ -105,6 +115,13 @@ const ClearInput = styled.input`
   }
 `;
 
+const {
+  registration: {
+    website: { url: registrationUrl },
+  },
+} = CompetitionDetails;
+const { websiteUrl: dchgUrl } = DCHGDetails;
+
 const recaptchaKey = process.env.GATSBY_SITE_RECAPTCHA_KEY;
 
 const recaptchaRef = React.createRef();
@@ -176,7 +193,7 @@ function Contact() {
   return (
     <Layout>
       <SEO title="Contact" />
-      <section>
+      <Section>
         <h1>Contact</h1>
         <p>Questions? Send us a message.</p>
         <FormWrapper>
@@ -249,7 +266,23 @@ function Contact() {
             </Row>
           </Form>
         </FormWrapper>
-      </section>
+      </Section>
+      <Section>
+        <h2>Resources</h2>
+        <ul>
+          <li>
+            <Anchor
+              text="Texas Redcoat Challenge entry website"
+              url={registrationUrl}
+            />
+            : Entries, dates, and other competition information.
+          </li>
+          <li>
+            <Anchor text="Denton County Homebrewers Guild" url={dchgUrl} />:
+            Club information, news, and events.
+          </li>
+        </ul>
+      </Section>
     </Layout>
   );
 }
