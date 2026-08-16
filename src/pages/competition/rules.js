@@ -105,7 +105,7 @@ const Rules = () => (
             </InternalLink>
             {`. `}
             <strong>
-              No loose bottles or cans in six-pack holders will be accepted.
+              No loose bottles in six-pack holders will be accepted.
             </strong>
           </em>
         </p>
@@ -165,10 +165,10 @@ const Rules = () => (
           <br />
           <br />
           The Best of Show judging will be determined by a panel of BJCP judges
-          based on a second judging of the top winners. Bottles and cans will
-          not be returned to entrants for any reason. All entries become the
-          property of the Texas Redcoat Challenge homebrew competition. Rules
-          and regulations are subject to change. Due to Texas law, Homebrew
+          based on a second judging of the top winners. Bottles will not be
+          returned to entrants for any reason. All entries become the property
+          of the Texas Redcoat Challenge homebrew competition. Rules and
+          regulations are subject to change. Due to Texas law, Homebrew
           Competitions are not allowed to charge for entries. The fee is for
           providing completed score sheets back to the entrant.
         </p>
@@ -178,25 +178,24 @@ const Rules = () => (
         <p>
           <span>Each entry will consist of</span>
           {` `}
-          <strong>two (2) 12-ounce capped bottles or sealed cans</strong>
+          <strong>two (2) 12-ounce capped bottles</strong>
           {` `}
           <span>
             that are void of all identifying information, including labels and
-            embossing. Printed caps are allowed, though discouraged, and if
-            used, must be completely blacked out. Bottles and cans must be free
-            of labels or other easily identified marks. Re-used commercial
-            bottles with embossed logos are allowed but discouraged. 12 oz brown
-            glass bottles are preferred; however, green or clear glass and
-            corked bottles will be accepted. Swing top bottles will be
-            disqualified and not judged.
+            embossing. CANS AND SWING TOP BOTTLES ARE NOT ALLOWED. Printed caps
+            are allowed, though discouraged, and if used, must be completely
+            blacked out. Bottles must be free of labels or other easily
+            identified marks. Re-used commercial bottles with embossed logos are
+            allowed but discouraged. 12 oz brown glass bottles are preferred;
+            however, green or clear glass bottles will be accepted.
           </span>
           <br />
           <br />
-          Bottles and cans will not be returned to entrants for any reason.
-          Completed bottle/can labels must be submitted with all entries, and
-          can be printed directly from the entry website along with any other
-          required paperwork. Bottle/Can labels should be attached to
-          bottles/cans with a rubber band only; glue and/or tape are
+          Bottles will not be returned to entrants for any reason. Completed
+          bottle labels must be submitted with all entries, and can be printed
+          directly from the entry website along with any other required
+          paperwork. Bottle labels should be placed in a clear zip-top bag and
+          attached to bottles with a rubber band only; glue and/or tape are
           unacceptable.
           <br />
           <br />
