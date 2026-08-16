@@ -65,7 +65,7 @@ const OtherContent = styled.p`
 const { awards, delivery, registration, year } = CompetitionDetails;
 const { pickup } = delivery;
 const { openDate, website } = registration;
-const { url: websiteUrl } = website;
+const { url: registrationUrl } = website;
 
 const openDateFormatted = formatDate(
   openDate.dayOfMonth,
@@ -161,8 +161,8 @@ const Competition = () => {
             Please visit the
             {` `}
             <Anchor
-              text="Texas Redcoat Challenge registration website"
-              url={websiteUrl}
+              text="Texas Redcoat Challenge entry website"
+              url={registrationUrl}
               title="Texas Redcoat Challenge Entries"
             />
             {` `}

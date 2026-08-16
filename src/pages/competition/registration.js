@@ -72,7 +72,7 @@ const getDateArgs = (data) => {
 
 const { registration, year: competitionYear } = CompetitionDetails;
 const { additionalInformation, website } = registration;
-const { url: websiteUrl } = website;
+const { url: registrationUrl } = website;
 
 const currentDate = new Date();
 
@@ -111,12 +111,12 @@ const Registration = () => (
           Please visit the official
           {` `}
           <ContentLink
-            href={websiteUrl}
+            href={registrationUrl}
             rel="noopener noreferrer"
             target="_blank"
             title="Texas Redcoat Challenge Entries"
           >
-            Texas Redcoat Challenge registration website
+            Texas Redcoat Challenge entry website
           </ContentLink>
           {` `}
           to register your account and entries. The website will also contain
@@ -130,7 +130,7 @@ const Registration = () => (
         </RegistrationNotification>
         {enableRegistration && (
           <RegistrationButton
-            href={websiteUrl}
+            href={registrationUrl}
             rel="noopener noreferrer"
             target="_blank"
           >
