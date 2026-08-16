@@ -4,8 +4,7 @@ import styled from "styled-components";
 
 import CompetitionDetails from "../../content/competition-details.json";
 
-import formatDate from "../../common/formatDate";
-
+import Anchor from "../../components/anchor";
 import Layout from "../../components/layout";
 import SEO from "../../components/seo";
 import CompetitionNav from "../../components/competition-nav";
@@ -23,7 +22,7 @@ const MapLink = styled.a`
 `;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
-const SiteLink = styled((props) => <Link {...props} />)`
+const InternalLink = styled((props) => <Link {...props} />)`
   color: #00247d;
 
   &:hover {
@@ -31,13 +30,14 @@ const SiteLink = styled((props) => <Link {...props} />)`
   }
 `;
 
-const { delivery } = CompetitionDetails;
+const { delivery, registration } = CompetitionDetails;
 const dropOffLocations = delivery.locations.filter(
   ({ isDropOffLocation }) => isDropOffLocation
 );
-const { date } = delivery.pickup;
-const { dayOfMonth, dayOfWeek, monthName, year } = date;
-const formattedPickupDate = formatDate(dayOfMonth, dayOfWeek, monthName, year);
+const {
+  website: { url: registrationUrl },
+} = registration;
+const hasRegistrationUrl = !!registrationUrl;
 
 const Rules = () => (
   <Layout>
@@ -55,30 +55,28 @@ const Rules = () => (
           entry registration.
         </p>
         <p>
-          <span>
-            All mailed entries must be received at the mailing location by the
-            entry deadline on
-          </span>
+          All mailed entries must be received at the mailing location by the
+          entry deadline; please allow for shipping time. Walk-in entries are
+          also allowed. All entries will be picked up from drop-off locations
+          the day of the entry deadline.
           {` `}
-          <strong>{formattedPickupDate}</strong>
-          <span>.</span>
-          {` `}
-          <span>
-            Please allow for shipping time. All entries will be picked up from
-            drop-off locations the day of the entry deadline. Walk-in entries
-            will be allowed, but only if they are dropped off by the entry
-            deadline on
-          </span>
-          {` `}
-          <strong>{`${monthName} ${dayOfMonth}`}</strong>
-          <span>.</span>
-          {` `}
-          <span>
-            All entries should be packaged as if they were being shipped in
-            order to assist our homebrew store partners with
-            storage/organization, as well as the organizers when collecting your
-            entries.
-          </span>
+          {hasRegistrationUrl && (
+            <>
+              Please visit the
+              {` `}
+              <Anchor
+                text="TRC registration website"
+                title="Texas Redcoat Challenge Registration"
+                url="https://www.trc.com/registration"
+              />
+              {` `}
+              for specific dates and times.
+              {` `}
+            </>
+          )}
+          All entries should be packaged as if they were being shipped in order
+          to assist our homebrew store partners with storage/organization, as
+          well as the organizers when collecting your entries.
         </p>
         <p>
           {`Entries can be dropped off at the following location${
@@ -98,12 +96,13 @@ const Rules = () => (
         </ul>
         <p>
           <em>
-            Note: If dropping off entries, please be sure to follow the
+            Note: If dropping off entries, please consult the location&apos;s
+            hours of operation to ensure they are open and follow the
             competition
             {` `}
-            <SiteLink to="/competition/shipping#packaging-instructions">
+            <InternalLink to="/competition/shipping#packaging-instructions">
               packaging instructions
-            </SiteLink>
+            </InternalLink>
             {`. `}
             <strong>
               No loose bottles or cans in six-pack holders will be accepted.
