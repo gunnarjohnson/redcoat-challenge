@@ -226,11 +226,7 @@ const IndexPage = () => {
                 To learn more about the Denton County Homebrewers Guild, please
                 visit the
                 {` `}
-                <ExternalLink
-                  text="DCHG website"
-                  url={DCHGDetails.websiteUrl}
-                />
-                .
+                <ExternalLink text="DCHG website" url={dchgUrl} />.
               </>
             )}
           </Content>
