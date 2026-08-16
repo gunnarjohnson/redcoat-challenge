@@ -1,11 +1,15 @@
 import { Link, useStaticQuery, graphql } from "gatsby";
 import React from "react";
 import { GatsbyImage } from "gatsby-plugin-image";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
+import Anchor from "../components/anchor";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Title from "../components/title";
+
+import CompetitionDetails from "../content/competition-details.json";
+import DCHGDetails from "../content/dchg-details.json";
 
 const Section = styled.section`
   display: flex;
@@ -15,6 +19,10 @@ const Section = styled.section`
 
   @media screen and (min-width: 768px) {
     flex-wrap: nowrap;
+  }
+
+  & + & {
+    margin-top: 3rem;
   }
 `;
 
@@ -71,15 +79,22 @@ const ContentWrapper = styled.div`
   }
 `;
 
-const Content = styled.p`
+const contentStyles = css`
   font-size: 1.2em;
   line-height: 1.6;
-  text-align: center;
+  text-align: left;
 
   @media screen and (min-width: 768px) {
     font-size: 1.4em;
-    text-align: left;
   }
+`;
+
+const Content = styled.p`
+  ${contentStyles}
+`;
+
+const ExternalLink = styled(Anchor)`
+  ${contentStyles}
 `;
 
 const ButtonWrapper = styled.div`
@@ -133,6 +148,18 @@ const ImgContainer = styled.div`
   }
 `;
 
+const {
+  registration: {
+    website: { url: registrationUrl },
+  },
+} = CompetitionDetails;
+const { websiteUrl: dchgUrl } = DCHGDetails;
+
+const hasRegistrationUrl = !!registrationUrl;
+const hasDCHGUrl = !!dchgUrl;
+const hasUrl = hasRegistrationUrl || hasDCHGUrl;
+const hasMultipleUrls = hasRegistrationUrl && hasDCHGUrl;
+
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -165,7 +192,7 @@ const IndexPage = () => {
             </Content>
           </ContentWrapper>
           <ButtonWrapper>
-            <Button to="/competition">Learn More</Button>
+            <Button to="/competition">Competition Details</Button>
           </ButtonWrapper>
         </SubsectionOne>
         <SubsectionTwo>
@@ -179,6 +206,36 @@ const IndexPage = () => {
           </ImgWrapper>
         </SubsectionTwo>
       </Section>
+      {hasUrl && (
+        <Section>
+          <Content>
+            {hasRegistrationUrl && (
+              <>
+                Entries can be submitted on the
+                {` `}
+                <ExternalLink
+                  text="Texas Redcoat Challenge registration website"
+                  url={registrationUrl}
+                />
+                .
+              </>
+            )}
+            {hasMultipleUrls && ` `}
+            {hasDCHGUrl && (
+              <>
+                To learn more about the Denton County Homebrewers Guild, please
+                visit the
+                {` `}
+                <ExternalLink
+                  text="DCHG website"
+                  url={DCHGDetails.websiteUrl}
+                />
+                .
+              </>
+            )}
+          </Content>
+        </Section>
+      )}
     </Layout>
   );
 };
