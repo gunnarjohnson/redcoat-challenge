@@ -214,7 +214,7 @@ const IndexPage = () => {
                 Entries can be submitted on the
                 {` `}
                 <ExternalLink
-                  text="Texas Redcoat Challenge registration website"
+                  text="Texas Redcoat Challenge entry website"
                   url={registrationUrl}
                 />
                 .
