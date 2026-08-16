@@ -85,19 +85,19 @@ const closeDate = new Date(...closeDateArgs, 23, 59, 59);
 const enableRegistration = openDate <= currentDate && currentDate <= closeDate;
 
 const notificationMessage = (() => {
-  const openDateFormatted = dayjs(openDate).format("dddd, MMM D, YYYY");
-  const closeDateFormatted = dayjs(closeDate).format("dddd, MMM D, YYYY");
-  const baseMessage = `Registration for the Texas Redcoat Challenge ${competitionYear}`;
+  const openDateFormatted = dayjs(openDate).format("MMMM D, YYYY");
+  const closeDateFormatted = dayjs(closeDate).format("MMMM D, YYYY");
+  const baseMessage = `The Texas Redcoat Challenge ${competitionYear}`;
 
   if (currentDate < openDate) {
-    return `${baseMessage} will open on ${openDateFormatted}.`;
+    return `${baseMessage} opens ${openDateFormatted}!`;
   }
 
   if (currentDate > closeDate) {
     return `${baseMessage} is closed as of ${closeDateFormatted}.`;
   }
 
-  return `${baseMessage} is open as of ${openDateFormatted} and will close on ${closeDateFormatted}.`;
+  return `${baseMessage} is open! Registration closes ${closeDateFormatted}.`;
 })();
 
 const Registration = () => (
