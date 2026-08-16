@@ -79,8 +79,8 @@ const Shipping = () => (
             Labels
             <ul>
               <li>
-                Enclose each of your bottle/can labels in a small zip-top bag
-                before attaching to their respective bottles.
+                Enclose each of your bottle labels in a small zip-top bag before
+                attaching to their respective bottles.
               </li>
               <ul>
                 <li>
@@ -92,11 +92,11 @@ const Shipping = () => (
             </ul>
           </li>
           <li>
-            Bottles/Cans
+            Bottles
             <ul>
               <li>
-                Carefully partition and pack each bottle/can with adequate
-                packaging material.
+                Carefully partition and pack each bottle with adequate packaging
+                material.
               </li>
             </ul>
           </li>
@@ -114,8 +114,8 @@ const Shipping = () => (
               </li>
               <li>
                 Every reasonable effort will be made to contact entrants whose
-                bottles/cans have broken to make arrangements for sending
-                replacement bottles.
+                bottles have broken to make arrangements for sending replacement
+                bottles.
               </li>
             </ul>
           </li>
