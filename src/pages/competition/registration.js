@@ -114,7 +114,6 @@ const Registration = () => (
             href={registrationUrl}
             rel="noopener noreferrer"
             target="_blank"
-            title="Texas Redcoat Challenge Entries"
           >
             Texas Redcoat Challenge entry website
           </ContentLink>
