@@ -10,17 +10,12 @@ import SEO from "../../components/seo";
 import CompetitionNav from "../../components/competition-nav";
 
 const Subtitle = styled.h2`
-  text-align: center;
-
-  @media screen and (min-width: 768px) {
-    text-align: left;
-  }
+  text-align: left;
 `;
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
   margin-top: 3rem;
 
   @media screen and (min-width: 768px) {
@@ -59,11 +54,14 @@ const CardList = styled.ul`
 
 const BJCPLinkList = styled.ul`
   @media screen and (max-width: 767px) {
-    padding-left: 0;
+    padding-left: 1.4rem;
   }
 `;
 
-const { categories, guidelines } = CompetitionDetails;
+const { categories, guidelines, registration } = CompetitionDetails;
+const {
+  website: { infoUrl: registrationInfoUrl },
+} = registration;
 
 const Categories = () => (
   <Layout>
@@ -73,6 +71,17 @@ const Categories = () => (
       <h1>Competition - Categories</h1>
       <Container>
         <Subtitle>The Texas Redcoat Challenge Style Categories</Subtitle>
+        <p>
+          Please refer to the
+          {` `}
+          <Anchor
+            text="Texas Redcoat Challenge entry website"
+            url={registrationInfoUrl}
+            title="Texas Redcoat Challenge Info"
+          />
+          {` `}
+          for the most current information about accepted styles.
+        </p>
         <Subcontainer>
           {categories.map((category, categoryIndex) => (
             <CardWrapper key={`category${categoryIndex + 1}`}>
