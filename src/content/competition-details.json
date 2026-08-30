@@ -185,22 +185,27 @@
       ]
     },
     {
-      "name": "Braggot & Cider",
+      "name": "Cider & Braggot",
       "subcategories": [
+        {
+          "id": "C1C",
+          "name": "English Cider",
+          "url": "https://www.bjcp.org/style/2025/C1/C1C/english-cider/"
+        },
+        {
+          "id": "C3B",
+          "name": "Spiced Cider",
+          "url": "https://www.bjcp.org/style/2025/C3/C3B/spiced-cider/"
+        },
+        {
+          "id": "C4A",
+          "name": "Common Perry",
+          "url": "https://www.bjcp.org/style/2025/C4/C4A/common-perry/"
+        },
         {
           "id": "M4A",
           "name": "Braggot",
           "url": "https://bjcp.org/style/2015/M4/M4A/braggot/"
-        },
-        {
-          "id": "C1",
-          "name": "Standard Cider & Perry",
-          "url": "https://bjcp.org/style/2015/C1/"
-        },
-        {
-          "id": "C2",
-          "name": "Specialty Cider & Perry",
-          "url": "https://bjcp.org/style/2015/C2/"
         }
       ]
     }
@@ -248,8 +253,8 @@
       "url": "https://www.bjcp.org/wp-content/uploads/2025/02/2021_Guidelines_Beer_1.25.pdf"
     },
     {
-      "content": "2015 Cider Style Guidelines",
-      "url": "https://legacy.bjcp.org/docs/2015_Guidelines_Cider.pdf"
+      "content": "2025 Cider Style Guidelines",
+      "url": "https://www.bjcp.org/wp-content/uploads/2025/01/2025_Guidelines_Cider.pdf"
     },
     {
       "content": "Additional Information",
