@@ -280,6 +280,7 @@
     },
     "fee": "$10",
     "website": {
+      "infoUrl": "https://entries.texasredcoat.com/index.php?section=entry",
       "name": "The Texas Redcoat Challenge - Entries",
       "url": "https://entries.texasredcoat.com/"
     },
